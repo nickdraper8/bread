@@ -1,5 +1,5 @@
-const express = require("express");
 const router = express.Router();
+const express = require("express");
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const keys = require('../../config/keys');
@@ -13,7 +13,7 @@ router.post('/signup', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                return res.status(400).json({ email: "That Email is already registered!" })
+                return res.status(400).json({ email: "That email is already registered!" })
             } else {
                 const newUser = new User({
                     phone: req.body.phone,
@@ -58,7 +58,7 @@ router.post("/login", (req, res) => {
             if (isMatch) {
                 const payload = { id: user.id, username: user.username };
 
-                jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+                jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (token) => {
                     res.json({
                         success: true,
                         token: "Bearer " + token
