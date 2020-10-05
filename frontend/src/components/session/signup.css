@@ -37,8 +37,7 @@
 }
 
 .signup-form-container .signup-form input:focus {
-    outline: none;
-    border: 2px solid #287f26;
+    outline: green solid 3px;
 }
 
 .signup-form-container .signup-form input[type="submit"] {
@@ -51,5 +50,4 @@
 
 .signup-form-container .signup-form input[type="submit"]:hover {
     background-color: #2ca02c;
-
 }

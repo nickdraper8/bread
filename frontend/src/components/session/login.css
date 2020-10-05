@@ -30,8 +30,7 @@
 }
 
 .login-form-container .login-form input:focus {
-    outline: none;
-    border: 2px solid #287f26;
+    outline: green solid 3px;
 }
 
 .login-form-container .login-form input[type="submit"] {
