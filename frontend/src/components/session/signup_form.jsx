@@ -7,10 +7,10 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      fname: "",
-      lname: "",
+      firstname: "",
+      lastname: "",
       email: "",
-      phone: "",
+      phonenumber: "",
       password: "",
       password2: "",
       errors: {},
@@ -20,13 +20,13 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  // componentDidMount(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push("/login");
-  //   }
+  componentDidMount(nextProps) {
+    if (this.props.signedIn === true) {
+      this.props.history.push("/login");
+    }
 
-  //   this.setState({ errors: nextProps.errors });
-  // }
+    this.setState({ errors: this.props.errors });
+  }
 
   update(field) {
     return (e) =>
@@ -38,9 +38,9 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user = {
-      fname: this.state.fname,
-      lname: this.state.lname,
-      phone: this.state.phone,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      phonenumber: this.state.phonenumber,
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
@@ -65,17 +65,18 @@ class SignupForm extends React.Component {
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
+            <p>Create a New Account</p>
             <div className="signup-form-name-container">
               <input
                 type="text"
-                value={this.state.email}
-                onChange={this.update("fname")}
+                value={this.state.firstname}
+                onChange={this.update("firstname")}
                 placeholder="First Name"
               />
               <input
                 type="text"
-                value={this.state.email}
-                onChange={this.update("lname")}
+                value={this.state.lastname}
+                onChange={this.update("lastname")}
                 placeholder="Last Name"
               />
             </div>
@@ -87,9 +88,16 @@ class SignupForm extends React.Component {
             />
             <input
               type="text"
-              value={this.state.handle}
+              value={this.state.username}
               onChange={this.update("username")}
-              placeholder="username"
+              placeholder="Username"
+            />
+            <input
+              type="tel"
+              value={this.state.phonenumber}
+              onChange={this.update("phonenumber")}
+              placeholder="Phone Number - 012-345-6789"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             />
             <div className="signup-form-password-container">
               <input

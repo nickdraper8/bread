@@ -1,7 +1,7 @@
 .signup-form-container {
     margin: auto;
     width: 400px;
-    height: 400px;
+    height: 500px;
     background: #e8e8e8;
     border-radius: 5px;
 }
@@ -15,6 +15,11 @@
     padding: 40px;
 }
 
+.signup-form-container .signup-form p {
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
 .signup-form-container .signup-form > div{
     display: flex;
     flex-direction: row;
@@ -22,7 +27,8 @@
 }
 
 .signup-form-container .signup-form input {
-    
+    height: 30px;
+    margin-bottom: 25px;
 }
 
 .signup-form-container .signup-form input[type="submit"] {
