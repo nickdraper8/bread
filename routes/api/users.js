@@ -32,18 +32,29 @@ router.post('/signup', (req, res) => {
                     username: req.body.username,
                     email: req.body.email,
                     password: req.body.password
-                })
+                });
 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
-                            .then(user => res.json(user))
+                            .then(user =>{
+                                const payload = { id: user.id, username: user.username };
+                                jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+                                    res.json({
+                                        success: true,
+                                        token: "Bearer " + token
+                                    });
+                                })})
+
                             .catch(err => console.log(err));
                     })
                 })
+            
             }
+
+
         })
 })
 
@@ -67,7 +78,6 @@ router.post("/login", (req, res) => {
         bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
                 const payload = { id: user.id, username: user.username };
-                debugger
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                     res.json({
                         success: true,
