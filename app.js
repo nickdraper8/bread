@@ -3,6 +3,9 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
+const passport = require('passport');
+
+require('./config/passport')(passport);
 
 mongoose
 .connect(db, { useNewUrlParser: true })
