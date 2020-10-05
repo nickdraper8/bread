@@ -1,15 +1,25 @@
-const router = express.Router();
 const express = require("express");
-const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
+const router = express.Router();
 const keys = require('../../config/keys');
+const User = require('../../models/User');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
+
 
 router.get("/test", (req, res) => 
     res.json({ msg: "This is the users route" }));
 
 
 router.post('/signup', (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
@@ -17,8 +27,8 @@ router.post('/signup', (req, res) => {
             } else {
                 const newUser = new User({
                     phone: req.body.phone,
-                    fname: req.body.fname,
-                    lname: req.body.lname,
+                    firstname: req.body.firstname,
+                    lastname: req.body.lastname,
                     username: req.body.username,
                     email: req.body.email,
                     password: req.body.password
@@ -71,6 +81,14 @@ router.post("/login", (req, res) => {
         });
     });
 });
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+    console.log('logged out');
+
+})
+
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
