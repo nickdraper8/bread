@@ -9,6 +9,7 @@ import { logout } from "./actions/session_actions";
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   // If a returning user has a session token stored in localStorage
+  debugger
   if (localStorage.jwtToken) {
 
     // Set the token as a common header for all axios requests
