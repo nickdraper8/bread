@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
       firstname: "",
       lastname: "",
       email: "",
-      phonenumber: "",
+      phone: "",
       password: "",
       password2: "",
       errors: {},
@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
     let user = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
-      phonenumber: this.state.phonenumber,
+      phone: this.state.phone,
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
@@ -106,8 +106,8 @@ class SignupForm extends React.Component {
             <label>Phone Number</label>
             <input
               type="tel"
-              value={this.state.phonenumber}
-              onChange={this.update("phonenumber")}
+              value={this.state.phone}
+              onChange={this.update("phone")}
               placeholder="Phone Number - 012-345-6789"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             />
