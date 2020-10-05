@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./login.css";
 
 class LoginForm extends React.Component {
@@ -17,13 +17,15 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
-  componentDidUpdate(nextProps) {
-    if (nextProps.currentUser === true) {
+  componentDidUpdate() {
+    if (this.props.currentUser === true) {
       this.props.history.push("/");
     }
 
     // Set or clear errors
-    this.setState({ errors: nextProps.errors });
+    if (this.state.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
   }
 
   // Handle field updates (called in the render method)
@@ -59,24 +61,24 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="login-form">
+            <p>Log In</p>
             <input
               type="text"
               value={this.state.email}
               onChange={this.update("username")}
               placeholder="Username"
             />
-            <br />
             <input
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
             <input type="submit" value="Submit" />
+            <p>Don't have an account? <span><Link to="/signup">Create an Account</Link></span></p>
             {this.renderErrors()}
           </div>
         </form>

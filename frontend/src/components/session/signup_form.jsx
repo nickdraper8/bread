@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import './signup.css';
 
 class SignupForm extends React.Component {
@@ -20,12 +20,15 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentDidMount(nextProps) {
+  componentDidUpdate() {
     if (this.props.signedIn === true) {
       this.props.history.push("/login");
     }
 
-    this.setState({ errors: this.props.errors });
+    // Set or clear errors
+    if (this.state.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
   }
 
   update(field) {
@@ -114,6 +117,7 @@ class SignupForm extends React.Component {
               />
             </div>
             <input type="submit" value="Submit" />
+            <p>Already have an account? <span><Link to="/login">Log In</Link></span></p>
             {this.renderErrors()}
           </div>
         </form>

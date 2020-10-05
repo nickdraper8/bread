@@ -2,8 +2,9 @@
     margin: auto;
     width: 400px;
     height: 500px;
-    background: #e8e8e8;
+    background: #9aff98;
     border-radius: 5px;
+    border: 1px solid #287f26;
 }
 
 .signup-form-container .signup-form {
@@ -18,6 +19,7 @@
 .signup-form-container .signup-form p {
     margin: 0px;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .signup-form-container .signup-form > div{
@@ -29,8 +31,25 @@
 .signup-form-container .signup-form input {
     height: 30px;
     margin-bottom: 25px;
+    border: 1px solid #287f26;
+    border-radius: 2px;
+    transition: 5s;
+}
+
+.signup-form-container .signup-form input:focus {
+    outline: none;
+    border: 2px solid #287f26;
 }
 
 .signup-form-container .signup-form input[type="submit"] {
-    
+    background-color: #33b533;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.signup-form-container .signup-form input[type="submit"]:hover {
+    background-color: #2ca02c;
+
 }
