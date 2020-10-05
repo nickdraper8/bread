@@ -17,8 +17,8 @@ router.post('/signup', (req, res) => {
             } else {
                 const newUser = new User({
                     phone: req.body.phone,
-                    fname: req.body.fname,
-                    lname: req.body.lname,
+                    firstname: req.body.firstname,
+                    lastname: req.body.lastname,
                     username: req.body.username,
                     email: req.body.email,
                     password: req.body.password
