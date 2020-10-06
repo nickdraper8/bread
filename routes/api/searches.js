@@ -9,7 +9,6 @@ const User = require("../../models/User")
 router.get('/search', (req, res) => {
 
     // eval(require('locus'));
-
     // console.log(res)
 
     const userSearch = new RegExp(/^(req.query.search)$/gi)
@@ -22,7 +21,6 @@ router.get('/search', (req, res) => {
         } else {
             res.render("users/index", {users:allUsers});
         }
-    
     });
     
     } else {
@@ -32,23 +30,11 @@ router.get('/search', (req, res) => {
             if(err){ 
                 console.log(err);
             }else{
-
                 res.render("users/index",{users: allUsers});
             }
-
         });
     }
 
 });
-
-{/* <form action='/search' method="GET">
-
-    <div>
-        <input type='text' name='search' />
-        <input type='submit' />
-    </div>
-
-</form> */}
-
 
 module.exports = router;
