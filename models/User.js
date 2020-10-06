@@ -29,7 +29,12 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+        friend_ids: {
+        type: Array,
+        required: true
     }
+
 })
 
 module.exports = User = mongoose.model('User', UserSchema);

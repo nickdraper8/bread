@@ -103,6 +103,43 @@ router.get('/logout', (req, res) => {
 
 })
 
+router.post("/:id", (req, res) => {
+
+    User.findBy({ friend_id }).then(user => {
+        if (!user) {
+            errors.friend_id = "That friend does not exist :(";
+            return res.status(400).json(errors);
+        }
+        res.json({
+            user_id: req.user.id,
+            friend_id: req.user.id,
+        });
+
+
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    
+    User.findByIdAndDelete(req.body.friend_id)
+        .then(() => res.json({ msg: "Friend deleted." }))
+        .catch(err =>
+            res.status(400).json(errors))
+});
+
+
+router.get('/friendList', function (req, res) {
+    User.find({}, function (err, users) {
+        var userMap = {};
+
+        users.forEach(function (user) {
+            userMap[friend_ids] = user;
+        });
+
+        res.send(userMap);
+    });
+});
+
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
