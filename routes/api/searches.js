@@ -41,5 +41,14 @@ router.get('/search', (req, res) => {
 
 });
 
+{/* <form action='/search' method="GET">
+
+    <div>
+        <input type='text' name='search' />
+        <input type='submit' />
+    </div>
+
+</form> */}
+
 
 module.exports = router;
