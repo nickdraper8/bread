@@ -10,11 +10,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    phonenumber: {
+    phone: {
         type: String,
         required: true
     },
-    handle: {
+    username: {
         type: String,
         required: true
     },
@@ -29,7 +29,12 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    // friend_ids: {
+    //     type: Array,
+    //     required: true
+    // }
+
 })
 
 module.exports = User = mongoose.model('User', UserSchema);

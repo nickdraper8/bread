@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let store;
 
   // If a returning user has a session token stored in localStorage
-  if (localStorage.jwtToken) {
+  if (localStorage.jwtToken && localStorage.jwtToken !== "undefined") {
     // Set the token as a common header for all axios requests
     setAuthToken(localStorage.jwtToken);
 

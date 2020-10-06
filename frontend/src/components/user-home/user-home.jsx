@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import InternalNavbar from "../nav/navbar";
+import InternalNavbarContainer from "../nav/navbar_container";
 import FriendsIndexItem from "./friends-index-item";
 import UserEventItem from "./user-event-item";
 import UserSearch from "../search/user_search"
