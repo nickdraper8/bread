@@ -1,0 +1,11 @@
+.friends-index-item-container {
+    background-color: white;
+    color: #24695C;
+    margin: 40px;
+    border-radius: 10%;
+}
+.friends-index-tile {
+    padding: 3px 3px 8px 8px;
+    margin: 5px 5px  8px 8px;
+    border-radius: 2%;
+}

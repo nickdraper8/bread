@@ -65,19 +65,21 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <p>Create a New Account</p>
-            <div className="signup-form-name-container">
-              <div>
-                <label>First Name</label>
+      <div className="signup-form-container-outer-container">
+        <div className="signup-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="signup-form">
+              <div className="sign-up-create-a-new-account">
+                Create a New Account
+              </div>
+              <div className="signup-form-name-container">
                 <input
                   type="text"
                   value={this.state.firstname}
                   onChange={this.update("firstname")}
                   placeholder="First Name"
                 />
+
               </div>
               <div>
                 <label>Last Name</label>
@@ -88,6 +90,27 @@ class SignupForm extends React.Component {
                   placeholder="Last Name"
                 />
               </div>
+
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
+              <input
+                type="tel"
+                value={this.state.phonenumber}
+                onChange={this.update("phonenumber")}
+                placeholder="Phone Number - 012-345-6789"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              />
+              <div className="signup-form-password-container">
             </div>
             <label>Email</label>
             <input
@@ -120,6 +143,7 @@ class SignupForm extends React.Component {
                   onChange={this.update("password")}
                   placeholder="Password"
                 />
+
               </div>
               <div>
                 <label>Confirm Password</label>
@@ -130,6 +154,19 @@ class SignupForm extends React.Component {
                   placeholder="Confirm Password"
                 />
               </div>
+
+              <input type="submit" value="Submit" />
+              <p>
+                Already have an account?{" "}
+                <span>
+                  <Link to="/login">Log In</Link>
+                </span>
+              </p>
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
+
             </div>
             <input type="submit" value="Submit" />
             <p>
@@ -141,6 +178,7 @@ class SignupForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+
       </div>
     );
   }

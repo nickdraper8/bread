@@ -1,13 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const User = require("../../models/User");
 const keys = require('../../config/keys');
 const User = require('../../models/User');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
+const passport = require("passport");
+const mongoose = require('mongoose');
+const UserSchema = require('')
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-
 
 router.get("/test", (req, res) => 
     res.json({ msg: "This is the users route" }));
@@ -98,6 +102,43 @@ router.get('/logout', (req, res) => {
     console.log('logged out');
 
 })
+
+router.post("/:id", (req, res) => {
+
+    User.findBy({ friend_id }).then(user => {
+        if (!user) {
+            errors.friend_id = "That friend does not exist :(";
+            return res.status(400).json(errors);
+        }
+        res.json({
+            user_id: req.user.id,
+            friend_id: req.user.id,
+        });
+
+
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    
+    User.findByIdAndDelete(req.body.friend_id)
+        .then(() => res.json({ msg: "Friend deleted." }))
+        .catch(err =>
+            res.status(400).json(errors))
+});
+
+
+router.get('/friendList', function (req, res) {
+    User.find({}, function (err, users) {
+        var userMap = {};
+
+        users.forEach(function (user) {
+            userMap[friend_ids] = user;
+        });
+
+        res.send(userMap);
+    });
+});
 
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
