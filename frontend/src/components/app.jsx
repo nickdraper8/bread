@@ -14,9 +14,8 @@ import UserHome from "./user-home/user-home"
 const App = () => (
   <div>
     <Switch>
-
       <AuthRoute exact path="/" component={MainPage} />
-      <AuthRoute exact path="/home" component={UserHome} />
+      <ProtectedRoute exact path="/home" component={UserHome} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>

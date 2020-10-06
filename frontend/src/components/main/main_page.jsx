@@ -1,5 +1,4 @@
 import React from "react";
-import UserSearchContainer from '../search/user_search_container';
 
 import "./main.css";
 import { Link } from "react-router-dom";
