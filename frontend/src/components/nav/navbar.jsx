@@ -10,6 +10,7 @@ class InternalNavbar extends React.Component {
   }
 
   logoutUser(e) {
+    debugger
     e.preventDefault();
     this.props.logout();
   }
@@ -20,9 +21,9 @@ class InternalNavbar extends React.Component {
         <div className="internal-nav-user-home-button">Home</div>
         <div className="internal-nav-user-Search-button">Search</div>
         <div className="internal-nav-user-Events-button">Events</div>
-        <Link to="/" className="user-home-logout-button">
+        <button onClick={this.logoutUser} className="user-home-logout-button">
           Log out
-        </Link>
+        </button>
       </div>
     );
   }

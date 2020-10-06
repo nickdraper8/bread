@@ -30,10 +30,10 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-        friend_ids: {
-        type: Array,
-        required: true
-    }
+    // friend_ids: {
+    //     type: Array,
+    //     required: true
+    // }
 
 })
 
