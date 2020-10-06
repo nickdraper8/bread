@@ -1,4 +1,12 @@
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #c2ffc2;
+    font-family: Futura;
+    text-decoration: none;
+    background-color: #FCF7F4;
+    color: #87D18B;
+    margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none; 
 }

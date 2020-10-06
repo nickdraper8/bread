@@ -1,0 +1,24 @@
+.user-event-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 5px;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 100px;
+}
+
+.user-event-tile {
+    font-size: 18px;
+    text-decoration: underline;
+    position: relative;
+    width: 25%;
+    height: 258px;
+    background-color: #FCF7F4;
+    color: black;
+    margin: 20px;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: 1px 10px 15px #d6d6d6;
+    padding: 15px;
+}

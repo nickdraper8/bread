@@ -1,9 +1,20 @@
+.signup-form-container-outer-container {
+    display: flex;
+    justify-content: center;
+}
 .signup-form-container {
+    font-family: futura;
     margin: auto;
     width: 400px;
-    background: #9aff98;
-    border-radius: 5px;
-    border: 1px solid #287f26;
+
+    height: 500px;
+    background: #87D18B;
+    border-radius: 30px;
+    border: 1px solid #87D18B;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .signup-form-container .signup-form {
@@ -13,6 +24,12 @@
     display: flex;
     flex-direction: column;
     padding: 40px;
+}
+
+.sign-up-create-a-new-account {
+    color: #FCF7F4;
+    font-size: 24px;
+    padding-bottom: 20px;
 }
 
 .signup-form-container .signup-form p {
@@ -35,8 +52,9 @@
 
 .signup-form-container .signup-form input {
     height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid #287f26;
+    margin-bottom: 25px;
+    border: 1px solid #87D18B;
+
     border-radius: 2px;
     transition: 0.5s;
     width: 100%;
@@ -47,11 +65,13 @@
 }
 
 .signup-form-container .signup-form input[type="submit"] {
-    background-color: #33b533;
+    background-color: black;
     color: white;
     text-transform: uppercase;
     font-weight: bolder;
     letter-spacing: 1px;
+    border-radius: 50px;
+    letter-spacing: 3px;
 }
 
 .signup-form-container .signup-form input[type="submit"]:hover {

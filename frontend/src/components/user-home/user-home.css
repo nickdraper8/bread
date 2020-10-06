@@ -1,0 +1,25 @@
+.user-home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.left-user-home-container {
+    width: 20%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.right-user-home-container {
+    border-radius: 30px;
+    background-color: white;
+    width: 80%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.user-home-internal-title {
+    color: white;
+    font-size: 48px;
+}

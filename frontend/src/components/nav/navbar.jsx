@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 
 
-class NavBar extends React.Component {
+class InternalNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
   }
 
   logoutUser(e) {
@@ -15,35 +14,18 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  // Selectively render links dependent on whether the user is logged in
-  getLinks() {
-    if (this.props.loggedIn) {
-      return (
-        <div>
-          <Link to={"/tweets"}>All Tweets</Link>
-          <Link to={"/profile"}>Profile</Link>
-          <Link to={"/new_tweet"}>Write a Tweet</Link>
-          <button onClick={this.logoutUser}>Logout</button>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
-        </div>
-      );
-    }
-  }
-
   render() {
     return (
-      <div>
-        <h1>Bread</h1>
-        {this.getLinks()}
+      <div className="internal-nav-bar-container">
+        <div className="internal-nav-user-home-button">Home</div>
+        <div className="internal-nav-user-Search-button">Search</div>
+        <div className="internal-nav-user-Events-button">Events</div>
+        <Link to="/" className="user-home-logout-button">
+          Log out
+        </Link>
       </div>
     );
   }
 }
 
-export default NavBar;
+export default InternalNavbar;

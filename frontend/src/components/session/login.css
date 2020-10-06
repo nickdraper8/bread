@@ -1,9 +1,12 @@
 .login-form-container {
+     font-family: futura;
     margin: auto;
     width: 300px;
-    background: #9aff98;
-    border-radius: 5px;
-    border: 1px solid #287f26;
+    height: 350px;
+    background: #87D18B;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid #87D18B;
 }
 
 .login-form-container .login-form {
@@ -34,12 +37,14 @@
 }
 
 .login-form-container .login-form input[type="submit"] {
-    background-color: #33b533;
+   background-color: #2954D3;
     color: white;
     text-transform: uppercase;
     font-weight: bolder;
     letter-spacing: 1px;
-    margin-top: 5px;
+    border-radius: 50px;
+    letter-spacing: 3px;
+
 }
 
 .login-form-container .login-form input[type="submit"]:hover {

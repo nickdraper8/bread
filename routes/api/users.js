@@ -1,13 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const User = require("../../models/User");
 const keys = require('../../config/keys');
 const User = require('../../models/User');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
+const passport = require("passport");
+const mongoose = require('mongoose');
+const UserSchema = require('')
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-
 
 router.get("/test", (req, res) => 
     res.json({ msg: "This is the users route" }));
