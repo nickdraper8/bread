@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import InternalNavbarContainer from "../nav/navbar_container";
 import FriendsIndexItem from "./friends-index-item";
 import UserEventItem from "./user-event-item";
