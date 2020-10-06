@@ -6,6 +6,7 @@
     font-family: futura;
     margin: auto;
     width: 400px;
+
     height: 500px;
     background: #87D18B;
     border-radius: 30px;
@@ -43,12 +44,20 @@
     justify-content: space-between;
 }
 
+.signup-form-container .signup-form > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .signup-form-container .signup-form input {
     height: 30px;
     margin-bottom: 25px;
     border: 1px solid #87D18B;
+
     border-radius: 2px;
-    transition: 5s;
+    transition: 0.5s;
+    width: 100%;
 }
 
 .signup-form-container .signup-form input:focus {
@@ -67,4 +76,10 @@
 
 .signup-form-container .signup-form input[type="submit"]:hover {
     background-color: #2ca02c;
+}
+
+.session-errors-list {
+    color: red;
+    font-weight: bold;
+    margin: 0px;
 }
