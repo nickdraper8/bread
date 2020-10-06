@@ -11,26 +11,46 @@ router.get("/test", (req, res) => res.json({ msg: "This is the search route" }))
 router.get('/search', (req, res) => {
 
     // const userSearch = new RegExp(`/^(${req.query.bounds})/gi`)
-    if(req.query.bounds){
-        User.find({ username: { $regex: `${req.query.bounds}`, $options: "g" } }, function (err, allUsers) {
-          if (err) {
-            console.log(err);
-          }
-        //   } else {
-        //     res.json(allUsers);
-        //   }
-        }).lean().exec();
-    
+    if(req.query.bounds) {
+        User
+            .find({ username: { $regex: `${req.query.bounds}`, $options: "g" } })
+            .then(users => res.json(users))
+            .catch(err => res.status(400).json(err));
+        
+        
+        // , function (err, allUsers) {
+        //     if (err) {
+        //         console.log(err);
+        //     } else {
+        //         let userMap = {};
+        //         debugger
+        //         allUsers.forEach(function (user) {
+        //           userMap[user._id] = user._doc;
+        //         });
+        //         debugger
+        //         res.send(userMap);
+        //     }
+        // });
     } else {
         // grab all users from db
 
-        User.find({}, function(err, allUsers){
-            if(err){ 
-                console.log(err);
-            }else{
-                res.json(allUsers);
-            }
-        });
+        User
+            .find()
+            .then(users => res.json(users))
+            .catch(err => res.status(400).json(err));
+            // function(err, allUsers){
+        //     if(err){ 
+        //         console.log(err);
+        //     }else{
+        //         let userMap = {};
+        //         debugger;
+        //         allUsers.forEach(function (user) {
+        //           userMap[user._id] = user._doc;
+        //         });
+        //         debugger;
+        //         res.send(userMap);
+        //     }
+        // });
     }
 
 });
