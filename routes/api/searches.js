@@ -1,15 +1,17 @@
-const { text } = require("body-parser");
 const express = require("express");
 const router = express.Router()
+// const { text } = require("body-parser");
 const User = require("../../models/User")
 
+
+router.get("/test", (req, res) => res.json({ msg: "This is the search route" }));
 
 // INDEX -- show all users
 
 router.get('/search', (req, res) => {
 
-    // eval(require('locus'));
-    // console.log(res)
+    eval(require('locus'));
+    console.log(res)
 
     const userSearch = new RegExp(/^(req.query.search)$/gi)
 
@@ -19,7 +21,7 @@ router.get('/search', (req, res) => {
         if(err){
             console.log(err);
         } else {
-            res.render("users/index", {users:allUsers});
+            res.render("users/index", {users: allUsers});
         }
     });
     

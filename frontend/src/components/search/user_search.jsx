@@ -23,31 +23,29 @@ class UserSearch extends React.Component {
     }
 
     render() {
+        let results = '';
         if (this.props.users) {
-            let results = Object.values(this.props.users).map(user => {
+            results = Object.values(this.props.users).map(user => {
                 return (
                     <div>
                         {user.username}
                     </div>
                 )
             })
-
-            return (
-                <div id="user-search-container">
-                    <div class="user-search-bar-container">
-                        <form>
-                            <input type="text" value={this.state.bounds} onChange={this.handleChange} />
-                            <button type="button" onClick={this.handleSubmit}>SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="user-search-results-container">
-                        {results}
-                    </div>
-                </div>
-            )
-        } else {
-            return null;
         }
+        return (
+            <div id="user-search-container">
+                <div className="user-search-bar-container">
+                    <form>
+                        <input type="text" value={this.state.bounds} onChange={this.handleChange} />
+                        <button type="button" onClick={this.handleSubmit}>SEARCH</button>
+                    </form>
+                </div>
+                <div className="user-search-results-container">
+                    {results}
+                </div>
+            </div>
+        )
     }
 }
 

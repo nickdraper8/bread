@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export const fetchUsers = data => {
-    return axios.get("/api/users", data);
+  // debugger
+  return axios.get("/api/searches/test");
+  // return axios.get("/api/searches/search", data);
 };
 
 export const fetchUser = userId => {
