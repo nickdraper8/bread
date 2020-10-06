@@ -10,20 +10,16 @@ router.get("/test", (req, res) => res.json({ msg: "This is the search route" }))
 
 router.get('/search', (req, res) => {
 
-    eval(require('locus'));
-    console.log(res)
-
-    const userSearch = new RegExp(/^(req.query.search)$/gi)
-
-    if(req.query.search){
-    
-        User.find({ username: userSearch }, function(err, allUsers){
-        if(err){
+    // const userSearch = new RegExp(`/^(${req.query.bounds})/gi`)
+    if(req.query.bounds){
+        User.find({ username: { $regex: `${req.query.bounds}`, $options: "g" } }, function (err, allUsers) {
+          if (err) {
             console.log(err);
-        } else {
-            res.render("users/index", {users: allUsers});
-        }
-    });
+          }
+        //   } else {
+        //     res.json(allUsers);
+        //   }
+        }).lean().exec();
     
     } else {
         // grab all users from db
@@ -32,7 +28,7 @@ router.get('/search', (req, res) => {
             if(err){ 
                 console.log(err);
             }else{
-                res.render("users/index",{users: allUsers});
+                res.json(allUsers);
             }
         });
     }

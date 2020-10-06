@@ -9,13 +9,17 @@ class UserSearch extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         if (!this.props.users) {
             this.props.fetchUsers(this.state.bounds);
         }
+    }
+
+    handleSubmit() {
+        this.props.fetchUsers(this.state.bounds);
     }
 
     handleChange(e) {
@@ -37,7 +41,7 @@ class UserSearch extends React.Component {
             <div id="user-search-container">
                 <div className="user-search-bar-container">
                     <form>
-                        <input type="text" value={this.state.bounds} onChange={this.handleChange} />
+                        <input name="search" type="text" value={this.state.bounds} onChange={this.handleChange} />
                         <button type="button" onClick={this.handleSubmit}>SEARCH</button>
                     </form>
                 </div>
