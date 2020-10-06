@@ -1,4 +1,6 @@
 import React from "react";
+import UserSearchContainer from '../search/user_search_container';
+
 import "./main.css";
 
 class MainPage extends React.Component {
@@ -6,6 +8,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <h1>A Twitter Clone</h1>
+        <UserSearchContainer />
         <footer>Copyright &copy; 2019 Chirper</footer>
       </div>
     );

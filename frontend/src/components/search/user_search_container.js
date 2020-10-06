@@ -11,7 +11,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return({
-        fetchUsers: bounds => dispatch(updateFilter(bounds))
+        fetchUsers: (value) => dispatch(updateFilter("bounds", value))
     });
 };
 
