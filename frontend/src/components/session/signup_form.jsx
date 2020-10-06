@@ -73,13 +73,13 @@ class SignupForm extends React.Component {
                 Create a New Account
               </div>
               <div className="signup-form-name-container">
+                <label>First Name</label>
                 <input
                   type="text"
                   value={this.state.firstname}
                   onChange={this.update("firstname")}
                   placeholder="First Name"
                 />
-
               </div>
               <div>
                 <label>Last Name</label>
@@ -90,95 +90,60 @@ class SignupForm extends React.Component {
                   placeholder="Last Name"
                 />
               </div>
-
+              <label>Email</label>
               <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
                 placeholder="Email"
               />
+              <label>Username</label>
               <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
                 placeholder="Username"
               />
+              <label>Phone Number</label>
               <input
                 type="tel"
-                value={this.state.phonenumber}
-                onChange={this.update("phonenumber")}
+                value={this.state.phone}
+                onChange={this.update("phone")}
                 placeholder="Phone Number - 012-345-6789"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               />
               <div className="signup-form-password-container">
-            </div>
-            <label>Email</label>
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <label>Username</label>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
-            <label>Phone Number</label>
-            <input
-              type="tel"
-              value={this.state.phone}
-              onChange={this.update("phone")}
-              placeholder="Phone Number - 012-345-6789"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            />
-            <div className="signup-form-password-container">
-              <div>
-                <label>Password</label>
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
+                <div>
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                  />
 
+                </div>
+                <div>
+                  <label>Confirm Password</label>
+                  <input
+                    type="password"
+                    value={this.state.password2}
+                    onChange={this.update("password2")}
+                    placeholder="Confirm Password"
+                  />
+                </div>
+                <input type="submit" value="Submit" />
+                <p>
+                  Already have an account?{" "}
+                  <span>
+                    <Link to="/login">Log In</Link>
+                  </span>
+                </p>
+                {this.renderErrors()}
               </div>
-              <div>
-                <label>Confirm Password</label>
-                <input
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.update("password2")}
-                  placeholder="Confirm Password"
-                />
-              </div>
-
-              <input type="submit" value="Submit" />
-              <p>
-                Already have an account?{" "}
-                <span>
-                  <Link to="/login">Log In</Link>
-                </span>
-              </p>
-              {this.renderErrors()}
             </div>
           </form>
         </div>
-
-            </div>
-            <input type="submit" value="Submit" />
-            <p>
-              Already have an account?{" "}
-              <span>
-                <Link to="/login">Log In</Link>
-              </span>
-            </p>
-            {this.renderErrors()}
-          </div>
-        </form>
-
       </div>
     );
   }
