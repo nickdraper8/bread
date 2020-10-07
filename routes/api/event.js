@@ -4,18 +4,23 @@ const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
 
 router.post("/new", (req, res) => {
-  const { errors, isValid } = validateEventInput(req.body);
+  
 
+  const { errors, isValid } = validateEventInput(req.body);
+  
+debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
+  
 
-  const newEvent = new Event({
+  const newEvent = new Event(
+    {
     name: req.body.name,
-    attendees: [req.user.username],
-    cost: 0
+    attendees: JSON.parse(req.body.attendees),
   });
 
+  
   newEvent.save().then((event) => res.json(event));
 });
 
