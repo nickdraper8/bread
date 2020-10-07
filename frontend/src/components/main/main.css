@@ -8,15 +8,17 @@ body {
 
 .bread-splash-title {
     position: absolute;
-    top: 30%;
-    font-size: 1016%;
+    top: 35%;
+    right: 33%;
+    font-size: 900%;
     font-weight: 100px;
     color: black;
 }
 
 .bread-splash-subtitle{
     position: absolute;
-    top: 52%;
+    top: 54%;
+    right: 40%;
     font-size: 24px;
     font-weight: 100px;
     color: #87D18B;
@@ -24,7 +26,7 @@ body {
 }
 
 .main-page-containter {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -34,9 +36,19 @@ body {
     background-color: #FCF7F4;
 }
 
+.bread-background-image {
+    position: relative;
+    right: 6%;
+    top: 0%;
+    height: 900px;
+    width: auto;
+    z-index: 0;
+}
+
 .splash-sign-up-button {
     position: absolute;
     top: 67%;
+    right: 43%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,12 +60,15 @@ body {
     color: #FCF7F4;
     box-shadow: 0 0 5 5;
     text-transform: uppercase;
+    transition: 0.5s;
 }
 
 .splash-sign-up-button:hover {
-    width: 132px;
-    height: 44px;
-    background-color: #87D18B;
+    width: 120px;
+    height: 40px;
+    background-color: black;
+    color: white
+
 }
 .use-case-tile-container {
     position: absolute;
