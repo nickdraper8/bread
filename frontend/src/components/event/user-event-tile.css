@@ -21,3 +21,7 @@
     box-shadow: 1px 10px 15px #d6d6d6;
     padding: 15px;
 }
+
+.user-event-tile:hover {
+    opacity: 4px;
+}
