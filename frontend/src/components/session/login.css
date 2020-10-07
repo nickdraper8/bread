@@ -41,10 +41,6 @@
     color: #717171;
 }
 
-.login-form-container .login-form input:focus {
-    border: 1px solid #d6d6d6;
-}
-
 .login-form-container .login-form input[type="submit"] {
     background-color: black;
     color: white;
