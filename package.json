@@ -30,8 +30,7 @@
     "mongoose": "^5.10.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "validator": "^13.1.17",
-    "venmo": "0.0.2"
+    "validator": "^13.1.17"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",

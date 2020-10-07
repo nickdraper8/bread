@@ -9,7 +9,8 @@ import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import UserHome from "./user-home/user-home";
-import EventShow from "./event/event-show";
+import EventShow from "./events/event-show";
+import EventIndex from "./events/user-event-index"
 
 const App = () => (
   <div>
