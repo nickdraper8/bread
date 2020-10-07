@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -45,6 +46,15 @@ class LoginForm extends React.Component {
       password: this.state.password,
     };
 
+    this.props.login(user);
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    let user = {
+      username: "DemoUser",
+      password: "password",
+    };
     this.props.login(user);
   }
 
@@ -87,6 +97,14 @@ class LoginForm extends React.Component {
                   Create an Account
                 </Link>
               </span>
+              <div className="demo-user-button">
+                <button
+                  onClick={this.handleDemoLogin}
+                  className="demo-user-button"
+                >
+                  Demo User
+                </button>
+              </div>
               {this.renderErrors()}
             </div>
           </form>
