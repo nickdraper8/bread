@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, RECEIVE_USER, RECEIVE_USERS_FROM_SEARCH } from "../actions/user_actions";
+import { RECEIVE_USERS, RECEIVE_USER, RECEIVE_USERS_FROM_SEARCH, RECEIVE_USERS_VIA_EVENT } from "../actions/user_actions";
 import { formatToJson } from "../util/data_format_api";
 
 const initialState = { all: {}, event: {}, search: {} };
