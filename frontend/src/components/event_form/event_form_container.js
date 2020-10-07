@@ -5,7 +5,7 @@ import { createEvent } from "../../actions/event_actions";
 const mSTP = state => {
     return({
         currentUserId: state.session.user.id,
-        users: state.entities.users.all
+        users: state.entities.users.search
     });
 };
 
