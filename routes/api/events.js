@@ -63,6 +63,8 @@ router.delete("/:eventId", (req, res) => {
     .catch((err) => {
       res.status(400).send({ message: "Could not delete event" });
     });
+  }
+);
 
 
 router.get("/:id/attendees", (req, res) => {
@@ -73,9 +75,9 @@ router.get("/:id/attendees", (req, res) => {
 
         User.find({ '_id' : {$in: attendees} }).select('_id username firstname lastname phone email').then(users => {
 
-          return res.json(users)
+          return res.json(users);
         });  
-  })
+  });
 
 });
 
