@@ -5,9 +5,8 @@
 .signup-form-container {
     font-family: futura;
     margin: auto;
-    width: 400px;
-
-    height: 500px;
+    width: 450px;
+    height: auto;
     background: #87D18B;
     border-radius: 30px;
     border: 1px solid #87D18B;
@@ -15,6 +14,10 @@
     top: 20%;
     display: flex;
     justify-content: center;
+}
+
+.signup-form-container label {
+    color: black;
 }
 
 .signup-form-container .signup-form {
@@ -36,6 +39,12 @@
     margin: 0px;
     margin-bottom: 20px;
     font-size: 20px;
+    color: black;
+}
+
+.signup-form-container .signup-form p a{
+    text-decoration: underline;
+    transition: 1s;
 }
 
 .signup-form-container .signup-form > div{
@@ -50,14 +59,17 @@
     justify-content: space-between;
 }
 
+.signup-form-container .signup-form > div > div:first-of-type {
+    margin-right: 30px;
+}
+
 .signup-form-container .signup-form input {
     height: 30px;
     margin-bottom: 25px;
     border: 1px solid #87D18B;
-
-    border-radius: 2px;
     transition: 0.5s;
     width: 100%;
+    border-radius: 3px;
 }
 
 .signup-form-container .signup-form input:focus {

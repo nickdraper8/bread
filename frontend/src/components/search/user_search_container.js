@@ -4,7 +4,7 @@ import { updateFilter } from "../../actions/filter_actions";
 
 const mSTP = state => {
     return({
-        users: state.users,
+        users: state.entities.users.all,
         currentUser: state.session.currentUser
     });
 };

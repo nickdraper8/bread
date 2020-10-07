@@ -1,6 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
-import InternalNavbar from "../nav/navbar";
+import InternalNavbarContainer from "../nav/navbar_container";
 import FriendsIndexItem from "./friends-index-item";
 import UserEventItem from "./user-event-item";
 import UserSearchContainer from "../search/user_search_container"
@@ -14,14 +15,16 @@ class UserHome extends React.Component {
   render() {
     return (
       <div className="user-home-container">
-       
-          <div className="left-user-home-container">
-            <div className="user-home-internal-title">BREAD</div>
-            <UserSearchContainer />
-            <FriendsIndexItem />
+        <div className="left-user-home-container">
+          <div className="user-home-internal-title">
+            <i class="fas fa-bread-slice"></i>BREAD
           </div>
-          <div className="right-user-home-container">
-          <InternalNavbar />
+          <UserSearchContainer />
+          <FriendsIndexItem />
+        </div>
+
+        <div className="right-user-home-container">
+          <InternalNavbarContainer />
           <ul className="user-event-tiles">
             {/* {events.map((event) => ( */}
             <UserEventItem />
