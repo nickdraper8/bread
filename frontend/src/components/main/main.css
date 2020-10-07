@@ -2,7 +2,7 @@ body {
     font-family: Futura;
     text-decoration: none;
     background-color: #FCF7F4;
-    color: #87D18B;
+    color: #052EF1;
     margin: 0;
 }
 
@@ -21,7 +21,7 @@ body {
     right: 40%;
     font-size: 24px;
     font-weight: 100px;
-    color: #87D18B;
+    color: #052EF1;
     /* font-family: Roc Grotesk; */
 }
 
@@ -55,7 +55,7 @@ body {
     width: 120px;
     height: 40px;
     border-radius: 50px;
-    background-color:#87D18B;
+    background-color:#052EF1;
     text-align: center;
     color: #FCF7F4;
     box-shadow: 0 0 5 5;
@@ -85,14 +85,14 @@ body {
     width: 400px;
     height: 400px;
     background-color: #FFB7D5;
-    color: #0F5642;
+    color: #052EF1;
     text-align: center;
 }
 
 .use-case-tile-work {
 width: 400px;
     height: 400px;
-    background-color: #2954D3;
+    background-color: #052EF1;
     color: #BBFFB9;
     text-align: center;
 }
@@ -101,7 +101,7 @@ width: 400px;
 width: 400px;
     height: 400px;
     background-color: #FFAB44;
-    color: #1255EC;
+    color: #052EF1;
     text-align: center;
 }
 

@@ -14,21 +14,36 @@
     font-size: 18px;
     font-weight: bold;
     padding: 40px;
-    color: #24695C;
+    color: #052EF1;
+    transition: .5s;
+}
+.internal-nav-user-home-button:hover {
+    color: black;
 }
 
 .internal-nav-user-Search-button {
     font-size: 18px;
     padding: 40px;
-    color: #24695C;
+    color: #052EF1;
     font-weight: bold;
+    transition: .5s;
+}
+.internal-nav-user-Search-button:hover {
+        color: black;
+
 }
 
 .internal-nav-user-Events-button {
     font-size: 18px;
     padding: 40px;
-    color: #24695C;
+    color: #052EF1;
     font-weight: bold;
+    transition: .5s;
+}
+
+.internal-nav-user-Events-button:hover {
+    color: black;
+
 }
 
 .user-home-logout-button {
@@ -37,8 +52,13 @@
     background-color: black;
     color:white;
     font-size: 14px;
-    padding: 5px;
+    padding: 6px;
     position: fixed;
     right: 2%;
-    border: 2px solid black;
+    border: 0;
+    transition: .5s;
+}
+.user-home-logout-button:hover {
+    background-color: #052EF1;
+    color: white;
 }

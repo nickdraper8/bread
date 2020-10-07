@@ -17,13 +17,14 @@
     width: 80%;
     height: 100vh;
     overflow: auto;
+    color: black;
 }
 
 .user-home-internal-title {
     color: white;
     font-size: 48px;
-    margin-left: 40px;
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 22px;
     position: relative;
 }
 
