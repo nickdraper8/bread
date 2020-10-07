@@ -2,7 +2,6 @@
     font-family: futura;
     margin: 150px auto;
     width: 350px;
-    height: 350px;
     background: white;
     color: black;
     border-radius: 30px;
@@ -11,12 +10,11 @@
     /* border: 1px solid #87D18B; */
 }
 
-.login-form-container .login-form {
-    width: 72%;
+.login-form-inner-container {
+     width: 76%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     /* align-items: center; */
     padding: 40px;
 }
@@ -28,7 +26,7 @@
 }
 
 .login-form-container .login-form input {
-   height: 30px;
+    height: 30px;
     margin-bottom: 25px;
     border: 0px solid #d6d6d6;
     border-bottom: 2px solid black;
@@ -48,9 +46,8 @@
 }
 
 .login-form-container .login-form input[type="submit"] {
-   background-color: black;
+    background-color: black;
     color: white;
-    letter-spacing: 1px;
     letter-spacing: 3px;
     padding: 4px;
 }
@@ -59,4 +56,21 @@
     background-color: white;
     color: black;
 
+}
+.dont-have-an-account {
+    margin-bottom: 15px;
+}
+.create-an-account-button {
+    display: flex;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px 10px 4px 40px;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+}
+
+.create-an-account-button:hover {
+    background-color: white;
+    color: black;
 }
