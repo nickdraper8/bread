@@ -10,7 +10,6 @@
 
 .user-event-tile {
     font-size: 18px;
-    text-decoration: underline;
     position: relative;
     width: 25%;
     height: 258px;
@@ -21,4 +20,8 @@
     overflow: hidden;
     box-shadow: 1px 10px 15px #d6d6d6;
     padding: 15px;
+}
+
+.user-event-tile:hover {
+    opacity: 4px;
 }

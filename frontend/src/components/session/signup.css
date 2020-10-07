@@ -2,18 +2,21 @@
     display: flex;
     justify-content: center;
 }
+
 .signup-form-container {
     font-family: futura;
+    color: black;
     margin: auto;
-    width: 450px;
-    height: auto;
-    background: #87D18B;
+    width: 28%;
+    height: 60%;
+    background:  #ffffff;
     border-radius: 30px;
-    border: 1px solid #87D18B;
     position: absolute;
-    top: 20%;
+     top: 10%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 1px 10px 15px #d6d6d6;
 }
 
 .signup-form-container label {
@@ -30,7 +33,7 @@
 }
 
 .sign-up-create-a-new-account {
-    color: #FCF7F4;
+   color: black;
     font-size: 24px;
     padding-bottom: 20px;
 }
@@ -66,28 +69,30 @@
 .signup-form-container .signup-form input {
     height: 30px;
     margin-bottom: 25px;
-    border: 1px solid #87D18B;
+    border: 0px solid #d6d6d6;
+    border-bottom: 2px solid black;
+    outline: 0;
     transition: 0.5s;
     width: 100%;
-    border-radius: 3px;
 }
 
-.signup-form-container .signup-form input:focus {
-    outline: green solid 3px;
+::placeholder {
+    font-size: 13px;
+    font-family: Futura;
+    color: #717171;
 }
 
 .signup-form-container .signup-form input[type="submit"] {
     background-color: black;
     color: white;
-    text-transform: uppercase;
-    font-weight: bolder;
     letter-spacing: 1px;
-    border-radius: 50px;
     letter-spacing: 3px;
 }
 
 .signup-form-container .signup-form input[type="submit"]:hover {
-    background-color: #2ca02c;
+   background-color: white;
+    color: black;
+
 }
 
 .session-errors-list {

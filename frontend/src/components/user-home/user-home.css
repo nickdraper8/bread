@@ -24,4 +24,18 @@
     font-size: 48px;
     margin-left: 40px;
     margin-top: 20px;
+    position: relative;
 }
+
+#outer-bread-logo {
+    color: #FCF7F4;
+}
+
+/* #inner-bread-logo {
+    color: black;
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    top: 3%;
+    left: 3%;
+} */
