@@ -8,7 +8,7 @@
 .left-user-home-container {
     width: 20%;
     height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .right-user-home-container {
@@ -16,7 +16,7 @@
     background-color: white;
     width: 80%;
     height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .user-home-internal-title {

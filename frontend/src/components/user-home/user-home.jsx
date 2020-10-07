@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import InternalNavbar from "../nav/navbar";
+import InternalNavbarContainer from "../nav/navbar_container";
 import FriendsIndexItem from "./friends-index-item";
 import UserEventItem from "./user-event-item";
 import UserSearchContainer from "../search/user_search_container"
@@ -24,7 +24,7 @@ class UserHome extends React.Component {
           </div>
 
         <div className="right-user-home-container">
-          <InternalNavbar />
+          <InternalNavbarContainer />
           <ul className="user-event-tiles">
             {/* {events.map((event) => ( */}
             <UserEventItem />
