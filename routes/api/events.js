@@ -36,6 +36,34 @@ router.get("/:id", (req, res) => {
     );
 });
 
+router.post("/edit/:id", (req, res) => { //check logic
+  Event.findById(req.params.id).then((event) => {
+    event.name =
+      req.body.name === "" ? event.name : req.body.name;
+    event.attendees =
+      req.body.attendees === "" ? event.attendees : req.body.attendees;
+
+    event
+      .save()
+      .then((event) => res.json(event))
+      .catch((err) => res.status(400).json(err));
+  });
+});
+
+router.delete("/:eventId", (req, res) => {
+  Event.findByIdAndRemove(req.params.eventId) //check this line
+    .then((events) => {
+      if (!events) {
+        return res.status(404).send({
+          message: "Events not found",
+        });
+      }
+      return res.send({ message: "Events successfully deleted" });
+    })
+    .catch((err) => {
+      res.status(400).send({ message: "Could not delete event" });
+    });
+
 
 router.get("/:id/attendees", (req, res) => {
 

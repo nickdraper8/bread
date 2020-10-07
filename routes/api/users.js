@@ -125,17 +125,17 @@ router.delete('/:id', (req, res) => {
 });
 
 
-router.get('/friendList', function (req, res) {
-    User.find({}, function (err, users) {
-        var userMap = {};
-
-        users.forEach(function (user) {
-            userMap[friend_ids] = user;
-        });
-
-        res.send(userMap);
-    });
-});
+//router.get('/attendees', function (req, res) {
+//    User.find({}, function (err, users) {
+//        var userMap = {};
+//
+//        users.forEach(function (user) {
+//            userMap[user_ids] = user;
+//        });
+//
+//        res.send(userMap);
+//    });
+//});
 
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -155,5 +155,7 @@ router.get("/:id/events", (req, res) => {
       return res.json(events);
     });
 });
+
+
 
 module.exports = router;
