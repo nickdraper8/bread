@@ -10,8 +10,6 @@ const EventSchema = new Schema({
     type: Array,
     required: true,
   },
-  start_date: Date,
-  end_date: Date,
 });
 
 module.exports = Event = mongoose.model("Event", EventSchema);

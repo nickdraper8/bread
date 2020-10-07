@@ -11,7 +11,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return({
-        createEvent: (userId, event) => dispatch(createEvent(userId, event))
+        createEvent: (event) => dispatch(createEvent(event))
     });
 };
 
