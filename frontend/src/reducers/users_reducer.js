@@ -13,6 +13,9 @@ export default function (state = initialState, action) {
         case RECEIVE_USERS_FROM_SEARCH:
             newState.search = formatToJson(action.users.data);
             return newState;
+        case RECEIVE_USERS_VIA_EVENT:
+            newState.event = formatToJson(action.users.data);
+            return newState;
         case RECEIVE_USER:
             newState.event[action.user._id] = action.user;
             return newState;
