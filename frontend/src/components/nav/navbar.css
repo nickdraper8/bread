@@ -12,6 +12,7 @@
 
 .internal-nav-user-home-button {
     font-size: 18px;
+    font-weight: bold;
     padding: 40px;
     color: #24695C;
 }
@@ -19,18 +20,19 @@
 .internal-nav-user-Search-button {
     font-size: 18px;
     padding: 40px;
-        color: #24695C;
-
+    color: #24695C;
+    font-weight: bold;
 }
 
 .internal-nav-user-Events-button {
     font-size: 18px;
     padding: 40px;
-        color: #24695C;
-
+    color: #24695C;
+    font-weight: bold;
 }
 
 .user-home-logout-button {
+    font-family: Futura;
     border-radius: 10px;
     background-color: black;
     color:white;
@@ -38,4 +40,5 @@
     padding: 5px;
     position: fixed;
     right: 2%;
+    border: 2px solid black;
 }

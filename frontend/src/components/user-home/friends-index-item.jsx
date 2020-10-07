@@ -10,14 +10,7 @@ class FriendsIndexItem extends React.Component {
   render() {
     return (
         <div className="friends-index-item-container">
-          {/* <div className="friends-index-tile">Sarah Fields</div>
-          <div className="friends-index-tile">Drew Shroyer</div>
-          <div className="friends-index-tile">Nick Draper</div>
-          <div className="friends-index-tile">J.R. McCann</div>
-          <div className="friends-index-tile">Rav Singh</div>
-          <div className="friends-index-tile">Drew Shroyer</div>
-          <div className="friends-index-tile">Nick Draper</div>
-          <div className="friends-index-tile">J.R. McCann</div> */}
+         
         </div>
     );
   }
