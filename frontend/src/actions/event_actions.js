@@ -33,8 +33,8 @@ export const fetchEvent = (eventId) => (dispatch) => {
     return (APIEventsUtil.fetchEvent(eventId).then(event => dispatch(receiveEvent(event))));
 };
 
-export const createEvent = (event) => (dispatch) => {
-    return (APIEventsUtil.createEvent(event).then(event => dispatch(receiveEvent(event))));
+export const createEvent = (userId, event) => (dispatch) => {
+    return (APIEventsUtil.createEvent(userId, event).then(event => dispatch(receiveEvent(event))));
 };
 
 export const editEvent = (event) => (dispatch) => {
