@@ -63,4 +63,16 @@ router.delete("/:eventId", (req, res) => {
     });
 });
 
+router.get("/:id/event", (req, res) => {
+  Event.findById(req.params.id).then((event) => {
+    const expenses = event.expenses;
+
+    Expense.find({ _id: { $in: expenses } })
+      .select("_id ")
+      .then((expense) => {
+        return res.json(expense);
+      });
+  });
+});
+
 module.exports = router;
