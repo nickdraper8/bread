@@ -73,22 +73,24 @@ class SignupForm extends React.Component {
                 Create a New Account
               </div>
               <div className="signup-form-name-container">
-                <label>First Name</label>
-                <input
-                  type="text"
-                  value={this.state.firstname}
-                  onChange={this.update("firstname")}
-                  placeholder="First Name"
-                />
-              </div>
-              <div>
-                <label>Last Name</label>
-                <input
-                  type="text"
-                  value={this.state.lastname}
-                  onChange={this.update("lastname")}
-                  placeholder="Last Name"
-                />
+                <div>
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    value={this.state.firstname}
+                    onChange={this.update("firstname")}
+                    placeholder="First Name"
+                  />
+                </div>
+                <div>
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    value={this.state.lastname}
+                    onChange={this.update("lastname")}
+                    placeholder="Last Name"
+                  />
+                </div>
               </div>
               <label>Email</label>
               <input
@@ -121,7 +123,6 @@ class SignupForm extends React.Component {
                     onChange={this.update("password")}
                     placeholder="Password"
                   />
-
                 </div>
                 <div>
                   <label>Confirm Password</label>
@@ -132,15 +133,15 @@ class SignupForm extends React.Component {
                     placeholder="Confirm Password"
                   />
                 </div>
-                <input type="submit" value="Submit" />
-                <p>
-                  Already have an account?{" "}
-                  <span>
-                    <Link to="/login">Log In</Link>
-                  </span>
-                </p>
-                {this.renderErrors()}
               </div>
+              <input type="submit" value="Submit" />
+              <p>
+                Already have an account?{" "}
+                <span>
+                  <Link to="/login">Log In</Link>
+                </span>
+              </p>
+              {this.renderErrors()}
             </div>
           </form>
         </div>

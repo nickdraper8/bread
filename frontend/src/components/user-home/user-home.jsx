@@ -15,13 +15,13 @@ class UserHome extends React.Component {
   render() {
     return (
       <div className="user-home-container">
-
-       
-          <div className="left-user-home-container">
-            <div className="user-home-internal-title">BREAD</div>
-            <UserSearchContainer />
-            <FriendsIndexItem />
+        <div className="left-user-home-container">
+          <div className="user-home-internal-title">
+            <i class="fas fa-bread-slice"></i>BREAD
           </div>
+          <UserSearchContainer />
+          <FriendsIndexItem />
+        </div>
 
         <div className="right-user-home-container">
           <InternalNavbarContainer />

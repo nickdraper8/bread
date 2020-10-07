@@ -10,7 +10,6 @@ class InternalNavbar extends React.Component {
   }
 
   logoutUser(e) {
-    debugger
     e.preventDefault();
     this.props.logout();
   }
