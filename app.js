@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 
 
 app.use("/api/users", users);
-app.use("/api/event", event);
+app.use("/api/events", events);
 app.use("/api/searches", searches);
 
 const port = process.env.PORT || 5000;
