@@ -79,7 +79,6 @@ class SignupForm extends React.Component {
                     value={this.state.firstname}
                     onChange={this.update("firstname")}
                     placeholder="First Name"
-
                   />
                 </div>
                 <div>
@@ -128,7 +127,8 @@ class SignupForm extends React.Component {
                   />
                 </div>
               </div>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit"/>
+              <input type="submit" value="Demo User"/>
               <p>
                 Already have an account?{" "}
                 <span>
