@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.14.8"
+  },
   "scripts": {
     "server:debug": "nodemon --inspect app.js",
     "server": "nodemon app.js",
