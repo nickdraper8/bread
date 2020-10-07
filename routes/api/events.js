@@ -1,21 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
-const passport = require("passport");
-
 const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
 
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateEventInput(req.body);
-
+  
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
-  const newEvent = new Event({
+  const newEvent = new Event(
+    {
     name: req.body.name,
-    attendees: [req.body.attendees]
+    attendees: req.body.attendees,
   });
 
   newEvent.save().then((event) => res.json(event));
@@ -37,7 +34,7 @@ router.get("/:id", (req, res) => {
     );
 });
 
-router.post("/edit/:id", (req, res) => {
+router.post("/edit/:id", (req, res) => { //check logic
   Event.findById(req.params.id).then((event) => {
     event.name =
       req.body.name === "" ? event.name : req.body.name;
@@ -62,7 +59,7 @@ router.delete("/:eventId", (req, res) => {
       return res.send({ message: "Events successfully deleted" });
     })
     .catch((err) => {
-      res.status(400).send({ message: "Could not delete expense" });
+      res.status(400).send({ message: "Could not delete event" });
     });
 });
 

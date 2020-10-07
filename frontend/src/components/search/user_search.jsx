@@ -13,12 +13,6 @@ class UserSearch extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //     if (!this.props.users) {
-    //         this.props.fetchUsers(this.state.bounds);
-    //     }
-    // }
-
     handleSubmit(e) {
         e.preventDefault()
         this.props.fetchUsers(this.state.bounds);
@@ -31,12 +25,12 @@ class UserSearch extends React.Component {
     render() {
         let results = '';
         let resultsContainer = '';
-        if (this.props.users.length > 0) {
+        if (Object.values(this.props.users).length > 0) {
             results = Object.values(this.props.users).map(user => {
                 return (
-                  <div key={user.id} className="user-search-result-item">
+                  <div key={user._id} onClick={this.props.handleAddAttendee} className="user-search-result-item">
                     {user.username}
-                    <i class="fas fa-plus-circle"></i>
+                    <i className="fas fa-plus-circle"></i>
                   </div>
                 );
             })
@@ -56,7 +50,7 @@ class UserSearch extends React.Component {
                   placeholder="Search Usernames"
                 />
                 <button type="submit">
-                  <i class="fas fa-search"></i>
+                  <i className="fas fa-search"></i>
                 </button>
               </form>
             </div>

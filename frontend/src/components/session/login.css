@@ -1,19 +1,21 @@
 .login-form-container {
     font-family: futura;
     margin: 150px auto;
-    width: 300px;
-    height: 350px;
-    background: #87D18B;
-    color: white;
+    width: 350px;
+    background: white;
+    color: black;
     border-radius: 30px;
-    border: 1px solid #87D18B;
+    box-shadow: 1px 10px 15px #d6d6d6;
+    display: flex;
+    /* border: 1px solid #87D18B; */
 }
 
-.login-form-container .login-form {
-    width: 72%;
+.login-form-inner-container {
+     width: 76%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     padding: 40px;
 }
 
@@ -25,29 +27,50 @@
 
 .login-form-container .login-form input {
     height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid #287f26;
-    border-radius: 2px;
+    margin-bottom: 25px;
+    border: 0px solid #d6d6d6;
+    border-bottom: 2px solid black;
+    outline: 0;
     transition: 0.5s;
     width: 100%;
 }
 
+::placeholder {
+    font-size: 13px;
+    font-family: Futura;
+    color: #717171;
+}
+
 .login-form-container .login-form input:focus {
-    outline: green solid 3px;
+    border: 1px solid #d6d6d6;
 }
 
 .login-form-container .login-form input[type="submit"] {
-   background-color: #2954D3;
+    background-color: black;
     color: white;
-    text-transform: uppercase;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    border-radius: 50px;
     letter-spacing: 3px;
-
+    padding: 4px;
 }
 
 .login-form-container .login-form input[type="submit"]:hover {
-    background-color: #2ca02c;
+    background-color: white;
+    color: black;
 
+}
+.dont-have-an-account {
+    margin-bottom: 15px;
+}
+.create-an-account-button {
+    display: flex;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px 10px 4px 40px;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+}
+
+.create-an-account-button:hover {
+    background-color: white;
+    color: black;
 }

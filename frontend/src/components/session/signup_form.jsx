@@ -70,20 +70,19 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <div className="sign-up-create-a-new-account">
-                Create a New Account
+                Create a Free Account
               </div>
               <div className="signup-form-name-container">
                 <div>
-                  <label>First Name</label>
                   <input
                     type="text"
                     value={this.state.firstname}
                     onChange={this.update("firstname")}
                     placeholder="First Name"
+
                   />
                 </div>
                 <div>
-                  <label>Last Name</label>
                   <input
                     type="text"
                     value={this.state.lastname}
@@ -92,21 +91,18 @@ class SignupForm extends React.Component {
                   />
                 </div>
               </div>
-              <label>Email</label>
               <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
                 placeholder="Email"
               />
-              <label>Username</label>
               <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
                 placeholder="Username"
               />
-              <label>Phone Number</label>
               <input
                 type="tel"
                 value={this.state.phone}
@@ -116,7 +112,6 @@ class SignupForm extends React.Component {
               />
               <div className="signup-form-password-container">
                 <div>
-                  <label>Password</label>
                   <input
                     type="password"
                     value={this.state.password}
@@ -125,7 +120,6 @@ class SignupForm extends React.Component {
                   />
                 </div>
                 <div>
-                  <label>Confirm Password</label>
                   <input
                     type="password"
                     value={this.state.password2}
