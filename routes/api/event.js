@@ -15,7 +15,8 @@ router.post("/new", (req, res) => {
 
   const newEvent = new Event({
     name: req.body.name,
-    attendees: [req.body.attendees]
+    attendees: [req.user.username],
+    cost: 0
   });
 
   newEvent.save().then((event) => res.json(event));

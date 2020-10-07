@@ -2,7 +2,7 @@ const Validator = require('validator');
 const validText = require('./valid-text');
 const validDate = require('./valid-date');
 
-module.exports = function validateStoreInput(data) {
+module.exports = function validateEventInput(data) {
     let errors = {};
     data.name = validText(data.name) ? data.name : '';
     data.date = validDate(data.start_date, data.end_date) ? data.date : '';
@@ -13,10 +13,10 @@ module.exports = function validateStoreInput(data) {
     }
 
     if (Validator.isEmpty(data.attendees)) {
-        errors.attendees = 'Atleast one attendee is required';
+        errors.attendees = 'At least one attendee is required';
     }
 
     if (Validator.isEmpty(data.date)) {
-        errors.date = 'Start Date should before End Date';
+        errors.date = 'Start date has to be before the end date!';
     }
 }
