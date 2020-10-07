@@ -1,3 +1,33 @@
+.login-signup-temp-nav-bar {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-signup-bread-title {
+    font-size: 32px;
+    padding-left: 10px;
+}
+
+.login-signup-bread-nav-buttons {
+    margin-right:  10px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    padding: 4px;
+    transition: .5s;
+}
+
+.login-signup-bread-nav-buttons:hover {
+     color: white; 
+     background-color: black;
+}
+
 .login-form-container {
     font-family: futura;
     margin: 150px auto;
@@ -41,10 +71,6 @@
     color: #717171;
 }
 
-.login-form-container .login-form input:focus {
-    border: 1px solid #d6d6d6;
-}
-
 .login-form-container .login-form input[type="submit"] {
     background-color: black;
     color: white;
@@ -60,17 +86,45 @@
 .dont-have-an-account {
     margin-bottom: 15px;
 }
+
 .create-an-account-button {
     display: flex;
     background-color: black;
     color: white;
     letter-spacing: 3px;
-    padding: 4px 10px 4px 40px;
+    padding: 4px;
     transition: 0.5s;
     border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
 }
 
 .create-an-account-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.demo-user-button {
+    border: 0;
+    display: flex;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 100;
+    font-family: inherit;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.demo-user-button:hover {
     background-color: white;
     color: black;
 }

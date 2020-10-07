@@ -65,79 +65,87 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container-outer-container">
-        <div className="signup-form-container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="signup-form">
-              <div className="sign-up-create-a-new-account">
-                Create a Free Account
+      <div>
+        <div className="login-signup-temp-nav-bar">
+          <div className="login-signup-bread-title">BREAD</div>
+          <div className="login-signup-bread-nav-buttons">
+            <Link to="/login">LOG IN</Link>
+          </div>
+        </div>
+        <div className="signup-form-container-outer-container">
+          <div className="signup-form-container">
+            <form onSubmit={this.handleSubmit}>
+              <div className="signup-form">
+                <div className="sign-up-create-a-new-account">
+                  Create a Free Account
+                </div>
+                <div className="signup-form-name-container">
+                  <div>
+                    <input
+                      type="text"
+                      value={this.state.firstname}
+                      onChange={this.update("firstname")}
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      value={this.state.lastname}
+                      onChange={this.update("lastname")}
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+                <input
+                  type="tel"
+                  value={this.state.phone}
+                  onChange={this.update("phone")}
+                  placeholder="Phone Number - 012-345-6789"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                />
+                <div className="signup-form-password-container">
+                  <div>
+                    <input
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update("password")}
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="password"
+                      value={this.state.password2}
+                      onChange={this.update("password2")}
+                      placeholder="Confirm Password"
+                    />
+                  </div>
+                </div>
+                <input type="submit" value="Submit" />
+                <input to="/login" type="submit" value="Demo User" />
+                <p>
+                  Already have an account?{" "}
+                  <span>
+                    <Link to="/login">Log In</Link>
+                  </span>
+                </p>
+                {this.renderErrors()}
               </div>
-              <div className="signup-form-name-container">
-                <div>
-                  <input
-                    type="text"
-                    value={this.state.firstname}
-                    onChange={this.update("firstname")}
-                    placeholder="First Name"
-
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    value={this.state.lastname}
-                    onChange={this.update("lastname")}
-                    placeholder="Last Name"
-                  />
-                </div>
-              </div>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
-              />
-              <input
-                type="tel"
-                value={this.state.phone}
-                onChange={this.update("phone")}
-                placeholder="Phone Number - 012-345-6789"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              />
-              <div className="signup-form-password-container">
-                <div>
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="password"
-                    value={this.state.password2}
-                    onChange={this.update("password2")}
-                    placeholder="Confirm Password"
-                  />
-                </div>
-              </div>
-              <input type="submit" value="Submit" />
-              <p>
-                Already have an account?{" "}
-                <span>
-                  <Link to="/login">Log In</Link>
-                </span>
-              </p>
-              {this.renderErrors()}
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );
