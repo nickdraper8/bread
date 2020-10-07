@@ -17,7 +17,7 @@ class UserHome extends React.Component {
       <div className="user-home-container">
         <div className="left-user-home-container">
           <div className="user-home-internal-title">
-            <i class="fas fa-bread-slice"></i>BREAD
+            <i className="fas fa-bread-slice"></i>BREAD
           </div>
           <UserSearchContainer />
           <FriendsIndexItem />
