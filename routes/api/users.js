@@ -4,9 +4,11 @@ const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const User = require("../../models/User");
+const Event = require("../../models/Event");
 const bcrypt = require('bcryptjs');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+const mongoose = require("mongoose");
 
 router.get("/test", (req, res) => 
     res.json({ msg: "This is the users route" }));
@@ -123,17 +125,17 @@ router.delete('/:id', (req, res) => {
 });
 
 
-router.get('/friendList', function (req, res) {
-    User.find({}, function (err, users) {
-        var userMap = {};
-
-        users.forEach(function (user) {
-            userMap[friend_ids] = user;
-        });
-
-        res.send(userMap);
-    });
-});
+//router.get('/attendees', function (req, res) {
+//    User.find({}, function (err, users) {
+//        var userMap = {};
+//
+//        users.forEach(function (user) {
+//            userMap[user_ids] = user;
+//        });
+//
+//        res.send(userMap);
+//    });
+//});
 
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -142,6 +144,18 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         username: req.user.username,
         email: req.user.email
     });
-})
+});
+
+
+router.get("/:id/events", (req, res) => {
+    
+    Event.find({ id: mongoose.ObjectId(req.params.id) })
+    .select("name")
+    .then((events) => {
+      return res.json(events);
+    });
+});
+
+
 
 module.exports = router;

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
+const User = require("../../models/User");
+const mongoose = require("mongoose");
 
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateEventInput(req.body);
@@ -34,22 +36,47 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// router.get("/attendees", )
+router.post("/edit/:id", (req, res) => { //check logic
+  Event.findById(req.params.id).then((event) => {
+    event.name =
+      req.body.name === "" ? event.name : req.body.name;
+    event.attendees =
+      req.body.attendees === "" ? event.attendees : req.body.attendees;
+
+    event
+      .save()
+      .then((event) => res.json(event))
+      .catch((err) => res.status(400).json(err));
+  });
+});
+
+router.delete("/:eventId", (req, res) => {
+  Event.findByIdAndRemove(req.params.eventId) //check this line
+    .then((events) => {
+      if (!events) {
+        return res.status(404).send({
+          message: "Events not found",
+        });
+      }
+      return res.send({ message: "Events successfully deleted" });
+    })
+    .catch((err) => {
+      res.status(400).send({ message: "Could not delete event" });
+    });
 
 
-// User.find(
-//   {
-//     _id: {
-//       $in: [
-//         mongoose.Types.ObjectId("4ed3ede8844f0f351100000c"),
-//         mongoose.Types.ObjectId("4ed3f117a844e0471100000d"),
-//         mongoose.Types.ObjectId("4ed3f18132f50c491100000e"),
-//       ],
-//     },
-//   },
-//   function (err, docs) {
-//     console.log(docs);
-//   }
-// );
+router.get("/:id/attendees", (req, res) => {
+
+  Event.findById(req.params.id).then(event => {
+    
+     const attendees = event._doc.attendees;
+
+        User.find({ '_id' : {$in: attendees} }).select('_id username firstname lastname phone email').then(users => {
+
+          return res.json(users)
+        });  
+  })
+
+});
 
 module.exports = router;
