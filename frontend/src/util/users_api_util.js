@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const fetchUsers = data => {
+export const fetchUsersFromSearch = data => {
   // return axios.get("/api/searches/test");
   return axios.get("/api/searches/search", {
     params: data,

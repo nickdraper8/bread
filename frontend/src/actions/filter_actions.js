@@ -1,4 +1,4 @@
-import { fetchUsers } from './user_actions';
+import { fetchUsersFromSearch } from './user_actions';
 
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 
@@ -10,5 +10,5 @@ export const changeFilter = (filter, value) => ({
 
 export const updateFilter = (filter, value) => (dispatch, getState) => {
     dispatch(changeFilter(filter, value));
-    return fetchUsers(getState().ui.filters)(dispatch);
+    return fetchUsersFromSearch(getState().ui.filters)(dispatch);
 };

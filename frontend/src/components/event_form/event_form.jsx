@@ -8,7 +8,7 @@ class EventForm extends React.Component {
 
     this.state = {
       name: "",
-      attendees: [],
+      attendees: {},
       errors: []
     };
 
@@ -19,8 +19,8 @@ class EventForm extends React.Component {
   }
 
   handleAddAttendee(e) {
-    let newState = this.state.attendees;
-    newState = newState.concat(e._dispatchInstances.key);
+    let newState = Object.assign({}, this.state.attendees);
+    newState[e._dispatchInstances.key] = this.props.users[e._dispatchInstances.key];
     this.setState({
       attendees: newState,
       errors: [],
@@ -28,54 +28,47 @@ class EventForm extends React.Component {
   }
 
   handleRemoveAttendee(e) {
-    let key = e._dispatchInstances.key;
-    let index = this.state.attendees.indexOf(key);
-    let newState = this.state.attendees;
-    newState.splice(index, 1);
+    let newState = Object.assign({}, this.state.attendees);
+    delete newState[e._dispatchInstances.key];
     this.setState({
       attendees: newState
     });
   }
 
   handleNameChange(e) {
-    this.setState({ name: e.target.value });
+    this.setState({ name: e.target.value, errors: [] });
   }
 
   handleSubmit(e) {
       e.preventDefault();
-      if (this.state.attendees.length < 1) {
+      let attendeeIds = Object.keys(this.state.attendees);
+      if (attendeeIds.length < 1) {
         this.setState({errors: ['You must include at least one user! Use the search bar to find users']});
       } else if (this.state.name === '') {
         this.setState({errors: ['You must give your event a name!']});
       } else {
-        let attendeesWithCreator = this.state.attendees.concat(this.props.currentUserId);
+        let attendeesWithCreator = attendeeIds.concat(this.props.currentUserId);
         let event = {
             name: this.state.name,
             attendees: attendeesWithCreator,
         };
-
         this.props.createEvent(event);
     }
   }
 
   render() {
     let attendeesList = '';
-    if (this.state.attendees.length > 0) {
-      attendeesList = Object.values(this.props.users).filter((user) =>
-        this.state.attendees.includes(user._id)
-      );
-      attendeesList = attendeesList.map((user) => {
-        return (
-          <div
-            key={user._id}
-            onClick={this.handleRemoveAttendee}
-            className="user-search-result-item"
-          >
-            {user.username}
-            <i className="fas fa-user-times"></i>
-          </div>
-        );
-      });
+    if (Object.values(this.state.attendees).length > 0) {
+      attendeesList = Object.values(this.state.attendees).map((user) => {
+        return <div
+                  key={user._id}
+                  onClick={this.handleRemoveAttendee}
+                  className="user-search-result-item"
+                >
+                  {user.username}
+                  <i className="fas fa-user-times"></i>
+                </div>
+      })
     } else {
         attendeesList = 
             <div

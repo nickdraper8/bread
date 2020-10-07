@@ -4,8 +4,8 @@ import { updateFilter } from "../../actions/filter_actions";
 
 const mSTP = (state, ownProps) => {
     return({
-        users: state.entities.users.all,
-        currentUser: state.session.currentUser,
+        users: state.entities.users.search,
+        currentUserId: state.session.user.id,
         handleAddAttendee: ownProps.handleAddAttendee,
         attendees: ownProps.attendees
     });
