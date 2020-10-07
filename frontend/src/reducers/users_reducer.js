@@ -5,7 +5,6 @@ const initialState = { all: {}, user: {}, new: undefined};
 export default function (state = initialState, action) {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-    debugger
     switch (action.type) {
         case RECEIVE_USERS:
             newState.all = action.users.data
