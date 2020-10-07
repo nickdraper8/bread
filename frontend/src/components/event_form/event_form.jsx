@@ -54,7 +54,7 @@ class EventForm extends React.Component {
             attendees: attendeesWithCreator,
         };
 
-        this.props.createEvent(this.props.userId, event);
+        this.props.createEvent(event);
     }
   }
 

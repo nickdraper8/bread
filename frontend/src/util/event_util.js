@@ -8,12 +8,12 @@ export const fetchEvent = eventId => {
     return axios.get(`/api/events/${eventId}`);
 };
 
-export const createEvent = (userId, event) => {
-    return axios.post(`/api/users/${userId}/events`, event);
+export const createEvent = event => {
+    return axios.post(`/api/events/new`, event);
 };
 
 export const editEvent = event => {
-    return axios.patch(`/api/events/${event.id}`, event);
+    return axios.patch(`/api/events/edit`, event);
 };
 
 export const deleteEvent = eventId => {
