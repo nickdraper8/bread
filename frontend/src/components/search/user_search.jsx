@@ -23,40 +23,48 @@ class UserSearch extends React.Component {
     }
 
     render() {
-        let results = '';
-        let resultsContainer = '';
-        if (Object.values(this.props.users).length > 0) {
-            results = Object.values(this.props.users).map(user => {
-                return (
-                  <div key={user._id} onClick={this.props.handleAddAttendee} className="user-search-result-item">
-                    {user.username}
-                    <i className="fas fa-plus-circle"></i>
-                  </div>
-                );
-            })
-            resultsContainer = (
-              <div className="user-search-results-container">{results}</div>
+      let results = "";
+      let resultsContainer = "";
+      if (Object.values(this.props.users).length > 0) {
+        results = Object.values(this.props.users).map((user) => {
+          if (user._id !== this.props.currentUserId) {
+            return (
+              <div
+                key={user._id}
+                onClick={this.props.handleAddAttendee}
+                className="user-search-result-item"
+              >
+                {user.username}
+                <i className="fas fa-plus-circle"></i>
+              </div>
             );
+          }
+        });
+        if (results !== '') {
+          resultsContainer = (
+            <div className="user-search-results-container">{results}</div>
+          );
         }
-        return (
-          <div id="user-search-container">
-            <div className="user-search-bar-container">
-              <form onSubmit={this.handleSubmit}>
-                <input
-                  name="search"
-                  type="text"
-                  value={this.state.bounds}
-                  onChange={this.handleChange}
-                  placeholder="Search Usernames"
-                />
-                <button type="submit">
-                  <i className="fas fa-search"></i>
-                </button>
-              </form>
-            </div>
-            {resultsContainer}
+      }
+      return (
+        <div id="user-search-container">
+          <div className="user-search-bar-container">
+            <form onSubmit={this.handleSubmit}>
+              <input
+                name="search"
+                type="text"
+                value={this.state.bounds}
+                onChange={this.handleChange}
+                placeholder="Search Usernames"
+              />
+              <button type="submit">
+                <i className="fas fa-search"></i>
+              </button>
+            </form>
           </div>
-        );
+          {resultsContainer}
+        </div>
+      );
     }
 }
 
