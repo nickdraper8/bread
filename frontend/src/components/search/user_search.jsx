@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./user_search.css";
 
 class UserSearch extends React.Component {
     constructor(props) {
@@ -9,13 +10,17 @@ class UserSearch extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         if (!this.props.users) {
             this.props.fetchUsers(this.state.bounds);
         }
+    }
+
+    handleSubmit() {
+        this.props.fetchUsers(this.state.bounds);
     }
 
     handleChange(e) {
@@ -34,18 +39,27 @@ class UserSearch extends React.Component {
             })
         }
         return (
-            <div id="user-search-container">
-                <div className="user-search-bar-container">
-                    <form>
-                        <input type="text" value={this.state.bounds} onChange={this.handleChange} />
-                        <button type="button" onClick={this.handleSubmit}>SEARCH</button>
-                    </form>
-                </div>
-                <div className="user-search-results-container">
-                    {results}
-                </div>
+          <div id="user-search-container">
+            <div className="friends-search-container">
+              Friends
+              <div className="user-search-bar-container">
+                <form>
+                  <input
+                  className="search-bar-input-box"
+                    name="search"
+                    type="text"
+                    value={this.state.bounds}
+                    onChange={this.handleChange}
+                  />
+                  <button type="button" onClick={this.handleSubmit}>
+                    SEARCH
+                  </button>
+                </form>
+              </div>
             </div>
-        )
+            <div className="user-search-results-container">{results}</div>
+          </div>
+        );
     }
 }
 
