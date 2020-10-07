@@ -98,6 +98,7 @@
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
+    margin: 10px 0px 10px 0px;
 }
 
 .create-an-account-button:hover {
@@ -120,6 +121,7 @@
     font-size: 100;
     font-family: inherit;
     width: 100%;
+    margin-top: 10px;
 }
 
 .demo-user-button:hover {
