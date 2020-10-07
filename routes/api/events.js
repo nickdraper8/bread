@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
+const User = require("../../models/User");
+const mongoose = require("mongoose");
 
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateEventInput(req.body);
@@ -34,22 +36,19 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// router.get("/attendees", )
 
+router.get("/:id/attendees", (req, res) => {
 
-// User.find(
-//   {
-//     _id: {
-//       $in: [
-//         mongoose.Types.ObjectId("4ed3ede8844f0f351100000c"),
-//         mongoose.Types.ObjectId("4ed3f117a844e0471100000d"),
-//         mongoose.Types.ObjectId("4ed3f18132f50c491100000e"),
-//       ],
-//     },
-//   },
-//   function (err, docs) {
-//     console.log(docs);
-//   }
-// );
+  Event.findById(req.params.id).then(event => {
+    
+     const attendees = event._doc.attendees;
+
+        User.find({ '_id' : {$in: attendees} }).select('_id username firstname lastname phone email').then(users => {
+
+          return res.json(users)
+        });  
+  })
+
+});
 
 module.exports = router;
