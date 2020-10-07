@@ -17,6 +17,6 @@ module.exports = function validateStoreInput(data) {
     }
 
     if (Validator.isEmpty(data.date)) {
-        errors.date = 'Start Date should before End Date';
+        errors.date = 'Start Date should be before End Date';
     }
 }
