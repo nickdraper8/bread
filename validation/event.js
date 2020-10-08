@@ -13,4 +13,7 @@ module.exports = function validateEventInput(data) {
         errors.attendees = 'At least one attendee is required';
     }
 
-};
+    if (Validator.isEmpty(data.date)) {
+        errors.date = 'Start Date should be before End Date';
+    }
+}
