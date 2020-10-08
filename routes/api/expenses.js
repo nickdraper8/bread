@@ -2,63 +2,53 @@
 const express = require("express");
 const router = express.Router();
 const Expense = require("../../models/Expense");
-//
-//router.get("/", (req, res) => {
-//
-//  Expense.find({ userId: req.params.userId }).then((expenses) =>
-//    res.json(
-//      expenses.map((expense) => {
-//        return {
-//          amount: expense.amount,
-//          date: expense.date,
-//          userId: req.body.userId,
-//        };
-//      })
-//    )
-//  );
-//});
-//
-// //router.get("/", (req, res) => {
- //  Expense.find((error, expenses) => {
- //    if (error) return res.status(404).json({ NoExpense: "No record of any expense." })
- //    res.json(expensess.map((expenses) => {
- //      return ({
- //        price: expense.price,
- //        date: expense.date,
- //        id: expense.id
- //      })
- //    }));
- //  });
- //})
+const mongoose = require("mongoose");
+
+router.get("/:userId", (req, res) => {
+
+  Expense.find({ id: mongoose.ObjectId(req.params.userId) })
+    .select("amount date")
+    .then((expense) => {
+      return res.json(expense);
+    });
+});
+
+router.get("/", (req, res) => {
+  Expense.find((error, expenses) => {
+    if (error) return res.status(404).json({ NoExpense: "No record of any expense." })
+    res.json(expenses.map((expenses) => {
+      return ({
+        price: expenses.amount,
+        date: expenses.date,
+        id: expenses.id
+      })
+    }));
+  });
+});
+
+
 router.post("/new", (req, res) => {
   const newExpense = new Expense({
-    amount: req.body.price,
-    userId: req.body.userId,
+    amount: req.body.amount,
+    payer_id: req.body.userId,
   });
   newExpense.save().then((expenses) => res.json(expenses));
 });
 
-//router.get("/:id/expense", (req, res) => {
-//  Expense.find({ id: mongoose.ObjectId(req.params.id) })
-//    .select("price")
-//    .then((expense) => {
-//      return res.json(expense);
-//    });
-//});
-//
-//router.delete("/:expenseId", (req, res) => {
-//  Expense.findByIdAndRemove(req.params.expenseId)
-//    .then((expenses) => {
-//      if (!expenses) {
-//        return res.status(404).send({
-//          message: "Expenses not found",
-//        });
-//      }
-//      return res.send({ message: "Expenses successfully deleted" });
-//    })
-//    .catch((err) => {
-//      res.status(400).send({ message: "Could not delete expense" });
-//    });
-//});
-//
+
+router.delete("/delete/:expenseId", (req, res) => {
+  Expense.findByIdAndRemove(req.params.expenseId)
+    .then((expenses) => {
+      if (!expenses) {
+        return res.status(404).send({
+          message: "Expenses not found",
+        });
+      }
+      return res.send({ message: "Expenses successfully deleted" });
+    })
+    .catch((err) => {
+      res.status(400).send({ message: "Could not delete expense" });
+    });
+});
+
 module.exports = router;
