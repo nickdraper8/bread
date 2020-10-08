@@ -67,17 +67,6 @@ body {
     color: white
 }
 
-.use-case-tile-container {
-    position: absolute;
-    top: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
 .use-case-tile-group {
     font-size: 40px;
     width: 400px;
