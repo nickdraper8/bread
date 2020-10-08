@@ -67,23 +67,6 @@ body {
     color: white
 }
 
-.use-case-tile-group {
-    font-size: 40px;
-    width: 400px;
-    height: 400px;
-    background-color: #FFB7D5;
-    color: #052EF1;
-    text-align: center;
-}
-
-.use-case-tile-work {
-width: 400px;
-    height: 400px;
-    background-color: #052EF1;
-    color: #BBFFB9;
-    text-align: center;
-}
-
 /* .use-case-tile-dinner {
 width: 400px;
     height: 400px;

@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: flex-start;
     margin: 15px;
-    background-color: white;
+    background-color: #D6CEC7;
     border-radius: 5px;
     padding-top: 100px;
 }
@@ -21,12 +21,12 @@
     position: relative; 
     width: 25%;
     height: 258px;
-    background-color: #FCF7F4;
+    background-color: #F5F1EB;
     color: black;
     margin: 20px;
     border-radius: 5%;
     overflow: hidden;
-    box-shadow: 1px 10px 15px #d6d6d6;
+    box-shadow: 1px 10px 15px #6C7F66;
     padding: 15px;
 }
 
