@@ -63,24 +63,6 @@ router.delete("/:eventId", (req, res) => {
     });
 });
 
-router.get("/:id/expense", (req, res) => {
-  Event.find({ id: mongoose.ObjectId(req.params.id) })
-    .select("name")
-    .then((events) => {
-      return res.json(events);
-    });
-});
 
-router.get("/:id/expense", (req, res) => {
-  Event.findById(req.params.id).then((event) => {
-    const attendees = event._doc.attendees;
-
-    User.find({ _id: { $in: attendees } })
-      .select("_id username firstname lastname phone email")
-      .then((users) => {
-        return res.json(users);
-      });
-  });
-});
 
 module.exports = router;
