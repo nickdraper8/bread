@@ -148,7 +148,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 
 router.get("/:id/events", (req, res) => {
-    Event.find({ id: mongoose.ObjectId(req.params.id) })
+    debugger
+    Event.find({ attendees: { $in: req.params.id } })
     .select("name")
     .then((events) => {
       return res.json(events);
