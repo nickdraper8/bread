@@ -13,6 +13,10 @@ class UserSearch extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+      this.props.clearSearch();
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         this.props.fetchUsers(this.state.bounds);
@@ -27,7 +31,6 @@ class UserSearch extends React.Component {
       let resultsContainer = "";
       if (Object.values(this.props.users).length > 0) {
         Object.values(this.props.users).forEach((user) => {
-          debugger
           if (user._id !== this.props.currentUserId) {
             results.push(
               <div

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import EventForm from "./event_form";
 import { createEvent } from "../../actions/event_actions";
+import { withRouter } from "react-router-dom";
 
 const mSTP = state => {
     return({
@@ -15,4 +16,4 @@ const mDTP = dispatch => {
     });
 };
 
-export default connect(mSTP, mDTP)(EventForm);
+export default withRouter(connect(mSTP, mDTP)(EventForm));

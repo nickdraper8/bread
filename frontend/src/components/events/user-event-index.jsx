@@ -18,6 +18,8 @@ class UserEventIndex extends React.Component {
       />
     ));
 
+    eventList = eventList.reverse();
+
     return (
       <div className="user-event-item-container">
         <div className="user-event-tile">{eventList}</div>

@@ -4,6 +4,7 @@ export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USERS_FROM_SEARCH = "RECEIVE_USERS_FROM_SEARCH";
 export const RECEIVE_USERS_VIA_EVENT = "RECEIVE_USERS_VIA_EVENT";
 export const RECEIVE_USER = "RECEIVE_USERS";
+export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
 export const receiveUsers = users => {
     return({
@@ -30,6 +31,12 @@ export const receiveUser = user => {
     return({
         type: RECEIVE_USER,
         user
+    });
+};
+
+export const clearSearch = () => {
+    return({
+        type: CLEAR_SEARCH
     });
 };
 
