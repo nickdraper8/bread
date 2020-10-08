@@ -47,7 +47,7 @@ router.delete("/delete/:expenseId", (req, res) => {
     .catch((err) => {
       res.status(400).send({ message: "Could not delete expense" });
         newExpense.save().then((expenses) => res.json(expenses));
-    }
-);
+    });
+});
 
 module.exports = router;
