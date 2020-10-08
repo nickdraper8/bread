@@ -26,7 +26,12 @@ class EventPage extends React.Component {
         } else {
 
             let attendeesList = Object.values(this.props.attendees).map(attendee => {
-                return <AttendeeContainer attendee={attendee}/>
+                return <AttendeeContainer key={attendee._id} attendee={attendee}/>
+            });
+
+            let totalExpenses = 0;
+            Object.values(this.props.expenses).forEach(expense => {
+                totalExpenses += parseFloat(expense.amount.$numberDecimal);
             });
 
             return(
@@ -42,7 +47,10 @@ class EventPage extends React.Component {
                         </div>
                         <div id="event-page-details">
                             <div id="expense-list-container">
-                                <div id="expense-list-title">Expense List</div>
+                                <div id="expense-list-title">
+                                    <div>Expense List</div>
+                                    <div>${totalExpenses}</div>
+                                </div>
                                     <div id="expense-list">{attendeesList}</div>
                             </div>
                             <div id="event-info-container">

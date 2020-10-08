@@ -1,0 +1,20 @@
+#attendee-container {
+    padding: 20px 0px;
+    background-color: #f0e8e200;
+    margin: 10px;
+    border-bottom: 3px black solid;
+}
+
+#attendee-name-title {
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.expense-list-container {
+    margin: 10px 0px;
+}
+
+#no-expenses-label {
+    margin: 0px 20px;
+}
+

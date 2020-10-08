@@ -62,8 +62,7 @@ router.delete("/:eventId", (req, res) => {
 });
 
 router.get("/:id/expenses", (req, res) => {
-  debugger
-  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date")
+  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date payer_id")
     .then((events) => {
       return res.json(events);
     });
