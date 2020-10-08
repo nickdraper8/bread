@@ -55,6 +55,7 @@ class EventForm extends React.Component {
             attendees: attendeesWithCreator,
         };
         this.props.createEvent(event);
+        this.props.history.push('/home');
     }
   }
 
