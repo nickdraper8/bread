@@ -9,9 +9,8 @@ class EventPage extends React.Component {
     }
 
     componentDidUpdate() {
-        debugger
         if (Object.values(this.props.users).length < 1) {
-            this.props.fetchUsersViaEvent(this.props.event.id);
+            this.props.fetchUsersViaEvent(this.props.event._id);
         }
     }
 
@@ -19,7 +18,7 @@ class EventPage extends React.Component {
         return(
             <div className="user-home-container">
                 <div className="left-user-home-container">
-                <div className="user-home-internal-title">BREAD</div>
+                <a className="user-home-internal-title">BREAD</a>
                 </div>
                 <div className="right-user-home-container">
                 <InternalNavbarContainer />

@@ -1,5 +1,6 @@
 import React from 'react';
 import UserSearchContainer from '../search/user_search_container';
+import InternalNavbarContainer from "../nav/navbar_container";
 import "./event_form.css";
 
 class EventForm extends React.Component {
@@ -88,27 +89,35 @@ class EventForm extends React.Component {
     }
 
     return (
-      <div id="event-form-container">
-        <h1>Create Event</h1>
-        <div id="form-items-container">
-          <UserSearchContainer
-            handleAddAttendee={this.handleAddAttendee}
-            attendees={this.state.attendees}
-          />
-          <div className="event-form-details-container">
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-                placeholder="Event Name"
+      <div className="user-home-container">
+        <div className="left-user-home-container">
+          <a className="user-home-internal-title">BREAD</a>
+        </div>
+        <div className="right-user-home-container">
+          <InternalNavbarContainer />
+          <div id="event-form-container">
+            <h1>Create Event</h1>
+            <div id="form-items-container">
+              <UserSearchContainer
+                handleAddAttendee={this.handleAddAttendee}
+                attendees={this.state.attendees}
               />
-              <button type="submit">Create Event</button>
-            </form>
-            <div className="user-search-results-container">
-                {attendeesList}
+              <div className="event-form-details-container">
+                <form onSubmit={this.handleSubmit}>
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.handleNameChange}
+                    placeholder="Event Name"
+                  />
+                  <button type="submit">Create Event</button>
+                </form>
+                <div className="user-search-results-container">
+                  {attendeesList}
+                </div>
+                {errorsUl}
+              </div>
             </div>
-            {errorsUl}
           </div>
         </div>
       </div>

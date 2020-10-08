@@ -1,3 +1,7 @@
+.login-page-container {
+    overflow: hidden;
+}
+
 .login-signup-temp-nav-bar {
     height: 100px;
     width: 100%;
@@ -41,6 +45,7 @@
     border-radius: 30px;
     box-shadow: 1px 10px 15px #d6d6d6;
     display: flex;
+    overflow: hidden;
     /* border: 1px solid #87D18B; */
 }
 

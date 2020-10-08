@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 
@@ -17,9 +17,8 @@ class InternalNavbar extends React.Component {
   render() {
     return (
       <div className="internal-nav-bar-container">
-        <div className="internal-nav-user-home-button">Home</div>
-        <div className="internal-nav-user-Search-button">Search</div>
-        <div className="internal-nav-user-Events-button">Events</div>
+        <Link to="/home" className="internal-nav-user-home-button">Home</Link>
+        <Link to="/newevent" className="internal-nav-user-create-button">Create Event</Link>
         <button onClick={this.logoutUser} className="user-home-logout-button">
           Log out
         </button>

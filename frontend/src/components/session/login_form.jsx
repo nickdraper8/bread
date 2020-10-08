@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login-page-container">
         <div className="login-signup-temp-nav-bar">
           <div className="login-signup-bread-title">BREAD</div>
           <div className="login-signup-bread-nav-buttons">

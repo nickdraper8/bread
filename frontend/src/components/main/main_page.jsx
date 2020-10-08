@@ -15,16 +15,16 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="main-page-containter">
-            <div className="bread-splash-subtitle">
-              an organizational tool where users can form events with each-other
-              and log expenses that are to be split up by others in the event.
-            </div>
-            <div className="splash-sign-up-button">
-              <Link to="/signup">Sign Up</Link>
-            </div>
-            <img className="beach-pic-background" src={beach} alt=""/>
+          <div className="bread-splash-subtitle">
+            Revolutionize the way you split shared expenses with friends. Social
+            financial awkwardness is now a thing of the past.
           </div>
+          <div className="splash-sign-up-button">
+            <Link to="/signup">Sign Up</Link>
+          </div>
+          <img className="beach-pic-background" src={beach} alt="" />
         </div>
+      </div>
     );
   }
 }
