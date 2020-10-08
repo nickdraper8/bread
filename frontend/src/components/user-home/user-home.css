@@ -9,11 +9,12 @@
     width: 20%;
     height: 100vh;
     overflow: auto;
+    color: #F5F1EB;
 }
 
 .right-user-home-container {
     border-radius: 30px 0px 0px 0px;
-    background-color: white;
+    background-color: #D6CEC7;
     width: 80%;
     height: 100vh;
     overflow: auto;
@@ -21,7 +22,7 @@
 }
 
 .user-home-internal-title {
-    color: white;
+    color: #F5F1EB;
     font-size: 48px;
     margin-left: 32px;
     margin-top: 20px;
@@ -31,7 +32,7 @@
 }
 
 .user-home-internal-title:hover {
-    color: #052EF1;
+    color: #6C7F66;
     letter-spacing: 2px;
     cursor: pointer;
 }
