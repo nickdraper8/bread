@@ -7,7 +7,7 @@
     background-color: #fcf7f4;
     border-radius: 30px;
     padding-bottom: 150px;
-    box-shadow: 1px 10px 15px #d6d6d6;
+    box-shadow: 1px 10px 15px #6C7F66;
 }
 
 #event-page-title {
@@ -15,15 +15,23 @@
 }
 
 #event-page-details {
-
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 
 #expense-list-container {
-
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    width: 55%;
 }
 
 #event-info-container {
-
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    width: 30%;
 }
 
 #event-page-footer {
