@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    margin: 25px;
+    margin: 25px 0px 25px 0px;
     background-color: #FCF7F4;
     border-radius: 5px;
     padding-top: 100px;
@@ -57,7 +57,23 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
-.drew-information-container:hover {
+
+.intro-text-information {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+}
+
+.drew-information-container:hover  .intro-bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.intro-bio {
+    display: none;
 }
 
 .nick-information-container {
@@ -76,6 +92,13 @@
          padding-top: 10px;
 }
 
+.nick-information-container:hover  .intro-bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
 .JR-information-container {
     font-size: 32px;
     display: flex;
@@ -90,6 +113,13 @@
     color: #BBFFB9;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+.JR-information-container:hover  .intro-bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
 }
 .Rav-information-container {
      font-size: 32px;
@@ -107,14 +137,20 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
-
+.Rav-information-container:hover  .intro-bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
 .intro-head-shot-pic {
-    height: 30vh;
+    height: 32vh;
     width: auto;
+    margin-left: 30px;
 }
 
 .intro-head-shot-pic-drew {
-    height: 30vh;
+    height: 32vh;
     width: auto;
-    margin-left: 20px;
+    margin-left: 30px;
 }

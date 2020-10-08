@@ -29,10 +29,11 @@
     position: relative;
     transition: 1s;
     top: 20px;
+    letter-spacing: 2px;
 }
 
 .user-home-internal-title:hover {
-    color: #6C7F66;
+    color: #87D18B;
     letter-spacing: 2px;
     cursor: pointer;
 }

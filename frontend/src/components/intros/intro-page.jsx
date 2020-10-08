@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import InternalNavbarContainer from "../nav/navbar_container";
 import "./intro-page.css";
 import drew from "../../images/drew-pic.png"
 import nick from "../../images/nick-pic.png";
@@ -8,6 +7,16 @@ import jr from "../../images/jr-pic.png"
 import rav from "../../images/rav-pic.png"
 
 class IntroPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+  }
+
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
   render() {
     return (
       <div className="user-home-container">
@@ -37,43 +46,64 @@ class IntroPage extends React.Component {
           <div className="intro-page-container">
             <div className="drew-information-container">
               <img src={drew} className="intro-head-shot-pic-drew" />
-              <a
-                className="nav-bar-link"
-                id="nav-bar-dash"
-                href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
-              >
-                Drew Shroyer
-              </a>
+              <div className="intro-text-information">
+                <a href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}>
+                  Drew Shroyer
+                  <span class="intro-bio">
+                    a software engineer with a design eye and a business
+                    mindset. Drew graduated from the STern school of business at
+                    NYU and has experience in creative direction and marketing
+                    for companies like Equinox, Ceros, and Microsoft.{" "}
+                  </span>
+                </a>
+              </div>
             </div>
             <div className="nick-information-container">
               <img src={nick} className="intro-head-shot-pic" />
-              <a
-                className="nav-bar-link"
-                id="nav-bar-dash"
-                href={"https://www.linkedin.com/in/nicholas-draper/"}
-              >
-                Nick Draper
-              </a>
-            </div>
-            <div className="Rav-information-container">
-              <img src={rav} className="intro-head-shot-pic" />{" "}
-              <a
-                className="nav-bar-link"
-                id="nav-bar-dash"
-                href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
-              >
-                Rav Singh
-              </a>
+              <div className="intro-text-information">
+                <a href={"https://www.linkedin.com/in/nicholas-draper/"}>
+                  Nick Draper
+                  <span class="intro-bio">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris condimentum porta maximus. Vivamus lacus nunc,
+                    vestibulum vel elementum ac, suscipit in lorem.
+                  </span>
+                </a>
+              </div>
             </div>
             <div className="JR-information-container">
               <img src={jr} className="intro-head-shot-pic" />{" "}
-              <a
-                className="nav-bar-link"
-                id="nav-bar-dash"
-                href={"https://www.linkedin.com/in/jrmcc/"}
-              >
-                JR McCann
-              </a>
+              <div className="intro-text-information">
+                <a
+                  className="nav-bar-link"
+                  id="nav-bar-dash"
+                  href={"https://www.linkedin.com/in/jrmcc/"}
+                >
+                  JR McCann
+                  <span class="intro-bio">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris condimentum porta maximus. Vivamus lacus nunc,
+                    vestibulum vel elementum ac, suscipit in lorem.
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="Rav-information-container">
+              <img src={rav} className="intro-head-shot-pic" />{" "}
+              <div className="intro-text-information">
+                <a
+                  className="nav-bar-link"
+                  id="nav-bar-dash"
+                  href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
+                >
+                  Rav Singh
+                  <span class="intro-bio">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris condimentum porta maximus. Vivamus lacus nunc,
+                    vestibulum vel elementum ac, suscipit in lorem.
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
