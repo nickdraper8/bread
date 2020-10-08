@@ -36,17 +36,44 @@ class IntroPage extends React.Component {
           </div>
           <div className="intro-page-container">
             <div className="drew-information-container">
-              <img src={drew} className="intro-head-shot-pic-drew" /> Drew
-              Shroyer
+              <img src={drew} className="intro-head-shot-pic-drew" />
+              <a
+                className="nav-bar-link"
+                id="nav-bar-dash"
+                href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
+              >
+                Drew Shroyer
+              </a>
             </div>
             <div className="nick-information-container">
-              <img src={nick} className="intro-head-shot-pic" /> Nick Draper
+              <img src={nick} className="intro-head-shot-pic" />
+              <a
+                className="nav-bar-link"
+                id="nav-bar-dash"
+                href={"https://www.linkedin.com/in/nicholas-draper/"}
+              >
+                Nick Draper
+              </a>
             </div>
             <div className="Rav-information-container">
-              <img src={rav} className="intro-head-shot-pic" /> Rav Singh
+              <img src={rav} className="intro-head-shot-pic" />{" "}
+              <a
+                className="nav-bar-link"
+                id="nav-bar-dash"
+                href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
+              >
+                Rav Singh
+              </a>
             </div>
             <div className="JR-information-container">
-              <img src={jr} className="intro-head-shot-pic" /> JR McCann
+              <img src={jr} className="intro-head-shot-pic" />{" "}
+              <a
+                className="nav-bar-link"
+                id="nav-bar-dash"
+                href={"https://www.linkedin.com/in/jrmcc/"}
+              >
+                JR McCann
+              </a>
             </div>
           </div>
         </div>
