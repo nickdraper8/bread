@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import InternalNavbarContainer from "../nav/navbar_container";
 import "./intro-page.css";
+import drew from "../../images/drew-pic.png"
+import nick from "../../images/nick-pic.png";
+import jr from "../../images/jr-pic.png"
+import rav from "../../images/rav-pic.png"
 
 class IntroPage extends React.Component {
   render() {
@@ -31,10 +35,19 @@ class IntroPage extends React.Component {
             </button>
           </div>
           <div className="intro-page-container">
-            <div className="drew-information-container">Drew Shroyer</div>
-            <div className="nick-information-container">Nick Draper</div>
-            <div className="Rav-information-container">Rav Singh</div>
-            <div className="JR-information-container">John Robert McCann</div>
+            <div className="drew-information-container">
+              <img src={drew} className="intro-head-shot-pic-drew" /> Drew
+              Shroyer
+            </div>
+            <div className="nick-information-container">
+              <img src={nick} className="intro-head-shot-pic" /> Nick Draper
+            </div>
+            <div className="Rav-information-container">
+              <img src={rav} className="intro-head-shot-pic" /> Rav Singh
+            </div>
+            <div className="JR-information-container">
+              <img src={jr} className="intro-head-shot-pic" /> JR McCann
+            </div>
           </div>
         </div>
       </div>

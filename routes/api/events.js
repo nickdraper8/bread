@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../../models/Event");
 const mongoose = require("mongoose");
+const Expense = require("../../models/Expense");
 
 
 router.post("/new", (req, res) => {
@@ -61,8 +62,8 @@ router.delete("/:eventId", (req, res) => {
 });
 
 router.get("/:id/expenses", (req, res) => {
-  Expense.find({ id: mongoose.ObjectId(req.params.id) })
-    .select("amount date")
+  debugger
+  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date")
     .then((events) => {
       return res.json(events);
     });

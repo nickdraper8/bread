@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: flex-start;
     margin: 15px;
-    background-color: #D6CEC7;
+    background-color: #FCF7F4;
     border-radius: 5px;
     padding-top: 100px;
 }
@@ -26,7 +26,7 @@
     margin: 20px;
     border-radius: 5%;
     overflow: hidden;
-    box-shadow: 1px 10px 15px #6C7F66;
+    box-shadow: 1px 10px 15px #d6d6d6;
     padding: 15px;
 }
 
