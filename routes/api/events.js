@@ -70,7 +70,6 @@ router.get("/:id/expenses", (req, res) => {
 });
 
 router.get("/:id/attendees", (req, res) => {
-  Event.findById(req.params.id).then((event) => {
     const attendees = event._doc.attendees;
 
     User.find({ _id: { $in: attendees } })
@@ -79,6 +78,27 @@ router.get("/:id/attendees", (req, res) => {
         return res.json(users);
       });
   });
+
+router.get("/:id/total", (req, res) => {
+
+  Expense.find( {event_id : {$in : req.params.id}})
+  .then( expense => {
+
+    const total = [];
+    expense.forEach(expense => {
+      total.unshift(expense.amount)
+    })
+
+    // debugger
+
+    sum = 0;
+    total.forEach(decimal => {
+      sum += JSON.parse(decimal)
+    })
+    
+    res.json(sum);
+  })
+
 });
 
 module.exports = router;
