@@ -10,32 +10,35 @@
     z-index: 1;
 }
 
-.internal-nav-user-home-button {
+.internal-nav-bar-container a {
     font-size: 18px;
-    padding: 40px;
-    color: #24695C;
-}
-
-.internal-nav-user-Search-button {
-    font-size: 18px;
-    padding: 40px;
-        color: #24695C;
+    font-weight: bold;
+    padding: 10px;
+    transition: .5s;
+    margin: 30px;
+    color: #052EF1;
+    border-radius: 25px;
 
 }
-
-.internal-nav-user-Events-button {
-    font-size: 18px;
-    padding: 40px;
-        color: #24695C;
-
+.internal-nav-bar-container a:hover {
+    color: black;
+    background-color: #eee5df;
 }
+
 
 .user-home-logout-button {
+    font-family: Futura;
     border-radius: 10px;
     background-color: black;
     color:white;
     font-size: 14px;
-    padding: 5px;
+    padding: 6px;
     position: fixed;
     right: 2%;
+    border: 0;
+    transition: .5s;
+}
+.user-home-logout-button:hover {
+    background-color: #052EF1;
+    color: white;
 }

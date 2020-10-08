@@ -1,19 +1,60 @@
-.login-form-container {
-     font-family: futura;
-    margin: auto;
-    width: 300px;
-    height: 350px;
-    background: #87D18B;
-    color: white;
-    border-radius: 30px;
-    border: 1px solid #87D18B;
+.login-page-container {
+    overflow: hidden;
 }
 
-.login-form-container .login-form {
-    width: 72%;
+.login-signup-temp-nav-bar {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+}
+
+.login-signup-bread-title {
+    font-size: 48px;
+    padding-left: 50px;
+}
+
+.login-signup-bread-nav-buttons {
+    margin-right:  50px;
+    font-size: 18px;    
+    background-color: black;
+    color: white;
+    padding: 4px;
+    transition: .5s;
+}
+
+.login-signup-bread-nav-buttons:hover {
+     background-color: white; 
+     color: black;
+}
+
+.login-form-container {
+    font-family: futura;
+    margin: 150px auto;
+    width: 350px;
+    background: white;
+    color: black;
+    border-radius: 30px;
+    box-shadow: 1px 10px 15px #d6d6d6;
+    display: flex;
+    overflow: hidden;
+    /* border: 1px solid #87D18B; */
+}
+
+.login-form-inner-container {
+     width: 76%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     padding: 40px;
 }
 
@@ -25,29 +66,74 @@
 
 .login-form-container .login-form input {
     height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid #287f26;
-    border-radius: 2px;
+    margin-bottom: 25px;
+    border: 0px solid #d6d6d6;
+    border-bottom: 2px solid black;
+    outline: 0;
     transition: 0.5s;
     width: 100%;
 }
 
-.login-form-container .login-form input:focus {
-    outline: green solid 3px;
+::placeholder {
+    font-size: 13px;
+    font-family: Futura;
+    color: #717171;
 }
 
 .login-form-container .login-form input[type="submit"] {
-   background-color: #2954D3;
+    background-color: black;
     color: white;
-    text-transform: uppercase;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    border-radius: 50px;
     letter-spacing: 3px;
-
+    padding: 4px;
 }
 
 .login-form-container .login-form input[type="submit"]:hover {
-    background-color: #2ca02c;
+    background-color: white;
+    color: black;
 
+}
+.dont-have-an-account {
+    margin-bottom: 15px;
+}
+
+.create-an-account-button {
+    display: flex;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.create-an-account-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.demo-user-button {
+    border: 0;
+    display: flex;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 100;
+    font-family: inherit;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.demo-user-button:hover {
+    background-color: white;
+    color: black;
 }

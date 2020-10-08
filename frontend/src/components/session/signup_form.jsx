@@ -18,6 +18,11 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   componentDidUpdate() {
@@ -53,6 +58,15 @@ class SignupForm extends React.Component {
     this.props.signup(user);
   }
 
+  handleDemoLogin(e) {
+    e.preventDefault();
+    let user = {
+      username: "DemoUser",
+      password: "password",
+    };
+    this.props.login(user);
+  }
+
   renderErrors() {
     return (
       <ul className="session-errors-list">
@@ -65,74 +79,77 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container-outer-container">
-        <div className="signup-form-container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="signup-form">
-              <div className="sign-up-create-a-new-account">
-                Create a New Account
-              </div>
-              <div className="signup-form-name-container">
-                <label>First Name</label>
-                <input
-                  type="text"
-                  value={this.state.firstname}
-                  onChange={this.update("firstname")}
-                  placeholder="First Name"
-                />
-              </div>
-              <div>
-                <label>Last Name</label>
-                <input
-                  type="text"
-                  value={this.state.lastname}
-                  onChange={this.update("lastname")}
-                  placeholder="Last Name"
-                />
-              </div>
-              <label>Email</label>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-              <label>Username</label>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
-              />
-              <label>Phone Number</label>
-              <input
-                type="tel"
-                value={this.state.phone}
-                onChange={this.update("phone")}
-                placeholder="Phone Number - 012-345-6789"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              />
-              <div className="signup-form-password-container">
-                <div>
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password"
-                  />
-
+      <div>
+        <div className="login-signup-temp-nav-bar">
+          <div className="login-signup-bread-title">BREAD</div>
+          <div className="login-signup-bread-nav-buttons">
+            <Link to="/login">LOG IN</Link>
+          </div>
+        </div>
+        <div className="signup-form-container-outer-container">
+          <div className="signup-form-container">
+            <form onSubmit={this.handleSubmit}>
+              <div className="signup-form">
+                <div className="sign-up-create-a-new-account">
+                  Create a Free Account
                 </div>
-                <div>
-                  <label>Confirm Password</label>
-                  <input
-                    type="password"
-                    value={this.state.password2}
-                    onChange={this.update("password2")}
-                    placeholder="Confirm Password"
-                  />
+                <div className="signup-form-name-container">
+                  <div>
+                    <input
+                      type="text"
+                      value={this.state.firstname}
+                      onChange={this.update("firstname")}
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      value={this.state.lastname}
+                      onChange={this.update("lastname")}
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+                <input
+                  type="tel"
+                  value={this.state.phone}
+                  onChange={this.update("phone")}
+                  placeholder="Phone Number - 012-345-6789"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                />
+                <div className="signup-form-password-container">
+                  <div>
+                    <input
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update("password")}
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="password"
+                      value={this.state.password2}
+                      onChange={this.update("password2")}
+                      placeholder="Confirm Password"
+                    />
+                  </div>
                 </div>
                 <input type="submit" value="Submit" />
+                <input onClick={this.handleDemoLogin} className="demo-user-button" type="button" value="Demo User" />
                 <p>
                   Already have an account?{" "}
                   <span>
@@ -141,8 +158,8 @@ class SignupForm extends React.Component {
                 </p>
                 {this.renderErrors()}
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );

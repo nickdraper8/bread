@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './search.css';
 
 class UserSearch extends React.Component {
     constructor(props) {
@@ -9,13 +10,16 @@ class UserSearch extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        if (!this.props.users) {
-            this.props.fetchUsers(this.state.bounds);
-        }
+    componentWillUnmount() {
+      this.props.clearSearch();
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+        this.props.fetchUsers(this.state.bounds);
     }
 
     handleChange(e) {
@@ -23,29 +27,48 @@ class UserSearch extends React.Component {
     }
 
     render() {
-        let results = '';
-        if (this.props.users) {
-            results = Object.values(this.props.users).map(user => {
-                return (
-                    <div>
-                        {user.username}
-                    </div>
-                )
-            })
+      let results = [];
+      let resultsContainer = "";
+      if (Object.values(this.props.users).length > 0) {
+        Object.values(this.props.users).forEach((user) => {
+          if (user._id !== this.props.currentUserId) {
+            results.push(
+              <div
+                key={user._id}
+                onClick={this.props.handleAddAttendee}
+                className="user-search-result-item"
+              >
+                {user.username}
+                <i className="fas fa-plus-circle"></i>
+              </div>
+            );
+          }
+        });
+        if (results.length > 0) {
+          resultsContainer = (
+            <div className="user-search-results-container">{results}</div>
+          );
         }
-        return (
-            <div id="user-search-container">
-                <div className="user-search-bar-container">
-                    <form>
-                        <input type="text" value={this.state.bounds} onChange={this.handleChange} />
-                        <button type="button" onClick={this.handleSubmit}>SEARCH</button>
-                    </form>
-                </div>
-                <div className="user-search-results-container">
-                    {results}
-                </div>
-            </div>
-        )
+      }
+      return (
+        <div id="user-search-container">
+          <div className="user-search-bar-container">
+            <form onSubmit={this.handleSubmit}>
+              <input
+                name="search"
+                type="text"
+                value={this.state.bounds}
+                onChange={this.handleChange}
+                placeholder="Search Usernames"
+              />
+              <button type="submit">
+                <i className="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+          {resultsContainer}
+        </div>
+      );
     }
 }
 

@@ -2,92 +2,95 @@ body {
     font-family: Futura;
     text-decoration: none;
     background-color: #FCF7F4;
-    color: #87D18B;
+    color: #052EF1;
     margin: 0;
 }
 
-.bread-splash-title {
-    position: absolute;
-    top: 30%;
-    font-size: 1016%;
-    font-weight: 100px;
-    color: black;
+.login-signup-bread-title-logo {
+    font-size: 48px;
+    padding-left: 50px;
+    color: white;
 }
 
 .bread-splash-subtitle{
-    position: absolute;
-    top: 52%;
-    font-size: 24px;
+    padding: 50px;
+    width: 65%;
+    font-family: Moret-Semibold;
+    font-size: 44px;
     font-weight: 100px;
-    color: #87D18B;
-    /* font-family: Roc Grotesk; */
+    color: black;
+    position: absolute;
+    z-index: 1;
+    bottom: 43%;
+}
+
+.beach-pic-background {
+    z-index: 0;
 }
 
 .main-page-containter {
-    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background-color: #FCF7F4;
+    overflow: hidden;
 }
 
 .splash-sign-up-button {
-    position: absolute;
-    top: 67%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 50px;
     width: 120px;
     height: 40px;
-    border-radius: 50px;
-    background-color:#87D18B;
+    /* border-radius: 50px; */
+    /* background-color:black; */
     text-align: center;
-    color: #FCF7F4;
+    color: black;
     box-shadow: 0 0 5 5;
     text-transform: uppercase;
+    transition: 0.5s;
+    position: absolute;
+    z-index: 1;
+    bottom: 35%;
+    font-size: 18px;
+    border-bottom: 2px solid black;
 }
 
 .splash-sign-up-button:hover {
-    width: 132px;
-    height: 44px;
-    background-color: #87D18B;
+    width: 120px;
+    height: 40px;
+    background-color:black;
+    color: white
 }
-.use-case-tile-container {
-    position: absolute;
-    top: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+
 .use-case-tile-group {
     font-size: 40px;
     width: 400px;
     height: 400px;
     background-color: #FFB7D5;
-    color: #0F5642;
+    color: #052EF1;
     text-align: center;
 }
 
 .use-case-tile-work {
 width: 400px;
     height: 400px;
-    background-color: #2954D3;
+    background-color: #052EF1;
     color: #BBFFB9;
     text-align: center;
 }
 
-.use-case-tile-dinner {
+/* .use-case-tile-dinner {
 width: 400px;
     height: 400px;
     background-color: #FFAB44;
-    color: #1255EC;
+    color: #052EF1;
     text-align: center;
-}
+} */
 
 /* .footer-container {
     color: white;

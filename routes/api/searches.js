@@ -10,31 +10,47 @@ router.get("/test", (req, res) => res.json({ msg: "This is the search route" }))
 
 router.get('/search', (req, res) => {
 
-    eval(require('locus'));
-    console.log(res)
-
-    const userSearch = new RegExp(/^(req.query.search)$/gi)
-
-    if(req.query.search){
-    
-        User.find({ username: userSearch }, function(err, allUsers){
-        if(err){
-            console.log(err);
-        } else {
-            res.render("users/index", {users: allUsers});
-        }
-    });
-    
+    // const userSearch = new RegExp(`/^(${req.query.bounds})/gi`)
+    if(req.query.bounds) {
+        User
+            .find({ username: { $regex: `${req.query.bounds}`, $options: "gi" } })
+            .then(users => res.json(users))
+            .catch(err => res.status(400).json(err));
+        
+        
+        // , function (err, allUsers) {
+        //     if (err) {
+        //         console.log(err);
+        //     } else {
+        //         let userMap = {};
+        //         debugger
+        //         allUsers.forEach(function (user) {
+        //           userMap[user._id] = user._doc;
+        //         });
+        //         debugger
+        //         res.send(userMap);
+        //     }
+        // });
     } else {
         // grab all users from db
 
-        User.find({}, function(err, allUsers){
-            if(err){ 
-                console.log(err);
-            }else{
-                res.render("users/index",{users: allUsers});
-            }
-        });
+        User
+            .find()
+            .then(users => res.json(users))
+            .catch(err => res.status(400).json(err));
+            // function(err, allUsers){
+        //     if(err){ 
+        //         console.log(err);
+        //     }else{
+        //         let userMap = {};
+        //         debugger;
+        //         allUsers.forEach(function (user) {
+        //           userMap[user._id] = user._doc;
+        //         });
+        //         debugger;
+        //         res.send(userMap);
+        //     }
+        // });
     }
 
 });

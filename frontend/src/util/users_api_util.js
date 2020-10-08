@@ -1,9 +1,13 @@
 import axios from "axios";
 
-export const fetchUsers = data => {
-  // debugger
-  return axios.get("/api/searches/test");
-  // return axios.get("/api/searches/search", data);
+export const fetchUsersFromSearch = data => {
+  return axios.get("/api/searches/search", {
+    params: data,
+  });
+};
+
+export const fetchUsersViaEvent = eventId => {
+  return axios.get(`/api/events/${eventId}/attendees`);
 };
 
 export const fetchUser = userId => {
