@@ -14,9 +14,11 @@ class Attendee extends React.Component {
         Object.values(this.props.expenses).forEach(expense => {
             if (this.props.attendee._id === expense.payer_id) {
                 expenseList.push(<ExpenseItemContainer key={expense._id} expense={expense} />);
+                totalPayed += parseFloat(expense.amount.$numberDecimal);
             }
-            totalPayed += parseFloat(expense.amount.$numberDecimal);
         });
+
+        totalPayed = Math.round(totalPayed * 100) / 100;
 
         let expenseListContainer = '';
         if (expenseList.length === 0) {
