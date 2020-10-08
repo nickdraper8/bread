@@ -4,7 +4,7 @@ const router = express.Router();
 const Expense = require("../../models/Expense");
 
 router.get("/:userId", (req, res) => {
-    debugger 
+
     Expense.find({ userId: req.params.userId }).then((expenses) =>
 
         res.json(
