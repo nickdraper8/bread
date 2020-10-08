@@ -6,7 +6,9 @@ class UserEventIndex extends React.Component {
     this.props.fetchEvents(this.props.currentUserId);
   }
   render() {
-    const { events, editEvent, deleteEvent } = this.props;
+
+    const { events, editEvent, deleteEvent} = this.props;
+
     let eventList = events.map((event) => (
       <EventShowContainer
         key={event._id}
@@ -22,5 +24,6 @@ class UserEventIndex extends React.Component {
       </div>
     );
   }
+
 }
 export default UserEventIndex;
