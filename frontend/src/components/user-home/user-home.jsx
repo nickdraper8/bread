@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import UserEventIndex from "../events/user-event-index"
+import UserEventIndexContainer from "../events/user-event-index-container"
 import InternalNavbarContainer from "../nav/navbar_container";
 import "./user-home.css";
 
@@ -16,7 +16,7 @@ class UserHome extends React.Component {
         </div>
         <div className="right-user-home-container">
           <InternalNavbarContainer />
-          {/* <UserEventIndex /> */}
+          <UserEventIndexContainer />
         </div>
       </div>
     );

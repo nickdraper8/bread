@@ -7,7 +7,7 @@ export const fetchUsersFromSearch = data => {
 };
 
 export const fetchUsersViaEvent = eventId => {
-  return axios.get(`/api/events/${eventId}/users`);
+  return axios.get(`/api/events/${eventId}/attendees`);
 };
 
 export const fetchUser = userId => {

@@ -6,22 +6,21 @@ body {
     margin: 0;
 }
 
-.bread-splash-title {
+/* .bread-splash-title {
     position: absolute;
     top: 35%;
-    right: 33%;
+    left: 33%;
     font-size: 900%;
     font-weight: 100px;
     color: black;
-}
+} */
 
 .bread-splash-subtitle{
+    font-family: Moret-Semibold;
     position: absolute;
-    top: 54%;
-    right: 40%;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 100px;
-    color: #052EF1;
+    color: black;
     /* font-family: Roc Grotesk; */
 }
 
@@ -36,14 +35,14 @@ body {
     background-color: #FCF7F4;
 }
 
-.bread-background-image {
+/* .bread-background-image {
     position: relative;
     right: 6%;
     top: 0%;
-    height: 900px;
+    height: 150%;
     width: auto;
     z-index: 0;
-}
+} */
 
 .splash-sign-up-button {
     position: absolute;
