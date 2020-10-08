@@ -16,4 +16,4 @@ module.exports = function validateEventInput(data) {
     if (Validator.isEmpty(data.date)) {
         errors.date = 'Start Date should be before End Date';
     }
-}
+};

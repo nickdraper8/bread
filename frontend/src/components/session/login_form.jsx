@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./login.css";
-import dock from "../../images/dock-picture.jpeg"
+// import dock from "../../images/dock-picture.jpeg"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -16,6 +16,10 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   // Once the user has been authenticated, redirect to the Tweets page

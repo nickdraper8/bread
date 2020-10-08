@@ -67,6 +67,7 @@ module.exports = function validateRegisterInput(data) {
     }
 
     return {
-        errors: Object.keys(errors).length === 0
+        errors: errors,
+        isValid: Object.keys(errors).length === 0
     };
 };
