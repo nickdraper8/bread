@@ -6,10 +6,9 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color:  #F5F1EB;  
+    background-color:  #87D08B;  
     border-radius: 30px 0px 0px 0px;
     z-index: 1;
-    
 }
 
 .internal-nav-user-home-button {
@@ -23,9 +22,8 @@
     transition: .5s;
     /* margin: 30px; */
     margin-left: 0px;
-    color: #6C7F66;
+    color: #87D08B;
     padding: 40px 60px 40px 60px;
-    border-radius: 25px;
     
 }
 .internal-nav-bar-container a:hover {

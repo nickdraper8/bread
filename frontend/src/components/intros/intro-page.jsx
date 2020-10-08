@@ -12,11 +12,29 @@ class IntroPage extends React.Component {
             BREAD
           </Link>
         </div>
-        <div className="right-user-home-container">
-          <InternalNavbarContainer />
-          {/* <UserEventIndexContainer /> */}
+        <div className="right-user-home-container-intros">
+          <div className="internal-nav-bar-container">
+            <Link to="/home" className="internal-nav-user-home-button">
+              Home
+            </Link>
+            <Link to="/newevent" className="internal-nav-user-create-button">
+              Create Event
+            </Link>
+            <Link to="/intros" className="internal-nav-user-intros-button">
+              Intros
+            </Link>
+            <button
+              onClick={this.logoutUser}
+              className="user-home-logout-button"
+            >
+              Log out
+            </button>
+          </div>
           <div className="intro-page-container">
-                
+            <div className="drew-information-container">Drew Shroyer</div>
+            <div className="nick-information-container">Nick Draper</div>
+            <div className="Rav-information-container">Rav Singh</div>
+            <div className="JR-information-container">John Robert McCann</div>
           </div>
         </div>
       </div>
