@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
     return({
         event: state.entities.events[ownProps.match.params.eventId],
         eventId: ownProps.match.params.eventId,
-        users: state.entities.users.event
+        attendees: state.entities.users.event
     });
 };
 

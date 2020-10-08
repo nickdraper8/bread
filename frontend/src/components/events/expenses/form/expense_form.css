@@ -1,0 +1,36 @@
+#expense-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#expense-form-title {
+
+}
+
+#expense-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#cost-input-container {
+    display: flex;
+}
+
+#expense-form-container form input {
+
+}
+
+#expense-form-container form label {
+
+}
+
+#expense-form-container form button {
+
+}
+
+#expense-form-errors {
+
+}
+
+
+

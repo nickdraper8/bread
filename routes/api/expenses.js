@@ -44,6 +44,7 @@ router.post("/new", (req, res) => {
         newExpense.save().then((expenses) => res.json(expenses));
     }
 );
+
 router.get("/:id/expense", (req, res) => {
   Expense.find({ id: mongoose.ObjectId(req.params.id) })
     .select("price")
