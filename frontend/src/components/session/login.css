@@ -21,15 +21,15 @@
 .login-signup-bread-nav-buttons {
     margin-right:  50px;
     font-size: 18px;    
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     padding: 4px;
     transition: .5s;
 }
 
 .login-signup-bread-nav-buttons:hover {
-     color: white; 
-     background-color: black;
+     background-color: white; 
+     color: black;
 }
 
 .login-form-container {
