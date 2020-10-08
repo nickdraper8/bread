@@ -34,6 +34,8 @@ class EventPage extends React.Component {
                 totalExpenses += parseFloat(expense.amount.$numberDecimal);
             });
 
+            totalExpenses = Math.round(totalExpenses * 100) / 100;
+
             return(
                 <div className="user-home-container">
                     <div className="left-user-home-container">
@@ -57,7 +59,7 @@ class EventPage extends React.Component {
                                 <ExpenseFormContainer eventId={this.props.eventId} />
                             </div>
                         </div>
-                        <div id="event-page-footer">
+                        {/* <div id="event-page-footer">
                             <div id="event-page-btns">
                                 <button type="button">Add Expense</button>
                                 <button type="button">Close Event</button>
@@ -65,7 +67,7 @@ class EventPage extends React.Component {
                             <div id="total-expenses">
                                 $ 520.40
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     </div>
                 </div>
