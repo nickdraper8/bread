@@ -1,26 +1,21 @@
 import React from "react";
-import "./user-event-tile.css"
-import EventShowContainer from "./event-show-container"
-
-
+import "./user-event-tile.css";
+import EventShowContainer from "./event-show-container";
 class UserEventIndex extends React.Component {
-
   componentDidMount() {
     this.props.fetchEvents(this.props.currentUserId);
   }
-
   render() {
-    const { events, editEvent, deleteEvent} = this.props;
-    // debugger
-   let eventList = events.map((event) => (
-     <EventShowContainer
-       key={event._id}
-       event={event}
-       deleteEvent={deleteEvent}
-       editEvent={editEvent}
-     />
-   ));
-    // debugger
+    const { events, editEvent, deleteEvent } = this.props;
+    let eventList = events.map((event) => (
+      <EventShowContainer
+        key={event._id}
+        event={event}
+        deleteEvent={deleteEvent}
+        editEvent={editEvent}
+      />
+    ));
+
     return (
       <div className="user-event-item-container">
         <div className="user-event-tile">{eventList}</div>
@@ -28,5 +23,4 @@ class UserEventIndex extends React.Component {
     );
   }
 }
-
 export default UserEventIndex;
