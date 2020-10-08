@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 
 class EventShow extends React.Component {
   componentDidMount() {
-    this.props.fetchEvent(this.props.match.params.eventId);
+    debugger
+    this.props.fetchUsersViaEvent(this.props.event._id);
   }
 
   render() {
-    const { event } = this.props;
+    const { event, users } = this.props;
+    debugger
     return (
       <div className="event-show-page-container">
-        <div className="event-show-page-title">{event.title}</div>
-        <ul className="event-show-attendees">{event.attendees}</ul>
-        <div className="event-total-cost">{event.cost}</div>
+        <div className="event-show-page-title">{event.name}</div>
+        <ul className="event-show-attendees">{users}</ul>
+        {/* <div className="event-total-cost">{event.cost}</div> */}
         <div className="event-show-link-to-home"><Link to={`/home/`}>Back To Home</Link></div>
       </div>
     );

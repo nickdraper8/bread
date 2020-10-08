@@ -7,11 +7,12 @@ import {
 } from "../../actions/event_actions";
 
 const mSTP = (state) => ({
-  events: Object.values(state.events),
+  events: Object.values(state.entities.events),
+  currentUserId: state.session.user.id
 });
 
 const mDTP = (dispatch) => ({
-  fetchEvents: () => dispatch(fetchEvents()),
+  fetchEvents: (userId) => dispatch(fetchEvents(userId)),
   deleteEvent: (eventId) => dispatch(deleteEvent(eventId)),
   editEvent: (event) => dispatch(editEvent(event)),
 });

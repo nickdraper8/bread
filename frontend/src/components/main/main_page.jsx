@@ -16,9 +16,12 @@ class MainPage extends React.Component {
         </div>
         <div className="main-page-containter">
           <div className="bread-background-container">
-            <img src={bread} className="bread-background-image" />
-            <div className="bread-splash-title">BREAD</div>
-            <div className="bread-splash-subtitle">always get your slice</div>
+            {/* <img src={bread} className="bread-background-image" /> */}
+            {/* <div className="bread-splash-title">BREAD</div> */}
+            <div className="bread-splash-subtitle">
+              an organizational tool where users can form events with each-other
+              and log expenses that are to be split up by others in the event.
+            </div>
             <div className="splash-sign-up-button">
               <Link to="/signup">Sign Up</Link>
             </div>
