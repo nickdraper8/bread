@@ -69,13 +69,15 @@ router.get("/:id/expenses", (req, res) => {
 });
 
 router.get("/:id/attendees", (req, res) => {
-    const attendees = event._doc.attendees;
-
-    User.find({ _id: { $in: attendees } })
-      .select("_id username firstname lastname phone email")
-      .then((users) => {
-        return res.json(users);
-      });
+    Event.findById(req.params.id).then(event => {
+      const attendees = event._doc.attendees;
+  
+      User.find({ _id: { $in: attendees } })
+        .select("_id username firstname lastname phone email")
+        .then((users) => {
+          return res.json(users);
+        });
+    })
   });
 
 router.get("/:id/total", (req, res) => {

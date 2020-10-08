@@ -27,7 +27,7 @@ class Attendee extends React.Component {
 
             expenseListContainer =  <div className="expense-list-container">
                                         {expenseList}
-                                        <div id="expense-item-container" class="total-payed">
+                                        <div id="expense-item-container" className="total-payed">
                                             <div>
                                                 TOTAL
                                             </div>
