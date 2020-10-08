@@ -1,15 +1,12 @@
 import React from "react";
-import "./user-event-tile.css"
-import EventShowContainer from "./event-show-container"
-
-
+import "./user-event-tile.css";
+import EventShowContainer from "./event-show-container";
 class UserEventIndex extends React.Component {
-
   componentDidMount() {
     this.props.fetchEvents(this.props.currentUserId);
   }
-
   render() {
+
     const { events, editEvent, deleteEvent} = this.props;
 
     let eventList = events.map((event) => (
@@ -20,13 +17,13 @@ class UserEventIndex extends React.Component {
         editEvent={editEvent}
       />
     ));
-      // debugger
-      return (
-        <div className="user-event-item-container">
-          <div className="user-event-tile">{eventList}</div>
-        </div>
-      );
-    }
-}
 
+    return (
+      <div className="user-event-item-container">
+        <div className="user-event-tile">{eventList}</div>
+      </div>
+    );
+  }
+
+}
 export default UserEventIndex;

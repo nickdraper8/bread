@@ -8,7 +8,7 @@ import {
 
 const mSTP = (state) => ({
   events: Object.values(state.entities.events),
-  currentUserId: state.session.user.id
+  currentUserId: state.session.user.id,
 });
 
 const mDTP = (dispatch) => ({
