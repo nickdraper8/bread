@@ -4,11 +4,12 @@ const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
 
 router.post("/new", (req, res) => {
-  const { errors, isValid } = validateEventInput(req.body);
+  // const { errors, isValid } = validateEventInput(req.body);
   
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
+  
   const newEvent = new Event(
     {
     name: req.body.name,
@@ -48,7 +49,7 @@ router.post("/edit/:id", (req, res) => { //check logic
   });
 });
 
-router.delete("/delete/:eventId", (req, res) => {
+router.delete("/:eventId", (req, res) => {
   Event.findByIdAndRemove(req.params.eventId) //check this line
     .then((events) => {
       if (!events) {
@@ -63,15 +64,8 @@ router.delete("/delete/:eventId", (req, res) => {
     });
 });
 
-router.get("/:id/expense", (req, res) => {
-  Event.find({ id: mongoose.ObjectId(req.params.id) })
-    .select("name")
-    .then((events) => {
-      return res.json(events);
-    });
-});
 
-router.get("/:id/expense", (req, res) => {
+router.get("/:id/attendees", (req, res) => {
   Event.findById(req.params.id).then((event) => {
     const attendees = event._doc.attendees;
 

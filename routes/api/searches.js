@@ -13,7 +13,7 @@ router.get('/search', (req, res) => {
     // const userSearch = new RegExp(`/^(${req.query.bounds})/gi`)
     if(req.query.bounds) {
         User
-            .find({ username: { $regex: `${req.query.bounds}`, $options: "g" } })
+            .find({ username: { $regex: `${req.query.bounds}`, $options: "gi" } })
             .then(users => res.json(users))
             .catch(err => res.status(400).json(err));
         
