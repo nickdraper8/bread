@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../../models/Event"); //don't see this on my folder
 const validateEventInput = require("../../validation/event");
-const User = require("../../models/User");
-const mongoose = require("mongoose");
 
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateEventInput(req.body);
@@ -63,32 +61,24 @@ router.delete("/:eventId", (req, res) => {
     .catch((err) => {
       res.status(400).send({ message: "Could not delete event" });
     });
-  }
-);
-
-
-router.get("/:id/attendees", (req, res) => {
-
-  Event.findById(req.params.id).then(event => {
-    
-     const attendees = event._doc.attendees;
-
-        User.find({ '_id' : {$in: attendees} }).select('_id username firstname lastname phone email').then(users => {
-
-          return res.json(users);
-        });  
-  });
-
 });
 
-router.get("/:id/event", (req, res) => {
-  Event.findById(req.params.id).then((event) => {
-    const expenses = event.expenses;
+router.get("/:id/expense", (req, res) => {
+  Event.find({ id: mongoose.ObjectId(req.params.id) })
+    .select("name")
+    .then((events) => {
+      return res.json(events);
+    });
+});
 
-    Expense.find({ _id: { $in: expenses } })
-      .select("_id ")
-      .then((expense) => {
-        return res.json(expense);
+router.get("/:id/expense", (req, res) => {
+  Event.findById(req.params.id).then((event) => {
+    const attendees = event._doc.attendees;
+
+    User.find({ _id: { $in: attendees } })
+      .select("_id username firstname lastname phone email")
+      .then((users) => {
+        return res.json(users);
       });
   });
 });
