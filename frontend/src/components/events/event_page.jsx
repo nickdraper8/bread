@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import InternalNavbarContainer from "../nav/navbar_container";
 import "./event_page.css";
 
@@ -9,9 +10,8 @@ class EventPage extends React.Component {
     }
 
     componentDidUpdate() {
-        debugger
         if (Object.values(this.props.users).length < 1) {
-            this.props.fetchUsersViaEvent(this.props.event.id);
+            this.props.fetchUsersViaEvent(this.props.event._id);
         }
     }
 
@@ -19,7 +19,7 @@ class EventPage extends React.Component {
         return(
             <div className="user-home-container">
                 <div className="left-user-home-container">
-                <div className="user-home-internal-title">BREAD</div>
+                <Link to="/home" className="user-home-internal-title">BREAD</Link>
                 </div>
                 <div className="right-user-home-container">
                 <InternalNavbarContainer />

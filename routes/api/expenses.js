@@ -1,18 +1,18 @@
 // create, : index, : show, : update, : destroy
 const express = require("express");
 const router = express.Router();
-const passport = require("passport");
 const Expense = require("../../models/Expense");
-const validateExpenseInput = require("../../validation/expense"); //notyetvalidated
 
 router.get("/:userId", (req, res) => {
+    debugger 
     Expense.find({ userId: req.params.userId }).then((expenses) =>
+
         res.json(
             expenses.map((expense) => {
                 return {
-                    amount: expense.amount,
+                    amount: expense.price,
                     date: expense.date,
-                    id: expense.id,
+
                 };
             })
         )
@@ -34,23 +34,23 @@ router.get("/:userId", (req, res) => {
 // });
 
 
-router.post(
-    "/new",
-    passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-        const { errors, isValid } = validateExpenseInput(req.body);
-
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
+router.post("/new", (req, res) => {
 
         const newExpense = new Expense({
-            price: req.body.price,
-            userId: req.user.id,
+
+            amount: req.body.price,
+            userId: req.body.userId,
         });
         newExpense.save().then((expenses) => res.json(expenses));
     }
 );
+router.get("/:id/expense", (req, res) => {
+  Expense.find({ id: mongoose.ObjectId(req.params.id) })
+    .select("price")
+    .then((expense) => {
+      return res.json(expense);
+    });
+});
 
 router.delete("/:expenseId", (req, res) => {
     Expense.findByIdAndRemove(req.params.expenseId)

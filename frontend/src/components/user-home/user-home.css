@@ -23,9 +23,17 @@
 .user-home-internal-title {
     color: white;
     font-size: 48px;
-    margin-left: 20px;
-    margin-top: 22px;
+    margin-left: 32px;
+    margin-top: 20px;
     position: relative;
+    transition: 1s;
+    top: 20px;
+}
+
+.user-home-internal-title:hover {
+    color: #052EF1;
+    letter-spacing: 2px;
+    cursor: pointer;
 }
 
 #outer-bread-logo {

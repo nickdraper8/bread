@@ -10,41 +10,21 @@
     z-index: 1;
 }
 
-.internal-nav-user-home-button {
+.internal-nav-bar-container a {
     font-size: 18px;
     font-weight: bold;
-    padding: 40px;
-    color: #052EF1;
+    padding: 10px;
     transition: .5s;
+    margin: 30px;
+    color: #052EF1;
+    border-radius: 25px;
+
 }
-.internal-nav-user-home-button:hover {
+.internal-nav-bar-container a:hover {
     color: black;
+    background-color: #eee5df;
 }
 
-.internal-nav-user-Search-button {
-    font-size: 18px;
-    padding: 40px;
-    color: #052EF1;
-    font-weight: bold;
-    transition: .5s;
-}
-.internal-nav-user-Search-button:hover {
-        color: black;
-
-}
-
-.internal-nav-user-Events-button {
-    font-size: 18px;
-    padding: 40px;
-    color: #052EF1;
-    font-weight: bold;
-    transition: .5s;
-}
-
-.internal-nav-user-Events-button:hover {
-    color: black;
-
-}
 
 .user-home-logout-button {
     font-family: Futura;

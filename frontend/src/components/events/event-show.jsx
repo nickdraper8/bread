@@ -8,11 +8,7 @@ class EventShow extends React.Component {
   }
 
   handleRedirect() {
-    this.props.history.push(`/events/${this.props.event.id}`)
-  }
-
-  componentDidMount() {
-    this.props.fetchUsersViaEvent(this.props.event._id);
+    this.props.history.push(`/events/${this.props.event._id}`)
   }
 
   render() {
