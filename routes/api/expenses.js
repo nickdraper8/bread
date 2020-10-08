@@ -26,7 +26,6 @@ router.get("/", (req, res) => {
   });
 });
 
-
 router.post("/new", (req, res) => {
   const newExpense = new Expense({
     amount: req.body.amount,
@@ -34,7 +33,6 @@ router.post("/new", (req, res) => {
   });
   newExpense.save().then((expenses) => res.json(expenses));
 });
-
 
 router.delete("/delete/:expenseId", (req, res) => {
   Expense.findByIdAndRemove(req.params.expenseId)
@@ -44,16 +42,23 @@ router.delete("/delete/:expenseId", (req, res) => {
           message: "Expenses not found",
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5c4d43815e6959922d1e04bf9d3798bc69583a2a
       }
       return res.send({ message: "Expenses successfully deleted" });
     })
     .catch((err) => {
       res.status(400).send({ message: "Could not delete expense" });
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 5c4d43815e6959922d1e04bf9d3798bc69583a2a
         newExpense.save().then((expenses) => res.json(expenses));
     }
 );
 
+<<<<<<< HEAD
 router.get("/:id/expense", (req, res) => {
   Expense.find({ id: mongoose.ObjectId(req.params.id) })
     .select("price")
@@ -63,4 +68,6 @@ router.get("/:id/expense", (req, res) => {
     });
 });
 
+=======
+>>>>>>> 5c4d43815e6959922d1e04bf9d3798bc69583a2a
 module.exports = router;
