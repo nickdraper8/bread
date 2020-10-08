@@ -23,12 +23,13 @@ class UserSearch extends React.Component {
     }
 
     render() {
-      let results = "";
+      let results = [];
       let resultsContainer = "";
       if (Object.values(this.props.users).length > 0) {
-        results = Object.values(this.props.users).map((user) => {
+        Object.values(this.props.users).forEach((user) => {
+          debugger
           if (user._id !== this.props.currentUserId) {
-            return (
+            results.push(
               <div
                 key={user._id}
                 onClick={this.props.handleAddAttendee}
@@ -40,7 +41,7 @@ class UserSearch extends React.Component {
             );
           }
         });
-        if (results !== '') {
+        if (results.length > 0) {
           resultsContainer = (
             <div className="user-search-results-container">{results}</div>
           );

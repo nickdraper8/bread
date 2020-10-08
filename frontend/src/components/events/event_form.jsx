@@ -1,6 +1,7 @@
 import React from 'react';
 import UserSearchContainer from '../search/user_search_container';
 import InternalNavbarContainer from "../nav/navbar_container";
+import { Link } from 'react-router-dom';
 import "./event_form.css";
 
 class EventForm extends React.Component {
@@ -91,7 +92,7 @@ class EventForm extends React.Component {
     return (
       <div className="user-home-container">
         <div className="left-user-home-container">
-          <a className="user-home-internal-title">BREAD</a>
+          <Link to="/home" className="user-home-internal-title">BREAD</Link>
         </div>
         <div className="right-user-home-container">
           <InternalNavbarContainer />
