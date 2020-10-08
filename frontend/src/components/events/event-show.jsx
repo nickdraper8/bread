@@ -9,7 +9,6 @@ class EventShow extends React.Component {
 
   render() {
     const { event, users } = this.props;
-    debugger
     return (
       <div className="event-show-page-container">
         <div className="event-show-page-title">{event.name}</div>
