@@ -10,13 +10,15 @@ class EventPage extends React.Component {
 
     componentDidMount() {
         this.props.fetchEvent(this.props.eventId);
+        this.props.fetchUsersViaEvent(this.props.eventId);
+        this.props.fetchExpenses(this.props.eventId);
     }
 
-    componentDidUpdate() {
-        if (Object.values(this.props.attendees).length < 1) {
-            this.props.fetchUsersViaEvent(this.props.event._id);
-        }
-    }
+    // componentDidUpdate() {
+    //     if (Object.values(this.props.attendees).length < 1) {
+            
+    //     }
+    // }
 
     render() {
         if (!this.props.event) {

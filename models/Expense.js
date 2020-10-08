@@ -23,6 +23,6 @@ const ExpenseSchema = new Schema({
         default: Date.now
     },
 
-})
+});
 
 module.exports = Expense = mongoose.model('Expense', ExpenseSchema);

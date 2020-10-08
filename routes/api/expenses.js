@@ -28,8 +28,10 @@ router.get("/", (req, res) => {
 
 router.post("/new", (req, res) => {
   const newExpense = new Expense({
+    description: req.body.description,
     amount: req.body.amount,
-    payer_id: req.body.userId,
+    payer_id: req.body.user_id,
+    event_id: req.body.event_id
   });
   newExpense.save().then((expenses) => res.json(expenses));
 });
