@@ -50,7 +50,7 @@ router.post("/edit/:id", (req, res) => { //check logic
   });
 });
 
-router.delete("/:eventId", (req, res) => {
+router.delete("/delete/:eventId", (req, res) => {
   Event.findByIdAndRemove(req.params.eventId) //check this line
     .then((events) => {
       if (!events) {
