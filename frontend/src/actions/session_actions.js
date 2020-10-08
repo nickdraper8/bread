@@ -7,6 +7,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 // We'll dispatch this when our user signs in
 export const receiveCurrentUser = (currentUser) => ({
@@ -25,6 +26,10 @@ export const receiveErrors = (errors) => ({
   errors,
 });
 
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+})
+
 // When our user is logged out, we will dispatch this action to set isAuthenticated to false
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT,
@@ -40,7 +45,9 @@ export const signup = (user) => (dispatch) =>
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
     },
-    (err) => dispatch(receiveErrors(err.response.data))
+    (err) => {
+      debugger
+      dispatch(receiveErrors(err.response.data))}
   );
 
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.

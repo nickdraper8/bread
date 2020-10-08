@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import UserSearch from "./user_search";
 import { updateFilter } from "../../actions/filter_actions";
+import { clearSearch } from "../../actions/user_actions";
 
 const mSTP = (state, ownProps) => {
     return({
@@ -13,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return({
-        fetchUsers: (value) => dispatch(updateFilter("bounds", value))
+        fetchUsers: (value) => dispatch(updateFilter("bounds", value)),
+        clearSearch: () => dispatch(clearSearch())
     });
 };
 
