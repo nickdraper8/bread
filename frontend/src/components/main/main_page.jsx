@@ -9,7 +9,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <div className="login-signup-temp-nav-bar">
-          <div className="login-signup-bread-title">BREAD</div>
+          <div className="login-signup-bread-title-logo">BREAD</div>
           <div className="login-signup-bread-nav-buttons">
             <Link to="/login">LOG IN</Link>
           </div>

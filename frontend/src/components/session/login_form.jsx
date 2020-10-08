@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./login.css";
+import dock from "../../images/dock-picture.jpeg"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -75,7 +76,10 @@ class LoginForm extends React.Component {
     return (
       <div>
         <div className="login-signup-temp-nav-bar">
-          <div className="login-signup-bread-title">BREAD</div>
+          <div className="login-signup-bread-title">
+            {" "}
+            <Link to={`/`}>BREAD</Link>
+          </div>
           <div className="login-signup-bread-nav-buttons">
             <Link to="/signup">SIGN UP</Link>
           </div>
@@ -119,6 +123,7 @@ class LoginForm extends React.Component {
             </form>
           </div>
         </div>
+        {/* <img src={dock} className="dock-back-ground-picture" alt="" /> */}
       </div>
     );
   }
