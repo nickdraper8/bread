@@ -15,15 +15,23 @@
 }
 
 #event-page-details {
-
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 
 #expense-list-container {
-
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    width: 55%;
 }
 
 #event-info-container {
-
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    width: 30%;
 }
 
 #event-page-footer {

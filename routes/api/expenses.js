@@ -43,11 +43,23 @@ router.delete("/delete/:expenseId", (req, res) => {
         return res.status(404).send({
           message: "Expenses not found",
         });
+<<<<<<< HEAD
       }
       return res.send({ message: "Expenses successfully deleted" });
     })
     .catch((err) => {
       res.status(400).send({ message: "Could not delete expense" });
+=======
+        newExpense.save().then((expenses) => res.json(expenses));
+    }
+);
+
+router.get("/:id/expense", (req, res) => {
+  Expense.find({ id: mongoose.ObjectId(req.params.id) })
+    .select("price")
+    .then((expense) => {
+      return res.json(expense);
+>>>>>>> f57f3b561daf4404aa61c4c70eceb00f7bfa6071
     });
 });
 
