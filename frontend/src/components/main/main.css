@@ -6,70 +6,60 @@ body {
     margin: 0;
 }
 
-.bread-splash-title {
-    position: absolute;
-    top: 35%;
-    right: 33%;
-    font-size: 900%;
+.bread-splash-subtitle{
+    padding: 50px;
+    width: 65%;
+    font-family: Moret-Semibold;
+    font-size: 44px;
     font-weight: 100px;
     color: black;
+    position: absolute;
+    z-index: 1;
+    bottom: 43%;
 }
 
-.bread-splash-subtitle{
-    position: absolute;
-    top: 54%;
-    right: 40%;
-    font-size: 24px;
-    font-weight: 100px;
-    color: #052EF1;
-    /* font-family: Roc Grotesk; */
+.beach-pic-background {
+    z-index: 0;
 }
 
 .main-page-containter {
-    /* position: relative; */
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: #FCF7F4;
-}
-
-.bread-background-image {
-    position: relative;
-    right: 6%;
-    top: 0%;
-    height: 900px;
-    width: auto;
-    z-index: 0;
+    overflow: hidden;
 }
 
 .splash-sign-up-button {
-    position: absolute;
-    top: 67%;
-    right: 43%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 50px;
     width: 120px;
     height: 40px;
-    border-radius: 50px;
-    background-color:#052EF1;
+    /* border-radius: 50px; */
+    /* background-color:black; */
     text-align: center;
-    color: #FCF7F4;
+    color: black;
     box-shadow: 0 0 5 5;
     text-transform: uppercase;
     transition: 0.5s;
+    position: absolute;
+    z-index: 1;
+    bottom: 35%;
+    border-bottom: 2px solid black;
 }
 
 .splash-sign-up-button:hover {
     width: 120px;
     height: 40px;
-    background-color: black;
+    background-color:black;
     color: white
-
 }
+
 .use-case-tile-container {
     position: absolute;
     top: 90%;
@@ -80,6 +70,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .use-case-tile-group {
     font-size: 40px;
     width: 400px;
@@ -97,13 +88,13 @@ width: 400px;
     text-align: center;
 }
 
-.use-case-tile-dinner {
+/* .use-case-tile-dinner {
 width: 400px;
     height: 400px;
     background-color: #FFAB44;
     color: #052EF1;
     text-align: center;
-}
+} */
 
 /* .footer-container {
     color: white;

@@ -1,8 +1,9 @@
 .event-show-page-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .event-show-page-title {

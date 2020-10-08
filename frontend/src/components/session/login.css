@@ -1,5 +1,5 @@
 .login-signup-temp-nav-bar {
-    height: 50px;
+    height: 100px;
     width: 100%;
     background-color: black;
     display: flex;
@@ -7,16 +7,20 @@
     color: white;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
 }
 
 .login-signup-bread-title {
-    font-size: 32px;
-    padding-left: 10px;
+    font-size: 48px;
+    padding-left: 50px;
 }
 
 .login-signup-bread-nav-buttons {
-    margin-right:  10px;
-    font-size: 14px;
+    margin-right:  50px;
+    font-size: 22px;
     background-color: white;
     color: black;
     padding: 4px;
