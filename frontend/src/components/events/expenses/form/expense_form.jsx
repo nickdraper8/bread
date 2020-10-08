@@ -35,7 +35,10 @@ class ExpenseForm extends React.Component {
                 event_id: this.props.eventId,
                 payer_id: this.props.currentUserId
             };
-            this.props.createExpense(expense);
+            this.setState({ description: '', amount: '' }, () => {
+                this.props.createExpense(expense);
+            });
+            
         }
     }
 
@@ -52,11 +55,11 @@ class ExpenseForm extends React.Component {
             <div id="expense-form-container">
                 <div id="expense-form-title">Add New Expense</div>
                 <form>
-                    <input type="text" placeholder="Expense Description" onChange={this.handleChange("description")}/>
+                    <input type="text" placeholder="Expense Description" value={this.state.description} onChange={this.handleChange("description")}/>
                     <label>Expense Cost</label>
                     <div id="cost-input-container">
                         <div>$</div>
-                        <input type="number" step="0.01" min="0" onChange={this.handleChange("amount")}/>
+                        <input type="number" step="0.01" min="0" value={this.state.amount} onChange={this.handleChange("amount")}/>
                         <div>dollars</div>
                     </div>
                     <button type="button" onClick={this.handleSubmit}>Add Expense</button>

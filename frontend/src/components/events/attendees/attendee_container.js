@@ -4,7 +4,7 @@ import Attendee from "./attendee";
 const mSTP = (state, ownProps) => {
     return({
         attendee: ownProps.attendee,
-        expenses: state.expenses
+        expenses: state.entities.expenses
     });
 };
 

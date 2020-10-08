@@ -62,23 +62,44 @@ router.delete("/:eventId", (req, res) => {
 });
 
 router.get("/:id/expenses", (req, res) => {
-  debugger
-  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date")
+  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date payer_id")
     .then((events) => {
       return res.json(events);
     });
 });
 
 router.get("/:id/attendees", (req, res) => {
-  Event.findById(req.params.id).then((event) => {
-    const attendees = event._doc.attendees;
-
-    User.find({ _id: { $in: attendees } })
-      .select("_id username firstname lastname phone email")
-      .then((users) => {
-        return res.json(users);
-      });
+    Event.findById(req.params.id).then(event => {
+      const attendees = event._doc.attendees;
+  
+      User.find({ _id: { $in: attendees } })
+        .select("_id username firstname lastname phone email")
+        .then((users) => {
+          return res.json(users);
+        });
+    })
   });
+
+router.get("/:id/total", (req, res) => {
+
+  Expense.find( {event_id : {$in : req.params.id}})
+  .then( expense => {
+
+    const total = [];
+    expense.forEach(expense => {
+      total.unshift(expense.amount)
+    })
+
+    // debugger
+
+    sum = 0;
+    total.forEach(decimal => {
+      sum += JSON.parse(decimal)
+    })
+    
+    res.json(sum);
+  })
+
 });
 
 module.exports = router;
