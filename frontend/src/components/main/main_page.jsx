@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import beach from "../../images/main-splash-image.jpeg";
 
 class MainPage extends React.Component {
+ 
   render() {
     return (
       <div>

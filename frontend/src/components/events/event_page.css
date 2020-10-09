@@ -5,10 +5,16 @@
     justify-content: center;
     align-items: center;
     background-color: #fcf7f4;
-    border-radius: 30px;
-    padding-bottom: 150px;
+    padding-bottom: 4%;
     box-shadow: 1px 10px 15px #d6d6d6;
 }
+
+.event-page-title-container {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4vh;
 
 #results-list-title {
     font-size: 22px;
@@ -23,6 +29,7 @@
 }
 
 #event-page-title {
+    color: white;
     font-size: 36px;
     margin: 10px 0px;
 }
@@ -38,15 +45,16 @@
     background: white;
     border-radius: 20px;
     width: 55%;
+    box-shadow: 1px 10px 15px #d6d6d6;
 }
 
 #event-info-container {
     padding: 20px;
     background: white;
     border-radius: 20px;
-    width: 75%;
-    margin: auto;
-    margin-bottom: 40px;
+    width: 30%;
+    height: 45%;
+    box-shadow: 1px 10px 15px #d6d6d6;
 }
 
 #event-page-footer {
