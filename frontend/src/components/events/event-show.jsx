@@ -19,7 +19,7 @@ class EventShow extends React.Component {
         <ul className="event-show-attendees">{users}</ul>
         <div className="event-show-link-to-home"><Link to={`/home/`}>Back To Home</Link></div>
       </div>
-    );
+    )
   }
 }
 
