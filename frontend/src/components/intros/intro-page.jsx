@@ -75,10 +75,12 @@ class IntroPage extends React.Component {
               <div className="intro-text-information">
                 <a href={"https://www.linkedin.com/in/nicholas-draper/"}>
                   Nick Draper
-                  <span className="intro-bio">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris condimentum porta maximus. Vivamus lacus nunc,
-                    vestibulum vel elementum ac, suscipit in lorem.
+                  <span class="intro-bio">
+                    A former technical recruiter, Nick is now a full stack software engineer 
+                      looking to take his talents into the market. Nick is proficient in many 
+                      technologies including JavaScript, Ruby, Rails, React, Redux, as well as 
+                      Node.js and Express. He is excited for the future, and is always excited 
+                      for a challenge.
                   </span>
                 </a>
               </div>

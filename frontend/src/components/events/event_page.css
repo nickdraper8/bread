@@ -54,6 +54,7 @@
     border-radius: 20px;
     width: 55%;
     box-shadow: 1px 10px 15px #d6d6d6;
+    margin-right: 30px;
 }
 
 #event-info-container {
@@ -65,6 +66,10 @@
     box-shadow: 1px 10px 15px #d6d6d6;
     margin: 0px auto;
     margin-bottom: 30px;
+}
+
+#event-right-side-container {
+    margin-right: 40px;
 }
 
 #event-page-footer {

@@ -16,21 +16,7 @@ router.get('/search', (req, res) => {
             .find({ username: { $regex: `${req.query.bounds}`, $options: "gi" } })
             .then(users => res.json(users))
             .catch(err => res.status(400).json(err));
-        
-        
-        // , function (err, allUsers) {
-        //     if (err) {
-        //         console.log(err);
-        //     } else {
-        //         let userMap = {};
-        //         debugger
-        //         allUsers.forEach(function (user) {
-        //           userMap[user._id] = user._doc;
-        //         });
-        //         debugger
-        //         res.send(userMap);
-        //     }
-        // });
+  
     } else {
         // grab all users from db
 
@@ -38,19 +24,7 @@ router.get('/search', (req, res) => {
             .find()
             .then(users => res.json(users))
             .catch(err => res.status(400).json(err));
-            // function(err, allUsers){
-        //     if(err){ 
-        //         console.log(err);
-        //     }else{
-        //         let userMap = {};
-        //         debugger;
-        //         allUsers.forEach(function (user) {
-        //           userMap[user._id] = user._doc;
-        //         });
-        //         debugger;
-        //         res.send(userMap);
-        //     }
-        // });
+
     }
 
 });
