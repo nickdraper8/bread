@@ -13,7 +13,7 @@
 }
 
 .home-page-app-instructions {
-   padding: 50px 32px 50px 32px; 
+   padding: 50px 32px 50px 32px;
 }
 
 .right-user-home-container {
@@ -45,12 +45,3 @@
 #outer-bread-logo {
     color: #FCF7F4;
 }
-
-/* #inner-bread-logo {
-    color: black;
-    position: absolute;
-    height: 4px;
-    width: 4px;
-    top: 3%;
-    left: 3%;
-} */

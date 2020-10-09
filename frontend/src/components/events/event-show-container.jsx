@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   fetchEvent: (eventId) => dispatch(fetchEvent(eventId)),
   fetchUsersViaEvent: (eventId) => dispatch(fetchUsersViaEvent(eventId)),
-  
 });
 
 export default withRouter(connect(mSTP, mDTP)(EventShow));
