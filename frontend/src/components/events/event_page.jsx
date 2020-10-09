@@ -28,7 +28,7 @@ class EventPage extends React.Component {
                 return <AttendeeResult key={attendee._id} attendee={attendee} expenses={this.props.expenses} avg={eachOwe} />
             });
             attendeesResultList.unshift(
-                <div id="results-list-title">Summary</div>
+                <div key={this.props.eventId} id="results-list-title">Summary</div>
             )
             return (
                 <div className="user-home-container">
