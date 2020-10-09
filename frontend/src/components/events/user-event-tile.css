@@ -37,6 +37,7 @@
 
 .event-show-page-container:hover {
     background-color: #87D08B;
+     cursor: pointer;
 }
 
 /* .user-event-tile:hover {

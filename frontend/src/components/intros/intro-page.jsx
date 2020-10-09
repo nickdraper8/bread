@@ -36,6 +36,9 @@ class IntroPage extends React.Component {
             <Link to="/intros" className="internal-nav-user-intros-button">
               Intros
             </Link>
+            <Link to="/dinner" className="internal-nav-user-dinner-button">
+              Dinner? (BETA)
+            </Link>
             <button
               onClick={this.logoutUser}
               className="user-home-logout-button"
@@ -81,11 +84,7 @@ class IntroPage extends React.Component {
               </div>
             </div>
             <div className="JR-information-container">
-              <img
-                src={jr}
-                className="intro-head-shot-pic"
-                alt="jr-pic"
-              />{" "}
+              <img src={jr} className="intro-head-shot-pic" alt="jr-pic" />{" "}
               <div className="intro-text-information">
                 <a
                   className="nav-bar-link"
@@ -102,8 +101,7 @@ class IntroPage extends React.Component {
               </div>
             </div>
             <div className="Rav-information-container">
-              <img src={rav} className="intro-head-shot-pic" 
-              alt="rav-pic"/>{" "}
+              <img src={rav} className="intro-head-shot-pic" alt="rav-pic" />{" "}
               <div className="intro-text-information">
                 <a
                   className="nav-bar-link"
@@ -112,9 +110,11 @@ class IntroPage extends React.Component {
                 >
                   Rav Singh
                   <span class="intro-bio">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris condimentum porta maximus. Vivamus lacus nunc,
-                    vestibulum vel elementum ac, suscipit in lorem.
+                    A former medical research scientist, with a background in
+                    neurodegenerative disorders of animals emphasiving motor
+                    behavior. Rav is now a creative software engineer trained in
+                    React/Redux, Javascript, Ruby On Rails, Express, MongoDB and
+                    SQL.
                   </span>
                 </a>
               </div>

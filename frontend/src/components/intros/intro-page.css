@@ -73,7 +73,7 @@
 }
 
 .intro-bio {
-    display: none;
+    height: 0px;
 }
 
 .nick-information-container {
@@ -97,6 +97,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 14px;
+}
+
+.intro-bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 0;
+    transition: 1s;
 }
 
 .JR-information-container {
