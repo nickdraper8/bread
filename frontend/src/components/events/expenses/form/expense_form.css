@@ -10,26 +10,58 @@
 #expense-form-container form {
     display: flex;
     flex-direction: column;
+    
 }
 
 #cost-input-container {
     display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 #expense-form-container form input {
-
+    margin: 5px 0px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px gray solid;
 }
 
 #expense-form-container form label {
-
+    margin-top: 12px;
 }
 
 #expense-form-container form button {
-
+    margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: #ffffff00;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 3px solid black;
+    font-size: 15px;
+    transition: .5s;
 }
 
-#expense-form-errors {
+#expense-form-container form button:hover {
+    background-color: black;
+    color: white;
+}
 
+#expense-form-container form button:focus {
+    outline: none
+}
+
+#expense-form-container form button:active {
+    letter-spacing: 4px;
+}
+
+
+
+#expense-form-errors {
+    color: red;
 }
 
 

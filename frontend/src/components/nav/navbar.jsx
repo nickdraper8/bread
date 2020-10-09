@@ -17,8 +17,15 @@ class InternalNavbar extends React.Component {
   render() {
     return (
       <div className="internal-nav-bar-container">
-        <Link to="/home" className="internal-nav-user-home-button">Home</Link>
-        <Link to="/newevent" className="internal-nav-user-create-button">Create Event</Link>
+        <Link to="/home" className="internal-nav-user-home-button">
+          Home
+        </Link>
+        <Link to="/newevent" className="internal-nav-user-create-button">
+          Create Event
+        </Link>
+        <Link to="/intros" className="internal-nav-user-create-button">
+          Intros
+        </Link>
         <button onClick={this.logoutUser} className="user-home-logout-button">
           Log out
         </button>

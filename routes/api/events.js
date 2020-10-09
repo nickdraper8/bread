@@ -1,15 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const Event = require("../../models/Event"); //don't see this on my folder
-const validateEventInput = require("../../validation/event");
+const Event = require("../../models/Event");
+const mongoose = require("mongoose");
+const Expense = require("../../models/Expense");
+
 
 router.post("/new", (req, res) => {
-  // const { errors, isValid } = validateEventInput(req.body);
-  
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
-  
+
   const newEvent = new Event(
     {
     name: req.body.name,
@@ -35,7 +32,7 @@ router.get("/:id", (req, res) => {
     );
 });
 
-router.post("/edit/:id", (req, res) => { //check logic
+router.post("/edit/:id", (req, res) => {
   Event.findById(req.params.id).then((event) => {
     event.name =
       req.body.name === "" ? event.name : req.body.name;
@@ -49,7 +46,7 @@ router.post("/edit/:id", (req, res) => { //check logic
   });
 });
 
-router.delete("/delete/:eventId", (req, res) => {
+router.delete("/:eventId", (req, res) => {
   Event.findByIdAndRemove(req.params.eventId) //check this line
     .then((events) => {
       if (!events) {
@@ -64,24 +61,45 @@ router.delete("/delete/:eventId", (req, res) => {
     });
 });
 
-router.get("/:id/expense", (req, res) => {
-  Event.find({ id: mongoose.ObjectId(req.params.id) })
-    .select("name")
+router.get("/:id/expenses", (req, res) => {
+  Expense.find({ event_id: { $in: req.params.id } }).select("description amount date payer_id")
     .then((events) => {
       return res.json(events);
     });
 });
 
 router.get("/:id/attendees", (req, res) => {
-  Event.findById(req.params.id).then((event) => {
-    const attendees = event._doc.attendees;
-
-    User.find({ _id: { $in: attendees } })
-      .select("_id username firstname lastname phone email")
-      .then((users) => {
-        return res.json(users);
-      });
+    Event.findById(req.params.id).then(event => {
+      const attendees = event._doc.attendees;
+  
+      User.find({ _id: { $in: attendees } })
+        .select("_id username firstname lastname phone email")
+        .then((users) => {
+          return res.json(users);
+        });
+    })
   });
+
+router.get("/:id/total", (req, res) => {
+
+  Expense.find( {event_id : {$in : req.params.id}})
+  .then( expense => {
+
+    const total = [];
+    expense.forEach(expense => {
+      total.unshift(expense.amount)
+    })
+
+    // debugger
+
+    sum = 0;
+    total.forEach(decimal => {
+      sum += JSON.parse(decimal)
+    })
+    
+    res.json(sum);
+  })
+
 });
 
 module.exports = router;

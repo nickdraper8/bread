@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class EventShow extends React.Component {
   constructor(props){
@@ -12,12 +12,10 @@ class EventShow extends React.Component {
   }
 
   render() {
-    const { event, users } = this.props;
+    const { event } = this.props;
     return (
       <div className="event-show-page-container" onClick={this.handleRedirect}>
         <div className="event-show-page-title">{event.name}</div>
-        <ul className="event-show-attendees">{users}</ul>
-        <div className="event-show-link-to-home"><Link to={`/home/`}>Back To Home</Link></div>
       </div>
     )
   }

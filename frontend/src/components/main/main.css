@@ -16,7 +16,7 @@ body {
     padding: 50px;
     width: 65%;
     font-family: Moret-Semibold;
-    font-size: 44px;
+    font-size: 5vh;
     font-weight: 100px;
     color: black;
     position: absolute;
@@ -65,23 +65,6 @@ body {
     height: 40px;
     background-color:black;
     color: white
-}
-
-.use-case-tile-group {
-    font-size: 40px;
-    width: 400px;
-    height: 400px;
-    background-color: #FFB7D5;
-    color: #052EF1;
-    text-align: center;
-}
-
-.use-case-tile-work {
-width: 400px;
-    height: 400px;
-    background-color: #052EF1;
-    color: #BBFFB9;
-    text-align: center;
 }
 
 /* .use-case-tile-dinner {

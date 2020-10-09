@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchExpenses = (eventId) => {
-  return axios.get(`/api/users/${eventId}/expenses`);
+  return axios.get(`/api/events/${eventId}/expenses`);
 };
 
 export const fetchExpense = (expenseId) => {

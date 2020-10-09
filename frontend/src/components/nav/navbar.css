@@ -1,13 +1,18 @@
 .internal-nav-bar-container {
     width: 100%;
+    height: 100px;
     display: flex;
     position: fixed;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color:  #FCF7F4;   
+    background-color:  #F5F1EB;  
     border-radius: 30px 0px 0px 0px;
     z-index: 1;
+}
+
+.internal-nav-user-home-button {
+    padding-left: 30px;
 }
 
 .internal-nav-bar-container a {
@@ -15,30 +20,38 @@
     font-weight: bold;
     padding: 10px;
     transition: .5s;
-    margin: 30px;
-    color: #052EF1;
-    border-radius: 25px;
-
+    margin-left: 0px;
+    color: #87D08B;
+    padding: 40px 60px 35px 60px;
+    border-radius: 30px 30px 0px 0px;
 }
+
 .internal-nav-bar-container a:hover {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: 0px;
+    background-color: #FCF7F4;
     color: black;
-    background-color: #eee5df;
+    padding: 40px 60px 35px 60px;
+    border-radius: 30px 30px 0px 0px;
 }
 
 
 .user-home-logout-button {
     font-family: Futura;
-    border-radius: 10px;
-    background-color: black;
-    color:white;
+    color:black;
     font-size: 14px;
     padding: 6px;
     position: fixed;
     right: 2%;
     border: 0;
     transition: .5s;
+    background-color: #F5F1EB;
 }
 .user-home-logout-button:hover {
-    background-color: #052EF1;
+    border: 0;
+    background-color: black;
     color: white;
+    cursor: pointer;
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import beach from "../../images/main-splash-image.jpeg";
 
 class MainPage extends React.Component {
+ 
   render() {
     return (
       <div>
@@ -16,7 +17,7 @@ class MainPage extends React.Component {
         </div>
         <div className="main-page-containter">
           <div className="bread-splash-subtitle">
-            Revolutionize the way you split shared expenses with friends. Social
+            revolutionize the way you split shared expenses with friends. social
             financial awkwardness is now a thing of the past.
           </div>
           <div className="splash-sign-up-button">

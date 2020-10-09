@@ -125,19 +125,6 @@ router.delete('/:id', (req, res) => {
 });
 
 
-//router.get('/attendees', function (req, res) {
-//    User.find({}, function (err, users) {
-//        var userMap = {};
-//
-//        users.forEach(function (user) {
-//            userMap[user_ids] = user;
-//        });
-//
-//        res.send(userMap);
-//    });
-//});
-
-
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
         id: req.user.id,
@@ -148,7 +135,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 
 router.get("/:id/events", (req, res) => {
-    Event.find({ id: mongoose.ObjectId(req.params.id) })
+    Event.find({ attendees: { $in: req.params.id } })
     .select("name")
     .then((events) => {
       return res.json(events);
