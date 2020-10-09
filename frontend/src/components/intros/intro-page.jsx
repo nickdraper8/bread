@@ -36,6 +36,9 @@ class IntroPage extends React.Component {
             <Link to="/intros" className="internal-nav-user-intros-button">
               Intros
             </Link>
+            <Link to="/dinner" className="internal-nav-user-dinner-button">
+              Dinner? (BETA)
+            </Link>
             <button
               onClick={this.logoutUser}
               className="user-home-logout-button"
@@ -53,12 +56,12 @@ class IntroPage extends React.Component {
               <div className="intro-text-information">
                 <a href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}>
                   Drew Shroyer
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     a creative software engineer trained in React/Redux,
                     Javascript, Ruby On Rails. Drew graduated from the Stern
                     School of Business at NYU and has experience in creative
                     direction /marketing for companies like Equinox, Ceros, and
-                    Microsoft.{" "}
+                    Microsoft.
                   </span>
                 </a>
               </div>
@@ -83,11 +86,7 @@ class IntroPage extends React.Component {
               </div>
             </div>
             <div className="JR-information-container">
-              <img
-                src={jr}
-                className="intro-head-shot-pic"
-                alt="jr-pic"
-              />{" "}
+              <img src={jr} className="intro-head-shot-pic" alt="jr-pic" />{" "}
               <div className="intro-text-information">
                 <a
                   className="nav-bar-link"
@@ -95,17 +94,16 @@ class IntroPage extends React.Component {
                   href={"https://www.linkedin.com/in/jrmcc/"}
                 >
                   JR McCann
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     New York based fullstack software engineer skilled in Ruby,
                     Javascript, Ruby on Rails, SQL, MongoDB/Mongoose, CSS/HTML,
-                    Python, and React/Redux
+                    Python, and React/Redux.
                   </span>
                 </a>
               </div>
             </div>
             <div className="Rav-information-container">
-              <img src={rav} className="intro-head-shot-pic" 
-              alt="rav-pic"/>{" "}
+              <img src={rav} className="intro-head-shot-pic" alt="rav-pic" />{" "}
               <div className="intro-text-information">
                 <a
                   className="nav-bar-link"
@@ -113,13 +111,12 @@ class IntroPage extends React.Component {
                   href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
                 >
                   Rav Singh
-                  <span class="intro-bio">
-                    A former medical research scientist, who has a background is
-                     in studying animal models of neurodegenerative disorders with 
-                     an emphasis on motor behavior and a background in studying 
-                     self-assembly of Amyloid b & a- synuclein. Now a creative 
-                     software engineer trained in React/Redux, Javascript, Ruby On Rails, 
-                     Express, MongoDB and SQL.
+                  <span className="intro-bio">
+                    A former medical research scientist, with a background in
+                    neurodegenerative disorders of animals emphasiving motor
+                    behavior. Rav is now a creative software engineer trained in
+                    React/Redux, Javascript, Ruby On Rails, Express, MongoDB and
+                    SQL.
                   </span>
                 </a>
               </div>

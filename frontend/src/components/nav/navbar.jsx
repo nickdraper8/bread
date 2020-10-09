@@ -26,6 +26,9 @@ class InternalNavbar extends React.Component {
         <Link to="/intros" className="internal-nav-user-create-button">
           Intros
         </Link>
+        <Link to="/dinner" className="internal-nav-user-dinner-button">
+          Dinner? (BETA)
+        </Link>
         <button onClick={this.logoutUser} className="user-home-logout-button">
           Log out
         </button>

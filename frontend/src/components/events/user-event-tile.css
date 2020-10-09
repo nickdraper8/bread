@@ -21,8 +21,11 @@
     color: black;
 }
 .event-show-page-container {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 24px;
-    position: relative; 
+    position: relative;
     width: 25%;
     height: 258px;
     background-color: #F5F1EB;
