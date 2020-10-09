@@ -15,6 +15,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 4vh;
+
+#results-list-title {
+    font-size: 22px;
+    border-bottom: 3px black solid;
 }
 
 #expense-list-title {
