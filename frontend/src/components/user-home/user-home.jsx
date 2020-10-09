@@ -12,7 +12,14 @@ class UserHome extends React.Component {
     return (
       <div className="user-home-container">
         <div className="left-user-home-container">
-          <Link to="/home" className="user-home-internal-title">BREAD</Link>
+          <Link to="/home" className="user-home-internal-title">
+            BREAD
+          </Link>
+          <div className="home-page-app-instructions">
+            Welcome to Bread - Revolutionize the way you split shared expenses with friends. Social
+            financial awkwardness is now a thing of the past. Evenly distribute exepenses for group trips, dinner, work events and more. 
+            Start by creating an event under "Create Event" and then add expenses within the tiles on the home page. 
+          </div>
         </div>
         <div className="right-user-home-container">
           <InternalNavbarContainer />

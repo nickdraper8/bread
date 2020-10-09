@@ -56,12 +56,12 @@ class IntroPage extends React.Component {
               <div className="intro-text-information">
                 <a href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}>
                   Drew Shroyer
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     a creative software engineer trained in React/Redux,
                     Javascript, Ruby On Rails. Drew graduated from the Stern
                     School of Business at NYU and has experience in creative
                     direction /marketing for companies like Equinox, Ceros, and
-                    Microsoft.{" "}
+                    Microsoft.
                   </span>
                 </a>
               </div>
@@ -75,7 +75,7 @@ class IntroPage extends React.Component {
               <div className="intro-text-information">
                 <a href={"https://www.linkedin.com/in/nicholas-draper/"}>
                   Nick Draper
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris condimentum porta maximus. Vivamus lacus nunc,
                     vestibulum vel elementum ac, suscipit in lorem.
@@ -92,10 +92,10 @@ class IntroPage extends React.Component {
                   href={"https://www.linkedin.com/in/jrmcc/"}
                 >
                   JR McCann
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     New York based fullstack software engineer skilled in Ruby,
                     Javascript, Ruby on Rails, SQL, MongoDB/Mongoose, CSS/HTML,
-                    Python, and React/Redux
+                    Python, and React/Redux.
                   </span>
                 </a>
               </div>
@@ -109,7 +109,7 @@ class IntroPage extends React.Component {
                   href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
                 >
                   Rav Singh
-                  <span class="intro-bio">
+                  <span className="intro-bio">
                     A former medical research scientist, with a background in
                     neurodegenerative disorders of animals emphasiving motor
                     behavior. Rav is now a creative software engineer trained in

@@ -1,9 +1,24 @@
 .event-show-page-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+
+.event-details-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 14px;
+    padding: 5px;
+    border-bottom: 2px solid black;
+    transition: .5s;
+}
+
+.event-details-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .event-show-page-title {
