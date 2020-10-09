@@ -31,4 +31,5 @@
 #expense-item-container button:hover {
     color: rgb(55, 55, 55);
     background-color: rgb(227, 227, 227);
+    cursor: pointer;
 }
