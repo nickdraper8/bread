@@ -26,9 +26,10 @@
 }
 
 .user-search-results-container .user-search-result-item {
-    padding: 0px 5px 0px 5px;
+    align-content: flex-end;
+    padding: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
