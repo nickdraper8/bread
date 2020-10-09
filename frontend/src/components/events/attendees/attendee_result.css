@@ -1,0 +1,20 @@
+#attendees-result-list-container {
+
+}
+
+#attendee-result-container {
+
+}
+
+
+#attendee-result-item {
+    margin: 20px 0px;
+}
+
+#owes-money {
+    color: #FE4318
+}
+
+#is-owed-money {
+    color: #1A9666
+}

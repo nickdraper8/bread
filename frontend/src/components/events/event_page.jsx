@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import InternalNavbarContainer from "../nav/navbar_container";
 import AttendeeContainer from "./attendees/attendee_container";
+import AttendeeResult from "./attendees/attendee_result";
 import ExpenseFormContainer from "./expenses/form/expense_form_container";
 import "./event_page.css";
 
@@ -14,12 +15,6 @@ class EventPage extends React.Component {
         this.props.fetchExpenses(this.props.eventId);
     }
 
-    // componentDidUpdate() {
-    //     if (Object.values(this.props.attendees).length < 1) {
-            
-    //     }
-    // }
-
     render() {
         if (!this.props.event) {
             return null;
@@ -29,12 +24,22 @@ class EventPage extends React.Component {
                 return <AttendeeContainer key={attendee._id} attendee={attendee}/>
             });
 
+            
             let totalExpenses = 0;
             Object.values(this.props.expenses).forEach(expense => {
                 totalExpenses += parseFloat(expense.amount.$numberDecimal);
             });
-
+            
             totalExpenses = Math.round(totalExpenses * 100) / 100;
+            let eachOwe = (totalExpenses / Object.values(this.props.attendees).length);
+            
+            let attendeesResultList = Object.values(this.props.attendees).map(attendee => {
+                return <AttendeeResult key={attendee._id} attendee={attendee} expenses={this.props.expenses} avg={eachOwe} />
+            });
+
+            attendeesResultList.unshift(
+                <div id="results-list-title">Summary</div>
+            )
 
             return(
                 <div className="user-home-container">
@@ -55,9 +60,12 @@ class EventPage extends React.Component {
                                 </div>
                                     <div id="expense-list">{attendeesList}</div>
                             </div>
-                            <div id="event-info-container">
-                                <ExpenseFormContainer eventId={this.props.eventId} />
-                            </div>
+                            <div id="event-right-side-container">
+                                <div id="event-info-container">
+                                    <ExpenseFormContainer eventId={this.props.eventId} />
+                                </div>
+                                <div id="event-info-container">{attendeesResultList}</div>
+                           </div>
                         </div>
                         {/* <div id="event-page-footer">
                             <div id="event-page-btns">
