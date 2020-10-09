@@ -87,3 +87,31 @@
 #total-expenses {
     
 }
+
+.delete-event-btn {
+    margin-top: 30px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: #ffffff00;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 3px solid black;
+    font-size: 15px;
+    transition: .5s;
+}
+
+.delete-event-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.delete-event-btn:focus {
+    outline: none
+}
+
+.delete-event-btn:active {
+    letter-spacing: 4px;
+}

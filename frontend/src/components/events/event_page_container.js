@@ -20,7 +20,7 @@ const mDTP = dispatch => {
         editEvent: event => dispatch(editEvent(event)),
         deleteEvent: eventId => dispatch(deleteEvent(eventId)),
         fetchEvent: eventId => dispatch(fetchEvent(eventId)),
-        fetchExpenses: eventId => dispatch(fetchExpenses(eventId))
+        fetchExpenses: eventId => dispatch(fetchExpenses(eventId)),
     });
 };
 
