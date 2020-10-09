@@ -3,9 +3,9 @@ import UserSearchContainer from "../search/user_search_container";
 import InternalNavbarContainer from "../nav/navbar_container";
 import { Link } from "react-router-dom";
 import "./dinner-home.css";
-import ExpenseFormContainer from "../events/expenses/expense_item_container";
-import AttendeeContainer from "../events/attendees/attendee_container";
-import AttendeeResult from "../events/attendees/attendee_result";
+// import ExpenseFormContainer from "../events/expenses/expense_item_container";
+// import AttendeeContainer from "../events/attendees/attendee_container";
+// import AttendeeResult from "../events/attendees/attendee_result";
 
 class DinnerHome extends React.Component {
   constructor(props) {

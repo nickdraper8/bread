@@ -6,11 +6,23 @@ import AttendeeResult from "./attendees/attendee_result";
 import ExpenseFormContainer from "./expenses/form/expense_form_container";
 import "./event_page.css";
 class EventPage extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchEvent(this.props.eventId);
         this.props.fetchUsersViaEvent(this.props.eventId);
         this.props.fetchExpenses(this.props.eventId);
     }
+
+    handleDelete() {
+        this.props.deleteEvent(this.props.eventId);
+        this.props.history.push('/home');
+    }
+
     render() {
         if (!this.props.event) {
             return null;
@@ -56,15 +68,7 @@ class EventPage extends React.Component {
                                     <div id="event-info-container">{attendeesResultList}</div>
                                 </div>
                             </div>
-                            {/* <div id="event-page-footer">
-                            <div id="event-page-btns">
-                                <button type="button">Add Expense</button>
-                                <button type="button">Close Event</button>
-                            </div>
-                            <div id="total-expenses">
-                                $ 520.40
-                            </div>
-                        </div> */}
+                            <button type="button" className="delete-event-btn" onClick={this.handleDelete} >DELETE EVENT</button>
                         </div>
                     </div>
                 </div>

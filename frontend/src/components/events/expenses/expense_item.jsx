@@ -22,7 +22,7 @@ class ExpenseItem extends React.Component {
                     </div>
                     <div>
                         ${parseFloat(this.props.expense.amount.$numberDecimal)}
-                        <button onClick={this.handleDelete} ><i class="fas fa-trash"></i></button>
+                        <button onClick={this.handleDelete} ><i className="fas fa-trash"></i></button>
                     </div>
                 </div>
             )
