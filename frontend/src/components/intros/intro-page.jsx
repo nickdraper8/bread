@@ -114,9 +114,12 @@ class IntroPage extends React.Component {
                 >
                   Rav Singh
                   <span class="intro-bio">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris condimentum porta maximus. Vivamus lacus nunc,
-                    vestibulum vel elementum ac, suscipit in lorem.
+                    A former medical research scientist, who has a background is
+                     in studying animal models of neurodegenerative disorders with 
+                     an emphasis on motor behavior and a background in studying 
+                     self-assembly of Amyloid b & a- synuclein. Now a creative 
+                     software engineer trained in React/Redux, Javascript, Ruby On Rails, 
+                     Express, MongoDB and SQL.
                   </span>
                 </a>
               </div>
