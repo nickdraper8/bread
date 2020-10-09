@@ -16,7 +16,6 @@ class EventShow extends React.Component {
     return (
       <div className="event-show-page-container" onClick={this.handleRedirect}>
         <div className="event-show-page-title">{event.name}</div>
-        <ul className="event-show-attendees">{users}</ul>
       </div>
     );
   }

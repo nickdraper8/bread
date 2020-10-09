@@ -36,30 +36,32 @@ class EventPage extends React.Component {
 
             totalExpenses = Math.round(totalExpenses * 100) / 100;
 
-            return(
-                <div className="user-home-container">
-                    <div className="left-user-home-container">
-                    <Link to="/home" className="user-home-internal-title">BREAD</Link>
+            return (
+              <div className="user-home-container">
+                <div className="left-user-home-container">
+                  <Link to="/home" className="user-home-internal-title">
+                    BREAD
+                  </Link>
+                </div>
+                <div className="right-user-home-container">
+                  <InternalNavbarContainer />
+                  <div id="event-page-container">
+                    <div className="event-page-title-container">
+                      <div id="event-page-title">{this.props.event.name}</div>
                     </div>
-                    <div className="right-user-home-container">
-                    <InternalNavbarContainer />
-                    <div id="event-page-container">
-                        <div id="event-page-title">
-                            {this.props.event.name}
+                    <div id="event-page-details">
+                      <div id="expense-list-container">
+                        <div id="expense-list-title">
+                          <div>Expense List</div>
+                          <div>${totalExpenses}</div>
                         </div>
-                        <div id="event-page-details">
-                            <div id="expense-list-container">
-                                <div id="expense-list-title">
-                                    <div>Expense List</div>
-                                    <div>${totalExpenses}</div>
-                                </div>
-                                    <div id="expense-list">{attendeesList}</div>
-                            </div>
-                            <div id="event-info-container">
-                                <ExpenseFormContainer eventId={this.props.eventId} />
-                            </div>
-                        </div>
-                        {/* <div id="event-page-footer">
+                        <div id="expense-list">{attendeesList}</div>
+                      </div>
+                      <div id="event-info-container">
+                        <ExpenseFormContainer eventId={this.props.eventId} />
+                      </div>
+                    </div>
+                    {/* <div id="event-page-footer">
                             <div id="event-page-btns">
                                 <button type="button">Add Expense</button>
                                 <button type="button">Close Event</button>
@@ -68,9 +70,9 @@ class EventPage extends React.Component {
                                 $ 520.40
                             </div>
                         </div> */}
-                    </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
             );
         }
     }
