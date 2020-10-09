@@ -12,6 +12,7 @@ import UserHome from "./user-home/user-home";
 import IntroPage from "./intros/intro-page"
 import EventPageContainer from "./events/event_page_container";
 import EventFormContainer from "./events/event_form_container";
+import DinnerPageContainer from "./dinner/dinner-home-container";
 
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
         component={EventPageContainer}
       />
       <ProtectedRoute exact path="/newevent" component={EventFormContainer} />
+      <ProtectedRoute exact path="/dinner" component={DinnerPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
