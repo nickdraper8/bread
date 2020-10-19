@@ -79,3 +79,8 @@
     padding-bottom: 39px;
     font-family: futura;
 }
+
+.description{
+    margin-left: 20px;
+    border-radius:  0px 0px 0px 50px;
+}

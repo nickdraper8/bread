@@ -17,6 +17,10 @@ const EventSchema = new Schema({
   created_at: {
     type: Date,
     default: Date.now
+  },
+  description: {
+    type: String,
+    default: "double click to add a description"
   }
 });
 
