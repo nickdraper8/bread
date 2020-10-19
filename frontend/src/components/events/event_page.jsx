@@ -5,11 +5,20 @@ import AttendeeContainer from "./attendees/attendee_container";
 import AttendeeResult from "./attendees/attendee_result";
 import ExpenseFormContainer from "./expenses/form/expense_form_container";
 import "./event_page.css";
+
 class EventPage extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            editMode : false,
+            description: ''
+        }
+
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.changeEdit = this.changeEdit.bind(this);
+        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     }
 
     componentDidMount() {
@@ -18,9 +27,46 @@ class EventPage extends React.Component {
         this.props.fetchExpenses(this.props.eventId);
     }
 
+
+    handleDescriptionChange(e){
+        this.setState({description: e.target.value})
+    }
+
+    handleEdit(e) {
+
+        const newEvent = Object.assign({}, this.props.event)
+        newEvent.description = this.state.description;
+
+        this.setState(  
+            { editMode : false},
+            () => this.props.editEvent(newEvent)
+        )
+    }
+
+    changeEdit() {
+        this.setState({
+            editMode : !this.state.editMode
+        })
+    }
+
     handleDelete() {
         this.props.deleteEvent(this.props.eventId);
         this.props.history.push('/home');
+    }
+
+    editViewer() {
+        return( 
+            <div>
+                <input
+                type='text'
+                onChange={this.handleDescriptionChange}
+                value={this.state.description}
+                />
+                <button onClick={this.changeEdit}>Cancel</button>
+                <button onClick={this.handleEdit}>Edit</button>
+
+            </div>
+        )
     }
 
     render() {
@@ -53,6 +99,11 @@ class EventPage extends React.Component {
                             <div id="event-page-title">
                                 {this.props.event.name}
                             </div>
+                               <div className='description-banner' onDoubleClick={this.changeEdit}>
+                                   {this.state.editMode ?  this.editViewer() : this.props.event.description }
+                                  
+
+                                   </div> 
                             <div id="event-page-details">
                                 <div id="expense-list-container">
                                     <div id="expense-list-title">

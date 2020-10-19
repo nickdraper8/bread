@@ -115,3 +115,7 @@
 .delete-event-btn:active {
     letter-spacing: 4px;
 }
+
+.description-banner{
+    font-size: 16px;
+}

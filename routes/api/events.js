@@ -11,6 +11,7 @@ router.post("/new", (req, res) => {
     {
     name: req.body.name,
     attendees: req.body.attendees,
+    description: req.body.description
   });
 
   newEvent.save().then((event) => res.json(event));
@@ -32,8 +33,10 @@ router.get("/:id", (req, res) => {
     );
 });
 
-router.post("/edit/:id", (req, res) => {
+router.patch("/edit/:id", (req, res) => {
   Event.findById(req.params.id).then((event) => {
+    event.description = 
+      req.body.description === '' ? event.description : req.body.description
     event.name =
       req.body.name === "" ? event.name : req.body.name;
     event.attendees =
