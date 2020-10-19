@@ -1,14 +1,13 @@
 import React from "react";
-
 import "./main.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import beach from "../../images/main-splash-image.jpeg";
 
 class MainPage extends React.Component {
  
   render() {
     return (
-      <div>
+      <div >
         <div className="login-signup-temp-nav-bar">
           <div className="login-signup-bread-title-logo">BREAD</div>
           <div className="login-signup-bread-nav-buttons">
@@ -25,7 +24,102 @@ class MainPage extends React.Component {
           </div>
           <img className="beach-pic-background" src={beach} alt="" />
         </div>
-      </div>
+            <div className="footer-container">
+              <div className="footer-inner-container">
+                <div className="footer-more-inner-container">
+              <div className="footer-bread-title-logo">created by:</div>
+                  <div className="footer-left-column">
+                    <div className="footer-links">
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                        className="footer-link"
+                        id="grey-footer">
+                        Drew Shroyer
+                      </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                        className="footer-link">
+                        About
+                </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                    className="footer-link" >
+                        LinkedIn
+                </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                        className="footer-link">
+                       Github
+                </a>
+                    </div>
+                  </div>
+                  <div className="footer-center-column">
+                    <div className="footer-links">
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link"
+                    id="grey-footer">
+                    Nick Draper
+                      </a>
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link">
+                    About
+                </a>
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link" >
+                    LinkedIn
+                </a>
+                  <a href="https://github.com/nickdraper8"
+                    className="footer-link">
+                    Github
+                </a>
+                    </div>
+                  </div>
+              <div className="footer-right-column">
+                <div className="footer-links">
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link"
+                    id="grey-footer">
+                    J.R. McCann
+                      </a>
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link">
+                    About
+                </a>
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link" >
+                    LinkedIn
+                </a>
+                  <a href="https://github.com/johnrobertmcc"
+                    className="footer-link">
+                    Github
+                </a>
+                    </div>
+                  </div>
+              <div className="footer-final-column">
+                <div className="footer-links">
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
+                    className="footer-link"
+                    id="grey-footer">
+                    Ravneet Singh
+                      </a>
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
+                    className="footer-link">
+                    About
+                </a>
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
+                    className="footer-link" >
+                    LinkedIn
+                </a>
+                  <a href="https://github.com/rvsin8"
+                    className="footer-link">
+                    Github
+                </a>
+
+                </div>
+              </div>
+                  <div className="footer-far-right-icons">
+                    <Link to="instagram.com/drewshroyer"></Link>
+                  </div>
+                </div>
+          </div>
+          </div>
+          </div>
     );
   }
 }
