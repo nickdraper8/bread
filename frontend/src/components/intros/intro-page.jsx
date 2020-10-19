@@ -36,8 +36,8 @@ class IntroPage extends React.Component {
             <Link to="/intros" className="internal-nav-user-intros-button">
               Intros
             </Link>
-            <Link to="/dinner" className="internal-nav-user-dinner-button">
-              Dinner? (BETA)
+            <Link to="/calc" className="internal-nav-user-dinner-button">
+              Tip Calculator
             </Link>
             <button
               onClick={this.logoutUser}
