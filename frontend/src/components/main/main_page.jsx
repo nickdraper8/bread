@@ -8,7 +8,7 @@ class MainPage extends React.Component {
  
   render() {
     return (
-      <div>
+      <div >
         <div className="login-signup-temp-nav-bar">
           <div className="login-signup-bread-title-logo">BREAD</div>
           <div className="login-signup-bread-nav-buttons">
@@ -25,7 +25,165 @@ class MainPage extends React.Component {
           </div>
           <img className="beach-pic-background" src={beach} alt="" />
         </div>
-      </div>
+            <div className="footer-container">
+              <div className="footer-inner-container">
+                <div className="footer-more-inner-container">
+              <div className="footer-bread-title-logo">created by:</div>
+                  <div className="footer-left-column">
+                    <div className="footer-links">
+                      <Link
+                        className="footer-link"
+                        id="grey-footer"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                        Drew Shroyer{" "}
+                      </Link>
+                      <Link
+                        className="footer-link"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                        About
+                </Link>
+                      <Link
+                        className="footer-link"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                        LinkedIn
+                </Link>
+                      <Link
+                        className="footer-link"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                       Github
+                </Link>
+                    </div>
+                  </div>
+                  <div className="footer-center-column">
+                    <div className="footer-links">
+                      <Link
+                        className="footer-link"
+                        id="grey-footer"
+                    to="linkedin.com/in/nicholas-draper/"
+                      >
+                        Nick Draper{" "}
+                      </Link>
+                      <Link
+                        className="footer-link"
+                    to="linkedin.com/in/nicholas-draper/"
+                      >
+                        About
+                </Link>
+                      <Link
+                        className="footer-link"
+                    to="linkedin.com/in/nicholas-draper/"
+                      >
+                        LinkedIn
+                </Link>
+                      <Link
+                        className="footer-link"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                        Github
+                </Link>
+                
+                    </div>
+                  </div>
+              <div className="footer-final-column">
+                <div className="footer-links">
+                  <Link
+                    className="footer-link"
+                    id="grey-footer"
+                    to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  >
+                    Rav Singh{" "}
+                  </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  >
+                    About
+                </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  >
+                    LinkedIn
+                </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  >
+                    Github
+                </Link>
+
+                </div>
+              </div>
+                  <div className="footer-right-column">
+                    <div className="footer-links">
+                      <Link
+                        className="footer-link"
+                        id="grey-footer"
+                    to="https://www.linkedin.com/in/jrmcc/"
+                      >
+                        J.R. McCann{" "}
+                      </Link>
+                      <Link
+                        className="footer-link"
+                    to="linkedin.com/in/jrmcc/"
+                      >
+                        About
+                </Link>
+                      <Link
+                        className="footer-link"
+                    to="linkedin.com/in/jrmcc/"
+                      >
+                       LinkedIn
+                </Link>
+                      <Link
+                        className="footer-link"
+                        to="linkedin.com/in/drew-shroyer-861b32a4/"
+                      >
+                        Github
+                </Link>
+                    </div>
+                  </div>
+              <div className="footer-final-column">
+                <div className="footer-links">
+                  <Link
+                    className="footer-link"
+                    id="grey-footer"
+                    to="linkedin.com/in/ravneet-singh-20b978a4/"
+                  >
+                    Rav Singh{" "}
+                  </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/ravneet-singh-20b978a4/"
+                  >
+                    About
+                </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/ravneet-singh-20b978a4/"
+                  >
+                    LinkedIn
+                </Link>
+                  <Link
+                    className="footer-link"
+                    to="linkedin.com/in/ravneet-singh-20b978a4/"
+                  >
+                    Github
+                </Link>
+
+                </div>
+              </div>
+                  <div className="footer-far-right-icons">
+                    <Link to="instagram.com/drewshroyer"></Link>
+                  </div>
+                </div>
+          </div>
+          </div>
+          </div>
     );
   }
 }
