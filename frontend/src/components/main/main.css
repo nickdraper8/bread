@@ -156,7 +156,7 @@ width: 400px;
 .footer-links {
     width: 200px;
     color: white;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -167,7 +167,7 @@ width: 400px;
     text-decoration: none;
     transition-duration: .3s;
     color: white;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 14px;
 }
 
