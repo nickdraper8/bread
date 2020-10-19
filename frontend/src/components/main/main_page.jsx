@@ -1,7 +1,6 @@
 import React from "react";
-
 import "./main.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import beach from "../../images/main-splash-image.jpeg";
 
 class MainPage extends React.Component {
@@ -31,149 +30,86 @@ class MainPage extends React.Component {
               <div className="footer-bread-title-logo">created by:</div>
                   <div className="footer-left-column">
                     <div className="footer-links">
-                      <Link
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
                         className="footer-link"
-                        id="grey-footer"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
-                        Drew Shroyer{" "}
-                      </Link>
-                      <Link
-                        className="footer-link"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
+                        id="grey-footer">
+                        Drew Shroyer
+                      </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                        className="footer-link">
                         About
-                </Link>
-                      <Link
-                        className="footer-link"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
+                </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                    className="footer-link" >
                         LinkedIn
-                </Link>
-                      <Link
-                        className="footer-link"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
+                </a>
+                  <a href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                        className="footer-link">
                        Github
-                </Link>
+                </a>
                     </div>
                   </div>
                   <div className="footer-center-column">
                     <div className="footer-links">
-                      <Link
-                        className="footer-link"
-                        id="grey-footer"
-                    to="linkedin.com/in/nicholas-draper/"
-                      >
-                        Nick Draper{" "}
-                      </Link>
-                      <Link
-                        className="footer-link"
-                    to="linkedin.com/in/nicholas-draper/"
-                      >
-                        About
-                </Link>
-                      <Link
-                        className="footer-link"
-                    to="linkedin.com/in/nicholas-draper/"
-                      >
-                        LinkedIn
-                </Link>
-                      <Link
-                        className="footer-link"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
-                        Github
-                </Link>
-                
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link"
+                    id="grey-footer">
+                    Nick Draper
+                      </a>
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link">
+                    About
+                </a>
+                  <a href="https://www.linkedin.com/in/nicholas-draper/"
+                    className="footer-link" >
+                    LinkedIn
+                </a>
+                  <a href="https://github.com/nickdraper8"
+                    className="footer-link">
+                    Github
+                </a>
+                    </div>
+                  </div>
+              <div className="footer-right-column">
+                <div className="footer-links">
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link"
+                    id="grey-footer">
+                    J.R. McCann
+                      </a>
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link">
+                    About
+                </a>
+                  <a href="https://www.linkedin.com/in/jrmcc/"
+                    className="footer-link" >
+                    LinkedIn
+                </a>
+                  <a href="https://github.com/johnrobertmcc"
+                    className="footer-link">
+                    Github
+                </a>
                     </div>
                   </div>
               <div className="footer-final-column">
                 <div className="footer-links">
-                  <Link
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
                     className="footer-link"
-                    id="grey-footer"
-                    to="linkedin.com/in/drew-shroyer-861b32a4/"
-                  >
-                    Rav Singh{" "}
-                  </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/drew-shroyer-861b32a4/"
-                  >
+                    id="grey-footer">
+                    Ravneet Singh
+                      </a>
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
+                    className="footer-link">
                     About
-                </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/drew-shroyer-861b32a4/"
-                  >
+                </a>
+                  <a href="https://www.linkedin.com/in/ravneet-singh-20b978a4/"
+                    className="footer-link" >
                     LinkedIn
-                </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/drew-shroyer-861b32a4/"
-                  >
+                </a>
+                  <a href="https://github.com/rvsin8"
+                    className="footer-link">
                     Github
-                </Link>
-
-                </div>
-              </div>
-                  <div className="footer-right-column">
-                    <div className="footer-links">
-                      <Link
-                        className="footer-link"
-                        id="grey-footer"
-                    to="https://www.linkedin.com/in/jrmcc/"
-                      >
-                        J.R. McCann{" "}
-                      </Link>
-                      <Link
-                        className="footer-link"
-                    to="linkedin.com/in/jrmcc/"
-                      >
-                        About
-                </Link>
-                      <Link
-                        className="footer-link"
-                    to="linkedin.com/in/jrmcc/"
-                      >
-                       LinkedIn
-                </Link>
-                      <Link
-                        className="footer-link"
-                        to="linkedin.com/in/drew-shroyer-861b32a4/"
-                      >
-                        Github
-                </Link>
-                    </div>
-                  </div>
-              <div className="footer-final-column">
-                <div className="footer-links">
-                  <Link
-                    className="footer-link"
-                    id="grey-footer"
-                    to="linkedin.com/in/ravneet-singh-20b978a4/"
-                  >
-                    Rav Singh{" "}
-                  </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/ravneet-singh-20b978a4/"
-                  >
-                    About
-                </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/ravneet-singh-20b978a4/"
-                  >
-                    LinkedIn
-                </Link>
-                  <Link
-                    className="footer-link"
-                    to="linkedin.com/in/ravneet-singh-20b978a4/"
-                  >
-                    Github
-                </Link>
+                </a>
 
                 </div>
               </div>
