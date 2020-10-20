@@ -13,7 +13,6 @@ export const createEvent = event => {
 };
 
 export const editEvent = event => {
-    debugger
     return axios.patch(`/api/events/edit/${event._id}`, event);
 };
 

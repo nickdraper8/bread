@@ -116,6 +116,37 @@
     letter-spacing: 4px;
 }
 
-.description-banner{
+.description-banner {
     font-size: 16px;
+}
+
+.description-banner input {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.description-banner button {
+    margin: 0px 5px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: #ffffff00;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 3px solid black;
+    font-size: 15px;
+    transition: .5s;
+}
+
+.description-banner button:hover {
+    background-color: black;
+    color: white;
+}
+
+.description-banner button:active {
+    letter-spacing: 4px;
 }

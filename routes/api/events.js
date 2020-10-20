@@ -93,8 +93,6 @@ router.get("/:id/total", (req, res) => {
       total.unshift(expense.amount)
     })
 
-    // debugger
-
     sum = 0;
     total.forEach(decimal => {
       sum += JSON.parse(decimal)
