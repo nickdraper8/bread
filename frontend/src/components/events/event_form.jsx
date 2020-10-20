@@ -121,16 +121,14 @@ class EventForm extends React.Component {
                     placeholder="Event Name"
                   />
                   <button type="submit">Create Event</button>
-
-                  <input
-                    className='description' 
-                    onChange={this.handleDescription}
-                    type='text'
-                    value={this.state.description}
-                    placeholder='  add a description... (optional)'
-                  />
-
                 </form>
+                <input
+                  className='description' 
+                  onChange={this.handleDescription}
+                  type='text'
+                  value={this.state.description}
+                  placeholder='  add a description... (optional)'
+                />
                 <div className="user-search-results-container">
                   {attendeesList}
                 </div>

@@ -46,7 +46,7 @@ class Calc extends React.Component {
                             </div>
                             <label>Tip Percentage</label>
                             <div id="cost-input-container">
-                                <input type="number" step="0.1" min="0" max="100" value={this.state.tip} onChange={this.handleChange("tip")}/>
+                                <input type="number" step="0.npm1" min="0" max="100" value={this.state.tip} onChange={this.handleChange("tip")}/>
                                 <div>%</div>
                             </div>
                         </div>

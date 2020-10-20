@@ -6,7 +6,7 @@
     align-items: center;
     background-color: #F5F1EB;
     border-radius: 30px;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
     box-shadow: 1px 10px 15px #d6d6d6;
 }
 
@@ -80,7 +80,10 @@
     font-family: futura;
 }
 
-.description{
-    margin-left: 20px;
-    border-radius:  0px 0px 0px 50px;
+#event-form-container .description {
+    border-radius: 10px;
+    width: 89%;
+    padding: 10px 15px;
+    margin-top: 30px;
+    height: 100px;
 }
