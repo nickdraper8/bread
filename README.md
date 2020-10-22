@@ -1,6 +1,7 @@
-Bread is an organizational tool where users can form events with each-other and log expenses that are to be split up by others in the event.
+# Introduction - At a glance
+## Bread is an organizational tool where users can form events with each-other and log expenses that are to be split up by others in the event.
 
-It is centered around an event created by you or friends, so the app can keep track of expenses throughout the night - so you can enjoy the night!
+## It is centered around an event created by you or friends, so the app can keep track of expenses throughout the night - so you can enjoy the night!
 
 [Live Link](https://mongo-bread.herokuapp.com/#/)
 
@@ -8,14 +9,8 @@ It is centered around an event created by you or friends, so the app can keep tr
 
 A user can register an account.
 
-<br><br/>
-<div style="text-align: center"><img src="frontend/src/images/create.png" alt="create account"></div>
-<br><br/>
 
 A user can create an event and add party members (friends).
-<br><br/>
-<div style="text-align: center"><img src="frontend/src/images/events.png" alt="create events"></div>
-<br><br/>
 
 
 Expenses are logged/added on by the User as the event progresses.
@@ -50,7 +45,7 @@ router.get("/:id/total", (req, res) => {
 
 module.exports = router;
 
-## Search Bar
+### Search Bar
 Implemented a search bar so user's can add friends to an event.
 
 

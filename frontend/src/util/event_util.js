@@ -13,9 +13,9 @@ export const createEvent = event => {
 };
 
 export const editEvent = event => {
-    return axios.patch(`/api/events/edit`, event);
+    return axios.patch(`/api/events/edit/${event._id}`, event);
 };
 
 export const deleteEvent = eventId => {
-    return axios.patch(`/api/events/${eventId}`);
+    return axios.delete(`/api/events/${eventId}`);
 };

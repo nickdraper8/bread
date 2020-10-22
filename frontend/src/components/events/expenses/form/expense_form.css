@@ -3,30 +3,27 @@
     flex-direction: column;
 }
 
-#expense-form-title {
-
-}
-
 #expense-form-container form {
     display: flex;
     flex-direction: column;
+    
 }
 
 #cost-input-container {
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
+    align-items: center;
 }
 
 #expense-form-container form input {
-    margin: 5px 0px;
-    padding: 10px 10px;
+    margin: 5px 0;
+    padding: 10px;
     border-radius: 5px;
-    border: 1px gray solid;
+    border: 1px solid grey;
 }
 
 #expense-form-container form label {
-    margin-top: 12px;
+    margin: 12px 0px 12px 0px;
 }
 
 #expense-form-container form button {

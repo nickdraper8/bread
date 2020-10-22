@@ -3,10 +3,6 @@ import ExpenseItemContainer from  "../expenses/expense_item_container";
 import "./attendee.css";
 
 class Attendee extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         let expenseList = [];

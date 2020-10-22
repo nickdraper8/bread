@@ -11,13 +11,15 @@ class EventForm extends React.Component {
     this.state = {
       name: "",
       attendees: {},
-      errors: []
+      errors: [],
+      desciption: ''
     };
 
     this.handleAddAttendee = this.handleAddAttendee.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleRemoveAttendee = this.handleRemoveAttendee.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDescription = this.handleDescription.bind(this);
   }
 
   handleAddAttendee(e) {
@@ -41,6 +43,10 @@ class EventForm extends React.Component {
     this.setState({ name: e.target.value, errors: [] });
   }
 
+  handleDescription(e) {
+    this.setState({description: e.target.value})
+  }
+
   handleSubmit(e) {
       e.preventDefault();
       let attendeeIds = Object.keys(this.state.attendees);
@@ -53,6 +59,7 @@ class EventForm extends React.Component {
         let event = {
             name: this.state.name,
             attendees: attendeesWithCreator,
+            description: this.state.description
         };
         this.props.createEvent(event);
         this.props.history.push('/home');
@@ -105,6 +112,7 @@ class EventForm extends React.Component {
                 attendees={this.state.attendees}
               />
               <div className="event-form-details-container">
+             
                 <form onSubmit={this.handleSubmit}>
                   <input
                     type="text"
@@ -114,6 +122,13 @@ class EventForm extends React.Component {
                   />
                   <button type="submit">Create Event</button>
                 </form>
+                <input
+                  className='description' 
+                  onChange={this.handleDescription}
+                  type='text'
+                  value={this.state.description}
+                  placeholder='  add a description... (optional)'
+                />
                 <div className="user-search-results-container">
                   {attendeesList}
                 </div>

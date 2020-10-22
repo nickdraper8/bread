@@ -17,5 +17,5 @@ export const editExpense = (expense) => {
 };
 
 export const deleteExpense = (expenseId) => {
-  return axios.patch(`/api/expenses/${expenseId}`);
+  return axios.delete(`/api/expenses/delete/${expenseId}`);
 };

@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./event-show.css";
 
 class EventShow extends React.Component {
   constructor(props){
     super(props);
     this.handleRedirect = this.handleRedirect.bind(this);
+    this.state = this.props.fetchEvent(this.props.event._id)
+  }
+
+  componentDidMount() {
+    this.props.fetchUsersViaEvent(this.props.event._id); 
   }
 
   handleRedirect() {
@@ -12,11 +17,12 @@ class EventShow extends React.Component {
   }
 
   render() {
-    const { event, users } = this.props;
+    const { event } = this.props;
+
     return (
       <div className="event-show-page-container" onClick={this.handleRedirect}>
         <div className="event-show-page-title">{event.name}</div>
-        <ul className="event-show-attendees">{users}</ul>
+        <div className="event-details-button">Event Details</div>
       </div>
     );
   }

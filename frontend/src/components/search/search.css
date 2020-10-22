@@ -26,7 +26,8 @@
 }
 
 .user-search-results-container .user-search-result-item {
-    padding: 10px;
+    align-content: flex-end;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;

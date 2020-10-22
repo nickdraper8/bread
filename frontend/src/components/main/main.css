@@ -16,7 +16,7 @@ body {
     padding: 50px;
     width: 65%;
     font-family: Moret-Semibold;
-    font-size: 44px;
+    font-size: 5vh;
     font-weight: 100px;
     color: black;
     position: absolute;
@@ -87,3 +87,105 @@ width: 400px;
     width: 100%;
     height: 40px;
 } */
+.footer-bread-title-logo {
+    font-size: 32px;
+    color: white;
+    /* font-family: Moret-Semibold; */
+}
+
+.footer-container {
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    font-family: Futura;
+    /* position: fixed;
+    left: 0;
+    bottom: 0; */
+    color: white;
+}
+
+.footer-inner-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+        position: relative;
+}
+
+.footer-more-inner-container {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+
+.footer-left-column {
+    position: absolute;
+    top: 10px;
+    left: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-center-column {
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-final-column {
+    position: absolute;
+    top: 10px;
+    left: 840px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-right-column {
+    position: absolute;
+    top: 10px;
+    left: 630px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links {
+    width: 200px;
+    color: white;
+    font-weight: 100;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    margin: 12px;
+    text-decoration: none;
+    transition-duration: .3s;
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    color: rgb(56, 158, 241); 
+}
+
+#grey-footer {
+    color: #FCF7F4;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.footer-far-right-icons {
+
+}
+
+.social-icon {
+
+}
