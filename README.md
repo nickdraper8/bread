@@ -20,8 +20,9 @@ When the event is over, the expense is divided equally through a built-in expens
 
 ## Code Highlights
 ### Expense Total
-Implemented logic behind adding expenses by event id.
+Implemented logic behind adding expenses by event id (events.js).
 
+```
 router.get("/:id/total", (req, res) => {
     Expense.find( {event_id : {$in : req.params.id}})
   .then( expense => {
@@ -44,11 +45,12 @@ router.get("/:id/total", (req, res) => {
 });
 
 module.exports = router;
+```
 
 ### Search Bar
-Implemented a search bar so user's can add friends to an event.
+Implemented a search bar so user's can add friends to an event (user_search.jsx).
 
-
+```
 import React from 'react';
 import './search.css';
 
@@ -124,6 +126,7 @@ class UserSearch extends React.Component {
 }
 
 export default UserSearch;
+```
 
 ## Technologies 
 * Mongoose(MongoDB)
@@ -133,10 +136,10 @@ export default UserSearch;
 * CSS / HTML
 
 ## Group Members
-* Nick Draper
-* Drew Shroyer
-* JR McCann
-* Ravneet Singh
+[Nick Draper](https://github.com/nickdraper8)
+[Drew Shroyer](https://github.com/drewshroyer)
+[JR McCann ](https://github.com/johnrobertmcc)
+[Ravneet Singh](https://github.com/rvsin8)
 
 
 
