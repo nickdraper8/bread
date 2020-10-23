@@ -1,4 +1,4 @@
-# Introduction - At a glance
+# Bread - At a glance
 ### Bread is an organizational tool where users can form events with each-other and log expenses that are to be split up by others in the event. Centered around an event created by you a friend, Bread can keep track of expenses throughout the night - so you can focus on enjoying your time!
 
 <a href="https://mongo-bread.herokuapp.com/#/"><p align="center">Live Link</p></a>
@@ -43,7 +43,7 @@ module.exports = router;
 ```
 ### Search Bar
 
-<p align="center"><img src=""./frontend/public/search.gif"" alt="search-gif"></p>
+<p align="center"><img src="./frontend/public/search.gif" alt="search-gif"></p>
 
 Implemented a search bar so user's can add friends to an event. This was done by creating a search form that would send the search term `bounds` to the backend. We then filtered the results using a regex expression to find usernames that match the parameters of the bounds.
 ```
