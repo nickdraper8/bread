@@ -10,7 +10,6 @@ router.get("/test", (req, res) => res.json({ msg: "This is the search route" }))
 
 router.get('/search', (req, res) => {
 
-    // const userSearch = new RegExp(`/^(${req.query.bounds})/gi`)
     if(req.query.bounds) {
         User
             .find({ username: { $regex: `${req.query.bounds}`, $options: "gi" } })
