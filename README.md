@@ -15,7 +15,7 @@
 ## Code Highlights
 ### Expense Total
 Implemented logic behind adding expenses by event id.
-```
+```Javascript
 // routes/expenses.js
 
 router.get("/:id/total", (req, res) => {
@@ -46,7 +46,7 @@ module.exports = router;
 <p align="center"><img src="./frontend/public/search.gif" alt="search-gif"></p>
 
 Implemented a search bar so user's can add friends to an event. This was done by creating a search form that would send the search term `bounds` to the backend. We then filtered the results using a regex expression to find usernames that match the parameters of the bounds.
-```
+```Javascript
 // routes/api/searches.js
 
 router.get('/search', (req, res) => {
@@ -70,7 +70,7 @@ router.get('/search', (req, res) => {
 });
 ```
 Then, we would send back the filtered users and place them in a specific slice of state under `state.entities.users.search` so that we could specifically manipulate what usernames users see in the search results bar vs other parts of the webapp that might contain user information unrelated to that of the search. For example, you can see this in action in the above gif where added users stay even when the search bounds change. Below is our action that first updates our filter state and then fetches the searched users from the database.
-```
+```Javascript
 // filter_acitons.js
 import { fetchUsersFromSearch } from './user_actions';
 
@@ -94,13 +94,15 @@ Our super simplified tip calculator allows for users to quickly and easily updat
 
 With just a a few lines of code we were able to provide an incredibly useful tool to Bread users attempting to split their bills. Check out a quick snippet below:
 
-```
+```Javascript
 let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 100;
         let totalCostWithTip = 0
         if (tip) {
             totalCostWithTip = parseInt(this.state.totalCost) + tip;
         }
 ```
+<p align="center"><img src="./frontend/public/tip.gif" alt="tip-gif"></p>
+
 
 
 ## Technologies 
