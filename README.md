@@ -86,6 +86,20 @@ export const updateFilter = (filter, value) => (dispatch, getState) => {
     dispatch(changeFilter(filter, value));
     return fetchUsersFromSearch(getState().ui.filters)(dispatch);
 };
+
+```
+### Tip Calculator
+
+Our super simplified tip calculator allows for users to quickly and easily update what they ordered for dinner and know their unique total once tip is added. By creating a slice of the state that will hold the values of tip, users are able to update their preffered tip percentage and our function will return the appropriate calcualted value. 
+
+With just a a few lines of code we were able to provide an incredibly useful tool to Bread users attempting to split their bills. Check out a quick snippet below:
+
+let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 100;
+        let totalCostWithTip = 0
+        if (tip) {
+            totalCostWithTip = parseInt(this.state.totalCost) + tip;
+        }
+
 ```
 
 ## Technologies 
@@ -101,6 +115,9 @@ export const updateFilter = (filter, value) => (dispatch, getState) => {
   * [LinkedIn](https://www.linkedin.com/in/nicholas-draper/)
   * [AngelList](https://angel.co/u/nicholas-draper-2)
 * Drew Shroyer
+  * [GitHub](https://github.com/drewshroyer)
+  * [LinkedIn](https://www.linkedin.com/in/drew-shroyer-861b32a4/)
+  * [AngelList](https://angel.co/u/drew-drew-shroyer)
 * JR McCann
 * Ravneet Singh
 
