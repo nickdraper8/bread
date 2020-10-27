@@ -100,7 +100,6 @@ let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 10
         if (tip) {
             totalCostWithTip = parseInt(this.state.totalCost) + tip;
         }
-
 ```
 
 Our routes were written in a way to 
