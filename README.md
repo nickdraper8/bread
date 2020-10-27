@@ -94,13 +94,16 @@ Our super simplified tip calculator allows for users to quickly and easily updat
 
 With just a a few lines of code we were able to provide an incredibly useful tool to Bread users attempting to split their bills. Check out a quick snippet below:
 
-// let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 100;
+```
+let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 100;
         let totalCostWithTip = 0
         if (tip) {
             totalCostWithTip = parseInt(this.state.totalCost) + tip;
         }
-
 ```
+
+Our routes were written in a way to 
+
 
 ## Technologies 
 * Mongoose(MongoDB)
@@ -119,6 +122,9 @@ With just a a few lines of code we were able to provide an incredibly useful too
   * [LinkedIn](https://www.linkedin.com/in/drew-shroyer-861b32a4/)
   * [AngelList](https://angel.co/u/drew-drew-shroyer)
 * JR McCann
+  * [GitHub](https://github.com/johnrobertmcc)
+  * [LinkedIn](https://www.linkedin.com/in/jrmcc/)
+  * [AngelList](https://angel.co/u/john-robert-mccann)
 * Ravneet Singh
 
 
