@@ -54,7 +54,10 @@ class IntroPage extends React.Component {
                 alt="drew-shroyer-pic"
               />
               <div className="intro-text-information">
-                <a href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}>
+                <a
+                  href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
+                  target="_blank"
+                >
                   Drew Shroyer
                   <span className="intro-bio">
                     a creative software engineer trained in React/Redux,
@@ -73,14 +76,18 @@ class IntroPage extends React.Component {
                 alt="nick-draper-pic"
               />
               <div className="intro-text-information">
-                <a href={"https://www.linkedin.com/in/nicholas-draper/"}>
+                <a
+                  href={"https://www.linkedin.com/in/nicholas-draper/"}
+                  target="_blank"
+                >
                   Nick Draper
                   <span class="intro-bio">
-                    A former technical recruiter, Nick is now a full stack software engineer 
-                      looking to take his talents into the market. Nick is proficient in many 
-                      technologies including JavaScript, Ruby, Rails, React, Redux, as well as 
-                      Node.js and Express. He is excited for the future, and is always excited 
-                      for a challenge.
+                    A former technical recruiter, Nick is now a full stack
+                    software engineer looking to take his talents into the
+                    market. Nick is proficient in many technologies including
+                    JavaScript, Ruby, Rails, React, Redux, as well as Node.js
+                    and Express. He is excited for the future, and is always
+                    excited for a challenge.
                   </span>
                 </a>
               </div>
@@ -90,6 +97,7 @@ class IntroPage extends React.Component {
               <div className="intro-text-information">
                 <a
                   className="nav-bar-link"
+                  target="_blank"
                   id="nav-bar-dash"
                   href={"https://www.linkedin.com/in/jrmcc/"}
                 >
@@ -106,6 +114,7 @@ class IntroPage extends React.Component {
               <img src={rav} className="intro-head-shot-pic" alt="rav-pic" />{" "}
               <div className="intro-text-information">
                 <a
+                  target="_blank"
                   className="nav-bar-link"
                   id="nav-bar-dash"
                   href={"https://www.linkedin.com/in/ravneet-singh-20b978a4/"}
