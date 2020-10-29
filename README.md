@@ -36,7 +36,7 @@ router.get("/:id/total", (req, res) => {
 
     res.json(sum);
   })
-
+  
 });
 
 module.exports = router;
