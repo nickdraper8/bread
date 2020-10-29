@@ -24,7 +24,7 @@ class AttendeeResult extends React.Component {
                 } 
                     message = `This is a reminder from Bread to let you know that owe $${difference * -1} to the event named ${this.props.eventName}.`
                 let phoneNumber = this.props.attendee.phone.replace(/-/g, '');
-                sendMessage(phoneNumber, message);
+                sendMessage({phoneNumber: phoneNumber, message: message});
                 localStorage.setItem(`messageTimerFor${this.props.eventName}${this.props.attendee.username}`, Date.now())
                 this.setState({buttonClicked: true});
             }
