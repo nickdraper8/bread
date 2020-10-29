@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('futura_medium-webfont.eot'); /* IE9 Compat Modes */
+  src: url('futura_medium-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('futura_medium-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('futura_medium-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('futura_medium-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Moret-Semibold';
+  src: url('fontsfree-net-moret3-webfont.eot'); /* IE9 Compat Modes */
+  src: url('fontsfree-net-moret3-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fontsfree-net-moret3-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fontsfree-net-moret3-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fontsfree-net-moret3-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+
 body {
     font-family: Futura;
     text-decoration: none;
