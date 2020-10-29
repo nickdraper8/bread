@@ -1,5 +1,5 @@
 const axios = require("axios");
-const keys = require('../api_config/api_keys');
+const keys = require('../config/api_keys');
 
 export const sendMessage = (phoneNumber, message) => {
     return(
