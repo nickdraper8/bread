@@ -20,9 +20,12 @@ class AttendeeResult extends React.Component {
             if (timeSinceLastMessage || ((Date.now() - timeSinceLastMessage) > 43200000)) {
                 let message = '';
                 if (difference > 0) {
-                    message = `This is a reminder from Bread to let you know that are owed $${difference} from the event named ${this.props.eventName}.`;
-                } 
-                    message = `This is a reminder from Bread to let you know that owe $${difference * -1} to the event named ${this.props.eventName}.`
+                    message = `This is a reminder from Bread to let you know that you are owed $${difference} from the event named ${this.props.eventName}. Go collect your cash!`;
+                } else if (difference === 0) {
+                    message = `This is a reminder from Bread to let you know that you are not owed anything nor do you owe anything to the event named ${this.props.eventName}. Keep it up!`
+                } else {
+                    message = `This is a reminder from Bread to let you know that you owe $${difference * -1} to the event named ${this.props.eventName}. Go pay back your friends!`
+                }
                 let phoneNumber = this.props.attendee.phone.replace(/-/g, '');
                 sendMessage({phoneNumber: phoneNumber, message: message});
                 localStorage.setItem(`messageTimerFor${this.props.eventName}${this.props.attendee.username}`, Date.now())
@@ -55,11 +58,10 @@ class AttendeeResult extends React.Component {
         }
 
         if (difference < 0 ) {
-            difference = difference * -1;
             return(
                 <div id="attendee-result-container">
                     <div id="attendee-result-item">
-                        {this.props.attendee.firstname} <span id="owes-money">owes ${difference}</span> to the group
+                        {this.props.attendee.firstname} <span id="owes-money">owes ${difference * -1}</span> to the group
                     </div>
                     {messageBtn}
                 </div>

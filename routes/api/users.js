@@ -15,7 +15,6 @@ router.get("/test", (req, res) =>
     res.json({ msg: "This is the users route" }));
 
 router.post("/sendmessage", (req, res) => {
-    debugger
     axios({
             "method":"POST",
             "url":`https://twilio-sms.p.rapidapi.com/2010-04-01/Accounts/a/Messages.json`,
