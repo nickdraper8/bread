@@ -1,4 +1,5 @@
 const axios = require("axios");
+const keys = require('../api_config/api_keys');
 
 export const sendMessage = (phoneNumber, message) => {
     return(
@@ -8,7 +9,7 @@ export const sendMessage = (phoneNumber, message) => {
             "headers":{
             "content-type":"application/json",
             "x-rapidapi-host":"twilio-sms.p.rapidapi.com",
-            "x-rapidapi-key":"fae626a662msh1586ba720f9b846p1902b7jsnfbbe238eb3ed",
+            "x-rapidapi-key":keys.twilioKey,
             "useQueryString":true
             },"params":{
             "from":"+19093651823",
