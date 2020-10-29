@@ -6,6 +6,9 @@ import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 
+import { sendMessage } from "./util/sms_api_util";
+import { milisecondsConverter } from "./util/data_format_api";
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
 
@@ -38,6 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById("root");
+
+  // Start of testing on the window
+  window.sendMessage = sendMessage
+  window.miliSeconds = milisecondsConverter
+  // End of testing on the window
+
+
 
   ReactDOM.render(<Root store={store} />, root);
 });
