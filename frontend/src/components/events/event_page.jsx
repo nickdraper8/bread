@@ -83,7 +83,7 @@ class EventPage extends React.Component {
             totalExpenses = Math.round(totalExpenses * 100) / 100;
             let eachOwe = (totalExpenses / Object.values(this.props.attendees).length);
             let attendeesResultList = Object.values(this.props.attendees).map(attendee => {
-                return <AttendeeResult key={attendee._id} attendee={attendee} expenses={this.props.expenses} avg={eachOwe} />
+                return <AttendeeResult key={attendee._id} attendee={attendee} eventName={this.props.event.name} expenses={this.props.expenses} avg={eachOwe} />
             });
             attendeesResultList.unshift(
                 <div key={this.props.eventId} id="results-list-title">Summary</div>
