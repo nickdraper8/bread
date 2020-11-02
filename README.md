@@ -18,7 +18,6 @@ Implemented logic behind adding expenses by event id.
 ```Javascript
 // routes/expenses.js
 
-```
 router.get("/:id/total", (req, res) => {
     Expense.find( {event_id : {$in : req.params.id}})
   .then( expense => {
