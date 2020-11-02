@@ -18,6 +18,7 @@ Implemented logic behind adding expenses by event id.
 ```Javascript
 // routes/expenses.js
 
+```
 router.get("/:id/total", (req, res) => {
     Expense.find( {event_id : {$in : req.params.id}})
   .then( expense => {
@@ -126,6 +127,9 @@ let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 10
   * [LinkedIn](https://www.linkedin.com/in/jrmcc/)
   * [AngelList](https://angel.co/u/john-robert-mccann)
 * Ravneet Singh
+  * [GitHub](https://github.com/rvsin8)
+  * [LinkedIn](https://www.linkedin.com/in/ravneet-singh-20b978a4/)
+  * [AngelList](https://angel.co/u/ravneet-singh-37)
 
 
 
