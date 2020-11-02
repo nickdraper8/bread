@@ -3,12 +3,68 @@
 }
 
 #attendee-result-container {
+    margin: 20px 0px;
+}
 
+#attendee-result-container button {
+    margin-top: 5px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: #ffffff00;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 10px;
+    transition: .5s;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#attendee-result-container button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#attendee-result-container button:focus {
+    outline: none;
+}  
+
+#attendee-result-container #message-sent-notice {
+    margin-top: 5px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 10px;
+    transition: .5s;
+    margin-bottom: 10px;
+    width: 100%;
+    cursor: default;
 }
 
 
 #attendee-result-item {
-    margin: 20px 0px;
+    /* margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background-color: #ffffff00;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 3px solid black;
+    font-size: 15px;
+    transition: .5s; */
 }
 
 #owes-money {
@@ -18,3 +74,4 @@
 #is-owed-money {
     color: #1A9666
 }
+
