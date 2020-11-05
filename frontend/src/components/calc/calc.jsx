@@ -26,7 +26,7 @@ class Calc extends React.Component {
         let tip = Math.round((this.state.totalCost * (this.state.tip / 100)) * 100) / 100;
         let totalCostWithTip = 0
         if (tip) {
-            totalCostWithTip = parseInt(this.state.totalCost) + tip;
+            totalCostWithTip = Math.round((parseInt(this.state.totalCost) + tip) * 100) / 100;
         }
         return(
             <div className="user-home-container">
