@@ -11,6 +11,7 @@
 - Expenses are logged/added on by the User as the event progresses.
 - When the event is over, the expense is divided equally through a built-in expenses calculator.
 - Includes a tip calculator for quick calculation after dinner
+- Integrated with an SMS messaging API called [Twilio](https://www.twilio.com/) so that users can remind other users in an event how much they owe/are owed.
 
 ## Code Highlights
 ### Expense Total
