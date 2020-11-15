@@ -11,35 +11,27 @@
 - Expenses are logged/added on by the User as the event progresses.
 - When the event is over, the expense is divided equally through a built-in expenses calculator.
 - Includes a tip calculator for quick calculation after dinner
+- Integrated with an SMS messaging API called [Twilio](https://www.twilio.com/) so that users can remind other users in an event how much they owe/are owed.
 
 ## Code Highlights
 ### Expense Total
 Implemented logic behind adding expenses by event id.
 ```Javascript
 // routes/expenses.js
-
 router.get("/:id/total", (req, res) => {
     Expense.find( {event_id : {$in : req.params.id}})
-  .then( expense => {
-
-    const total = [];
-    expense.forEach(expense => {
-      total.unshift(expense.amount)
-    })
-
-    // debugger
-
-    sum = 0;
-    total.forEach(decimal => {
-      sum += JSON.parse(decimal)
-    })
-
-    res.json(sum);
-  })
-
+        .then(expense => {
+            const total = [];
+            expense.forEach(expense => {
+                total.unshift(expense.amount)
+            })
+            sum = 0;
+            total.forEach(decimal => {
+                sum += JSON.parse(decimal)
+            })
+            res.json(sum);
+        })
 });
-
-module.exports = router;
 ```
 ### Search Bar
 
