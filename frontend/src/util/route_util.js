@@ -11,7 +11,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
       !loggedIn ? (
         <Component {...props} />
       ) : (
-        // Redirect to the tweets page if the user is authenticated
+        // Redirect to the home page if the user is authenticated
         <Redirect to="/home" />
       )
     }
@@ -25,8 +25,8 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
       loggedIn ? (
         <Component {...props} />
       ) : (
-        // Redirect to the login page if the user is already authenticated
-        <Redirect to="/login" />
+        // Redirect to the splash page if the user is already authenticated
+        <Redirect to="/" />
       )
     }
   />
