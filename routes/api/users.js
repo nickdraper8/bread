@@ -9,9 +9,32 @@ const bcrypt = require('bcryptjs');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const mongoose = require("mongoose");
+const axios = require("axios");
 
 router.get("/test", (req, res) => 
     res.json({ msg: "This is the users route" }));
+
+router.post("/sendmessage", (req, res) => {
+    axios({
+            "method":"POST",
+            "url":`https://twilio-sms.p.rapidapi.com/2010-04-01/Accounts/a/Messages.json`,
+            "headers":{
+            "content-type":"application/json",
+            "x-rapidapi-host":"twilio-sms.p.rapidapi.com",
+            "x-rapidapi-key":keys.twilioKey,
+            "useQueryString":true
+            },"params":{
+            "from":"+19093651823",
+            "body":req.body.message,
+            "to":`+1${req.body.phoneNumber}`
+            }, "data": {}
+            })
+            .then((res)=>{
+            console.log(res)
+            })
+            .catch((error) => console.log( error )
+            )
+})
 
 
 router.post('/signup', (req, res) => {

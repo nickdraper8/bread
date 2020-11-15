@@ -1,7 +1,38 @@
 import React from 'react';
 import "./attendee_result.css";
+import { sendMessage } from  '../../../util/sms_api_util';
+import { milisecondsConverter } from "../../../util/data_format_api";
 
 class AttendeeResult extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            buttonClicked: false
+        }
+
+        this.handleSendMessage = this.handleSendMessage.bind(this);
+    }
+
+    handleSendMessage(difference) {
+        return () => {
+            let timeSinceLastMessage = localStorage.getItem(`messageTimerFor${this.props.eventName}${this.props.attendee.username}`);
+            if (timeSinceLastMessage || ((Date.now() - timeSinceLastMessage) > 43200000)) {
+                let message = '';
+                if (difference > 0) {
+                    message = `This is a reminder from Bread to let you know that you are owed $${difference} from the event named ${this.props.eventName}. Go collect your cash!`;
+                } else if (difference === 0) {
+                    message = `This is a reminder from Bread to let you know that you are not owed anything nor do you owe anything to the event named ${this.props.eventName}. Keep it up!`
+                } else {
+                    message = `This is a reminder from Bread to let you know that you owe $${difference * -1} to the event named ${this.props.eventName}. Go pay back your friends!`
+                }
+                let phoneNumber = this.props.attendee.phone.replace(/-/g, '');
+                sendMessage({phoneNumber: phoneNumber, message: message});
+                localStorage.setItem(`messageTimerFor${this.props.eventName}${this.props.attendee.username}`, Date.now())
+                this.setState({buttonClicked: true});
+            }
+        }
+    }
 
     render() {
 
@@ -15,13 +46,24 @@ class AttendeeResult extends React.Component {
         totalPayed = Math.round(totalPayed * 100) / 100;
         let difference = totalPayed - this.props.avg
         difference = Math.round(difference * 100) / 100;
+
+        let messageBtn = ''
+        if (this.props.attendee) {
+            let timeSinceLastMessage = localStorage.getItem(`messageTimerFor${this.props.eventName}${this.props.attendee.username}`);
+            if (!timeSinceLastMessage || ((Date.now() - timeSinceLastMessage) > 43200000)) {
+                messageBtn = <button onClick={this.handleSendMessage(difference)}>Send SMS to {this.props.attendee.firstname}</button>
+            } else {
+                messageBtn = <button id="message-sent-notice">Sent. Send again in {milisecondsConverter(43200000 - (Date.now() - timeSinceLastMessage))}</button>
+            }
+        }
+
         if (difference < 0 ) {
-            difference = difference * -1;
             return(
                 <div id="attendee-result-container">
                     <div id="attendee-result-item">
-                        {this.props.attendee.firstname} <span id="owes-money">owes ${difference}</span> to the group
+                        {this.props.attendee.firstname} <span id="owes-money">owes ${difference * -1}</span> to the group
                     </div>
+                    {messageBtn}
                 </div>
             )
         } else {
@@ -30,6 +72,7 @@ class AttendeeResult extends React.Component {
                     <div id="attendee-result-item">
                         {this.props.attendee.firstname} <span id="is-owed-money">is owed ${difference}</span> from the group
                     </div>
+                    {messageBtn}
                 </div>
             )
         }
