@@ -39,7 +39,7 @@ class MainPage extends React.Component {
                     Drew Shroyer
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                    href="https://drewshroyer.github.io/"
                     className="footer-link"
                     target="_blank"
                   >
@@ -53,7 +53,7 @@ class MainPage extends React.Component {
                     LinkedIn
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/drew-shroyer-861b32a4/"
+                    href="https://github.com/drewshroyer"
                     className="footer-link"
                     target="_blank"
                   >
@@ -72,7 +72,7 @@ class MainPage extends React.Component {
                     Nick Draper
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/nicholas-draper/"
+                    href="https://nickdraper8.github.io/portfolio-page/"
                     className="footer-link"
                     target="_blank"
                   >
@@ -105,7 +105,7 @@ class MainPage extends React.Component {
                     J.R. McCann
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/jrmcc/"
+                    href="https://www.johnrobertmcc.com/"
                     className="footer-link"
                     target="_blank"
                   >
